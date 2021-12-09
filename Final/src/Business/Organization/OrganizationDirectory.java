@@ -4,10 +4,20 @@
  */
 package Business.Organization;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author aniketmirajkar
  */
 public class OrganizationDirectory {
-    
+    private ArrayList<Organization> organizationList;
+
+    public ArrayList<Organization> getOrganizationList() {
+        return organizationList;
+    }
+
+    public void setOrganizationList(ArrayList<Organization> organizationList) {
+        this.organizationList = organizationList;
+    }
 }
