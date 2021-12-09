@@ -27,7 +27,7 @@ public abstract class Organization {
      public enum Type{
         Admin("Admin Organization"), Doctor("Doctor Organization"), Lab("Lab Organization"),Pharmacist("Pharmacy Organization"),
         OrphanageAdmin("Orphanage Admin Organization"), ChildCare("Child Care Organization"), ChildRegistration("Child Registeration Organization"), FinanceOrganization ("Finance Organization"),
-        AdoptionAdmin("Adoption Admin Organization"), Adoption("Adoption Organization"), CriminalCheck("Criminal Check Organization"), FinanceCheck("Finance Check Organization"),Adopter("Adopter Organization")
+        EsposualAdmin("Espousal Admin Organization"), Adoption("Adoption Organization"), CriminalCheck("Criminal Check Organization"), FinanceCheck("Finance Check Organization"),Adopter("Adopter Organization")
         ,Donor("Donor Organization");
         private String value;
         private Type(String value) {

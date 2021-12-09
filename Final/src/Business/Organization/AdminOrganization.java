@@ -9,5 +9,5 @@ package Business.Organization;
  * @author aniketmirajkar
  */
 public class AdminOrganization {
-    
+
 }
