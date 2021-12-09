@@ -4,10 +4,42 @@
  */
 package Business.Donor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author aniketmirajkar
  */
 public class DonorDirectory {
     
+    List<Donor> donorList;
+    
+    public DonorDirectory() {
+        donorList = new ArrayList<Donor>();
+    }
+    
+    private static DonorDirectory donorDirectory;
+
+    public List<Donor> getDonorList() {
+        return donorList;
+    }
+
+    public void setDonorList(List<Donor> donorList) {
+        this.donorList = donorList;
+    }
+
+    public static DonorDirectory getDonorDirectory() {
+        return donorDirectory;
+    }
+
+    public static void setDonorDirectory(DonorDirectory donorDirectory) {
+        DonorDirectory.donorDirectory = donorDirectory;
+    }
+    
+    public Donor addNewDonor(){
+        Donor donor = new Donor();
+        donorList.add(donor);
+        return donor;
+    }    
 }
