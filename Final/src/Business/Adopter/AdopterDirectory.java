@@ -31,5 +31,16 @@ public class AdopterDirectory {
     public void setAdoptersList(List<Adopter> adoptersList) {
         this.adoptersList = adoptersList;
     }
+    
+    
+    public AdopterDirectory() {
+        adoptersList = new ArrayList<Adopter>();
+    }
+    
+    public Adopter addAdopter(){
+     Adopter adopter = new Adopter();
+        adoptersList.add(adopter);
+      return adopter;
+    }
         
 }
