@@ -4,10 +4,31 @@
  */
 package Business.Organization;
 
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author aniketmirajkar
  */
-public class FinanceOrganization {
-    
+public class FinanceOrganization extends Organization {
+    String name;
+    public FinanceOrganization(String name) {
+        super(name);
+        this.name=name;
+    }
+    public FinanceOrganization() {
+       super(Organization.Type.FinanceOrganization.getValue());
+    }
+
+   @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new FundingFinanceRole());
+        return roles;
+    }
+    @Override
+    public Organization.Type getType() {
+        return  Organization.Type.FinanceOrganization;
+    }
 }
