@@ -14,7 +14,11 @@ public class Donor {
     private int donorAge;
     private String donorGender;
     private float donorIncome;
-    private String donorEmail; 
+    private String donorEmail;
+    private int userID;
+    private String userName;
+    private String homeAddr;
+    private String officeAddress;
 
     public String getDonorName() {
         return donorName;
@@ -62,5 +66,37 @@ public class Donor {
 
     public void setDonorEmail(String donorEmail) {
         this.donorEmail = donorEmail;
-    }    
+    }   
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getHomeAddr() {
+        return homeAddr;
+    }
+
+    public void setHomeAddr(String homeAddr) {
+        this.homeAddr = homeAddr;
+    }
+
+    public String getOfficeAddress() {
+        return officeAddress;
+    }
+
+    public void setOfficeAddress(String officeAddress) {
+        this.officeAddress = officeAddress;
+    }
 }

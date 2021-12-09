@@ -41,5 +41,13 @@ public class DonorDirectory {
         Donor donor = new Donor();
         donorList.add(donor);
         return donor;
-    }    
+    }   
+    
+    public static DonorDirectory getInstance(){
+       
+        if(donorDirectory == null) {
+            donorDirectory=new DonorDirectory();
+        }
+        return donorDirectory;  
+    }
 }
