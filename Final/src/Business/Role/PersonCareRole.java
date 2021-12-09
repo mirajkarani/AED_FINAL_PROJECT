@@ -12,16 +12,16 @@ import javax.swing.JPanel;
  *
  * @author mandardeshmukh
  */
-public class EspousalAdminRole extends Role {
+public class PersonCareRole extends Role {
     
-        @Override
+     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory Persondirectory, AdopterDirectory adopterdirectory,DonorDirectory donorDirectory) {
-        return new AdminWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business, Persondirectory, adopterdirectory,donorDirectory);
+        return new PersonCareWorkArea(userProcessContainer, account, organization, enterprise, business, Persondirectory, adopterdirectory);
     }
-    
+
     @Override
-    public String toString(){
-        return (Role.RoleType.EspousalAdmin.getValue());
+    public String toString() {
+        return (Role.RoleType.PersonCare.getValue());
     }
     
 }
