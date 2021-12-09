@@ -21,5 +21,15 @@ public class AdopterDirectory {
         if(adopterdirectory==null){
             adopterdirectory=new AdopterDirectory();
         }
+        return adopterdirectory;  
+    }
+
+    public List<Adopter> getAdoptersList() {
+        return adoptersList;
+    }
+
+    public void setAdoptersList(List<Adopter> adoptersList) {
+        this.adoptersList = adoptersList;
+    }
         
 }
