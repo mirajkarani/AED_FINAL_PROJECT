@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class DonorOrganization extends Organization {
     
     String name;
+    
     public DonorOrganization(String name) {
         super(name);
         this.name = name;

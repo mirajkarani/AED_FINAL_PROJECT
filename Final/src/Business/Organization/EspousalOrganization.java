@@ -12,7 +12,9 @@ import java.util.ArrayList;
  * @author aniketmirajkar
  */
 public class EspousalOrganization extends Organization {
+    
     String name;
+    
     public EspousalOrganization(String name) {
         super(name);
         this.name=name;
@@ -27,6 +29,5 @@ public class EspousalOrganization extends Organization {
     @Override
     public Organization.Type getType() {
         return  Organization.Type.Espousal;
-    }
-    
+    }    
 }

@@ -12,7 +12,9 @@ import java.util.ArrayList;
  * @author aniketmirajkar
  */
 public class FinanceOrganization extends Organization {
+    
     String name;
+    
     public FinanceOrganization(String name) {
         super(name);
         this.name=name;
