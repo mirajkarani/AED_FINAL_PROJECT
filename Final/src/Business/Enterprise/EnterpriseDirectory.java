@@ -30,5 +30,35 @@ public class EnterpriseDirectory {
     }
     
     //Create enterprise
+    public Enterprise createAndAddEnterprise(String name,Enterprise.EnterpriseType type){
+        Enterprise enterprise=null;
+        if(type==Enterprise.EnterpriseType.Hospital){
+            enterprise=new HospitalEnterprise(name);
+            enterpriseList.add(enterprise);
+        }
+        else if(type==Enterprise.EnterpriseType.RayOfHope){
+            enterprise=new RayOfHope(name);
+            enterpriseList.add(enterprise);
+        }
+        else if (type == Enterprise.EnterpriseType.Adoption)
+        {
+            enterprise = new AdoptionEnterprise(name);
+            enterpriseList.add(enterprise);
+        }
+        else if(type == Enterprise.EnterpriseType.Funding){
+            enterprise = new FundingEnterprise(name);
+            enterpriseList.add(enterprise);
+        }
+        return enterprise;
+    }
+    
+    public boolean isUnique(String name){
+        for(Enterprise enterprise : enterpriseList){
+            if(name.equalsIgnoreCase(enterprise.getName())){
+                return false;
+            }
+        }
+        return true;
+    }
     
 }
