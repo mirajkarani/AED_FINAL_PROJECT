@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  *
  * @author mandardeshmukh
  */
-public class LabAssistantRole {
+public class LabAssistantRole extends Role {
     
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory Persondirectory, AdopterDirectory adopterdirectory, DonorDirectory donorDirectory) {
