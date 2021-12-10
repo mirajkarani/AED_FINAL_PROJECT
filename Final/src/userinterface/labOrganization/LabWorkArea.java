@@ -24,7 +24,7 @@ public class LabWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form LabWorkArea
      */
-     JPanel userProcessContainer;
+    JPanel userProcessContainer;
     EcoSystem ecosystem;
     private LabOrganization labOrganization;
     private OrganizationDirectory directory;
@@ -158,7 +158,12 @@ public class LabWorkArea extends javax.swing.JPanel {
         manageLabWorkAreaJPanel();
     }//GEN-LAST:event_LabNetworkPanelMousePressed
 
-    
+    private void manageLabWorkAreaJPanel() {
+        LabJPanel panel = new LabJPanel(rightSystemAdminPanel, userAccount, labOrganization, ecosystem);
+        rightSystemAdminPanel.add("ManageNetworkJPanel", panel);
+        CardLayout layout = (CardLayout) rightSystemAdminPanel.getLayout();
+        layout.next(rightSystemAdminPanel);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LabNetworkPanel;
