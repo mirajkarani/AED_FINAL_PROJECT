@@ -15,8 +15,13 @@ import javax.swing.JPanel;
 public class RayOfHopeRole extends Role{
     
      @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, ChildDirectory childdirectory, AdopterDirectory adopterdirectory,DonorDirectory donorDirectory) {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory Persondirectory, AdopterDirectory adopterdirectory,DonorDirectory donorDirectory) {
         return null;
+    }
+    
+      @Override
+    public String toString(){
+        return (RoleType.RayOfHope.getValue());
     }
     
 }
