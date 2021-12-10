@@ -4,6 +4,13 @@
  */
 package userinterface.MedicOrg;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.LabOrganization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mandardeshmukh
@@ -13,8 +20,51 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AssignPersonJPanel
      */
-    public AssignPersonJPanel() {
+    private JPanel userProcessContainer;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private PharmacistOrganization pharmacistOrganization;
+    private MedicOrganization medicorganization;
+    private EcoSystem business;
+    MedicalHelpWorkRequest request;
+    private PersonDirectory persondirectory;
+    private Person person;
+    private LabOrganization labOrganization;
+    double temperature;
+    double pulserate;
+    double BP;
+    double respirationrate;
+    Network network;
+    public AssignPersonJPanel(JPanel userProcessContainer, MedicalHelpWorkRequest request, Person person, UserAccount userAccount, MedicOrganization medicorganization, Enterprise enterprise, EcoSystem business, PersonDirectory persondirectory) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.request = request;
+        this.enterprise = enterprise;
+        this.userAccount = userAccount;
+        this.persondirectory = persondirectory;
+        this.person = person;
+        this.medicorganization = medicorganization;
+        this.business = business;
+        for (Network net : business.getNetworkList()) {
+            for (Enterprise ent : net.getEnterpriseDirectory().getEnterpriseList()) {
+                if (ent.equals(enterprise)) {
+                    network = net;
+                }
+            }
+        }
+        getPersonDetails();
+        displayImage();
+        populateLabTable();
+        populateMedicationTable();
+        txtName.setEnabled(false);
+        txtAge.setEnabled(false);
+        btnMale.setEnabled(false);
+        btnFemale.setEnabled(false);
+        txtMark.setEnabled(false);
+        lblName.setEnabled(false);
+        lblAge.setEnabled(false);
+        lblGender.setEnabled(false);
+        lblMark.setEnabled(false);
     }
 
     /**
@@ -205,14 +255,14 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
     private void btnRequestTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestTestActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("DoctorRequestLab", new DoctorRequestLab(userProcessContainer, userAccount, enterprise, child, childdirectory, request ,business));
+        userProcessContainer.add("MedicRequestLab", new MedicRequestLab(userProcessContainer, userAccount, enterprise, person, persondirectory, request ,business));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnRequestTestActionPerformed
 
     private void btnPrescribeMedicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrescribeMedicationActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("DoctorPrescibeMedicine", new DoctorPrescibeMedicine(userProcessContainer, userAccount,  enterprise ,child, childdirectory,request ,business));
+        userProcessContainer.add("MedicMedicinePrescription", new MedicMedicinePrescription(userProcessContainer, userAccount,  enterprise ,person, persondirectory,request ,business));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnPrescribeMedicationActionPerformed
 
@@ -226,7 +276,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        DoctorJPanel panel = (DoctorJPanel) component;
+       MedicJPanel panel = (MedicJPanel) component;
         panel.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
