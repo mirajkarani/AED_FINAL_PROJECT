@@ -5,13 +5,13 @@
 package Business.Role;
 
 import Business.Adopter.AdopterDirectory;
-import Business.Donor.DonorDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.AdopterRegisteration.AdopterWorkArea;
 
 /**
  *

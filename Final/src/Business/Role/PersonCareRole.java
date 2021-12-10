@@ -12,6 +12,7 @@ import Business.Organization.Organization;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.RayOfHope.PersonCare.PersonCareWorkArea;
 
 /**
  *
@@ -20,13 +21,12 @@ import javax.swing.JPanel;
 public class PersonCareRole extends Role {
     
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory Persondirectory, AdopterDirectory adopterdirectory,DonorDirectory donorDirectory) {
-        return new PersonCareWorkArea(userProcessContainer, account, organization, enterprise, business, Persondirectory, adopterdirectory);
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory personDirectory, AdopterDirectory adopterDirectory, DonorDirectory donorDirectory) {
+        return new PersonCareWorkArea(userProcessContainer, account, organization, enterprise, business, personDirectory, adopterDirectory);
     }
 
     @Override
     public String toString() {
         return (Role.RoleType.PersonCare.getValue());
-    }
-    
+    }    
 }

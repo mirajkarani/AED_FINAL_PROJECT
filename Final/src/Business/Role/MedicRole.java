@@ -13,14 +13,15 @@ import Business.Organization.Organization;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.MedicOrg.MedicWorkArea;
 
 /**
  *
  * @author mandardeshmukh
  */
-public class MedicRole {
+public class MedicRole extends Role {
     
-     @Override
+    @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory Persondirectory, AdopterDirectory adopterdirectory, DonorDirectory donorDirectory) {
         return new MedicWorkArea(userProcessContainer, account, (MedicOrganization) organization, enterprise, business, Persondirectory);
     }

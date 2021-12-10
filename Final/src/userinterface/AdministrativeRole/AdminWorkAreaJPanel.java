@@ -6,17 +6,19 @@
 package userinterface.AdministrativeRole;
 
 import Business.Adopter.AdopterDirectory;
-import Business.Person.PersonDirectory;
 import Business.Donor.DonorDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import userinterface.AdopterRoleAdmin.AdoptionUnitWorkRequestJPanel;
 import userinterface.FundingRoleAdmin.FundingUnitWorkRequestJPanel;
+import javax.swing.JPanel;
+import Business.Person.PersonDirectory;
+import Business.UserAccount.UserAccount;
+
 
 
 /**

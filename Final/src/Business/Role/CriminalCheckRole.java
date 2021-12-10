@@ -12,6 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.Verification.VerificationWorkArea;
 
 /**
  *
@@ -23,7 +24,7 @@ public class CriminalCheckRole extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory Persondirectory, AdopterDirectory adopterdirectory, DonorDirectory donorDirectory) {
-        return new VerificationandCriminalWorkArea(userProcessContainer,account, organization, enterprise,  business,  adopterdirectory);
+        return new VerificationWorkArea(userProcessContainer,account, organization, enterprise,  business,  adopterdirectory);
     }
     @Override
     public String toString(){

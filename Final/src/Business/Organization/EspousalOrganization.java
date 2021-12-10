@@ -4,6 +4,7 @@
  */
 package Business.Organization;
 
+import Business.Role.EspousalRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
