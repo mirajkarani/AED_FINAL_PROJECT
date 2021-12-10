@@ -4,7 +4,10 @@
  */
 package Business.Role;
 
+import Business.Adopter.AdopterDirectory;
+import Business.Donor.DonorDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 
 import Business.Organization.*;
 import Business.Person.PersonDirectory;
@@ -48,7 +51,7 @@ public abstract class Role {
         }
     }
     
-        public abstract JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise,EcoSystem business, PersonDirectory Persondirectory, AdopterDirectory adopterdirectory,DonorDirectory donorDirectory);
+    public abstract JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise,EcoSystem business, PersonDirectory personDirectory, AdopterDirectory adopterDirectory,DonorDirectory donorDirectory);
 
 
     @Override
