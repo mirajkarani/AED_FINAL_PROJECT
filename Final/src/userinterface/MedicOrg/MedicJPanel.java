@@ -145,10 +145,10 @@ public class MedicJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblMedic.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a child from table");
+            JOptionPane.showMessageDialog(null, "Please select a Person from table");
             return;
         }
-        MedicalHelpWorkRequest request = (MedicalHelpWorkRequest) tblMedic.getValueAt(selectedRow, 0);
+        MedicalAssistanceWorkRequest request = (MedicalAssistanceWorkRequest) tblMedic.getValueAt(selectedRow, 0);
         if (request.getReceiver() != null) {
             JOptionPane.showMessageDialog(null, "Request already assigned.");
             return;
