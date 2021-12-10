@@ -6,6 +6,8 @@
 package Business.WorkQueue;
 
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
 
 /**
  *
@@ -79,8 +81,6 @@ public class RegisterDonorRequest extends WorkRequest{
         this.contactCarrierName = contactCarrierName;
     }
     
-    
-
     public Enterprise getEnterprise() {
         return enterprise;
     }
@@ -162,11 +162,8 @@ public class RegisterDonorRequest extends WorkRequest{
         this.userEmailId = userEmailId;
     }
 
-    
-
     @Override
     public String toString() {
         return userName;
-    }
-    
+    }  
 }
