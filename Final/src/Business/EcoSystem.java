@@ -6,9 +6,11 @@
 package Business;
 
 
-import Business.Customer.CustomerDirectory;
-import Business.DeliveryMan.DeliveryManDirectory;
-import Business.Restaurant.RestaurantDirectory;
+import Business.Adopter.AdopterDirectory;
+import Business.Donor.DonorDirectory;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.Person.PersonDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
 import java.util.ArrayList;
@@ -17,18 +19,22 @@ import java.util.ArrayList;
  *
  * @author MyPC1
  */
-public class EcoSystem extends Organization{
+public class EcoSystem extends Organization {
     
     private static EcoSystem business;
-    private RestaurantDirectory restaurantDirectory;
-    private CustomerDirectory customerDirectory;
-    private DeliveryManDirectory deliveryManDirectory;
+    private ArrayList<Network> networkCatalog;
+    private PersonDirectory personDirectory;
+    private AdopterDirectory adopterDirectory;
+    private DonorDirectory donorDirectory;
 
-    public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
-
-        this.restaurantDirectory = restaurantDirectory;
-        this.customerDirectory = customerDirectory;
-        this.deliveryManDirectory = deliveryManDirectory;
+    private EcoSystem(){
+        
+        super(null);
+        
+        networkCatalog = new ArrayList<Network>();
+        personDirectory = new PersonDirectory();
+        adopterDirectory = new AdopterDirectory();
+        donorDirectory = new DonorDirectory();
     }
     
     public static EcoSystem getInstance(){
@@ -44,14 +50,49 @@ public class EcoSystem extends Organization{
         roleList.add(new SystemAdminRole());
         return roleList;
     }
-    private EcoSystem(){
-        super(null);
-       // networkList=new ArrayList<Network>();
-    }
-
     
     public boolean checkIfUserIsUnique(String userName){
        //
        return false;
+    }
+
+    public static EcoSystem getBusiness() {
+        return business;
+    }
+
+    public static void setBusiness(EcoSystem business) {
+        EcoSystem.business = business;
+    }
+
+    public ArrayList<Network> getNetworkCatalog() {
+        return networkCatalog;
+    }
+
+    public void setNetworkCatalog(ArrayList<Network> networkCatalog) {
+        this.networkCatalog = networkCatalog;
+    }
+
+    public PersonDirectory getPersonDirectory() {
+        return personDirectory;
+    }
+
+    public void setPersonDirectory(PersonDirectory personDirectory) {
+        this.personDirectory = personDirectory;
+    }
+
+    public AdopterDirectory getAdopterDirectory() {
+        return adopterDirectory;
+    }
+
+    public void setAdopterDirectory(AdopterDirectory adopterDirectory) {
+        this.adopterDirectory = adopterDirectory;
+    }
+
+    public DonorDirectory getDonorDirectory() {
+        return donorDirectory;
+    }
+
+    public void setDonorDirectory(DonorDirectory donorDirectory) {
+        this.donorDirectory = donorDirectory;
     }
 }
