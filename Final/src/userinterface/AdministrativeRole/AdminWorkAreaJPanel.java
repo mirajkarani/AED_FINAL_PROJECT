@@ -6,6 +6,14 @@
 package userinterface.AdministrativeRole;
 
 import Business.Adopter.AdopterDirectory;
+import Business.Donor.DonorDirectory;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import javax.swing.JPanel;
+import Business.Person.PersonDirectory;
+import Business.UserAccount.UserAccount;
 
 
 /**
