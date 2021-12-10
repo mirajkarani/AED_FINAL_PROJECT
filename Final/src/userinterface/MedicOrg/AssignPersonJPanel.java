@@ -268,6 +268,64 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        if (txtTemp.getText().isEmpty() || txtPulse.getText().isEmpty() || txtRR.getText().isEmpty() || txtBP.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Vital Signs cannot be empty");
+            return;
+        } else {
+            try {
+                temperature = Double.parseDouble(txtTemp.getText());
+                if (temperature <= 0.0) {
+                    JOptionPane.showMessageDialog(null, "Body Temperature should be positive");
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Body Temperature should be numeric");
+                return;
+            }
+            try {
+                pulserate = Double.parseDouble(txtPulse.getText());
+                if (pulserate <= 0.0) {
+                    JOptionPane.showMessageDialog(null, "Pulse Rate should be positive");
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Pulse Rate should be numeric");
+                return;
+            }
+            try {
+                BP = Double.parseDouble(txtBP.getText());
+                if (BP <= 0.0) {
+                    JOptionPane.showMessageDialog(null, "Bloodpressure should be positive");
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Blood Pressure should be numeric");
+                return;
+            }
+            try {
+                respirationrate = Double.parseDouble(txtRR.getText());
+                if (respirationrate <= 0.0) {
+                    JOptionPane.showMessageDialog(null, "Respiration rate should be positive");
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Repiration Rate should be numeric");
+                return;
+            }
+        }
+        person.setBP(BP);
+        person.setBodytemp(temperature);
+        person.setPulseRate(pulserate);
+        person.setRespirationRate(respirationrate);
+        txtTemp.setEnabled(true);
+        txtPulse.setEnabled(true);
+        txtBP.setEnabled(true);
+        txtRR.setEnabled(true);
+        JOptionPane.showMessageDialog(this, "Vital Signs have been added.");
+        btnRequestTest.setEnabled(true);
+        btnPrescribeMedication.setEnabled(true);
+
+
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
