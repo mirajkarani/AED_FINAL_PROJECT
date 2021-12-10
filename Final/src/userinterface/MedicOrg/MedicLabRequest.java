@@ -4,6 +4,12 @@
  */
 package userinterface.MedicOrg;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mandardeshmukh
@@ -13,6 +19,15 @@ public class MedicLabRequest extends javax.swing.JPanel {
     /**
      * Creates new form MedicLabRequest
      */
+    
+    private JPanel userProcessContainer;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private PersonDirectory persondirectory;
+    private Person person;
+    private  MedicalHelpWorkRequest request;
+    private  EcoSystem business;
+    Network network;
     public MedicLabRequest() {
         initComponents();
     }
@@ -67,8 +82,8 @@ public class MedicLabRequest extends javax.swing.JPanel {
             labRequest.setMessage(message);
             labRequest.setSender(userAccount);
             labRequest.setStatus("Sent");
-            labRequest.setChildId(request.getChildId());
-            labRequest.setChildName(request.getChildName());
+            labRequest.setPersonId(request.getPersonId());
+            labRequest.setPersonName(request.getPersonName());
             labRequest.setStatus("Medical Test Requested");
             JOptionPane.showMessageDialog(this, "Lab Test details added! ");
             Organization org = null;
@@ -86,7 +101,7 @@ public class MedicLabRequest extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        AssignChildJPanel panel = (AssignChildJPanel) component;
+        AssignPersonJPanel panel = (AssignPersonJPanel) component;
         panel.populateLabTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
