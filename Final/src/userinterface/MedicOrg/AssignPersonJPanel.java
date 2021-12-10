@@ -8,7 +8,11 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.LabOrganization;
+import Business.Organization.MedicOrganization;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.MedicalAssistanceWorkRequest;
 import javax.swing.JPanel;
 
 /**
@@ -35,7 +39,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
     double BP;
     double respirationrate;
     Network network;
-    public AssignPersonJPanel(JPanel userProcessContainer, MedicalHelpWorkRequest request, Person person, UserAccount userAccount, MedicOrganization medicorganization, Enterprise enterprise, EcoSystem business, PersonDirectory persondirectory) {
+    public AssignPersonJPanel(JPanel userProcessContainer, MedicalAssistanceWorkRequest request, Person person, UserAccount userAccount, MedicOrganization medicorganization, Enterprise enterprise, EcoSystem business, PersonDirectory persondirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -66,6 +70,8 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
         lblGender.setEnabled(false);
         lblMark.setEnabled(false);
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
