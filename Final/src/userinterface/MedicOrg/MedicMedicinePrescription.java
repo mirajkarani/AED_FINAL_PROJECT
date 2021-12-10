@@ -28,8 +28,22 @@ public class MedicMedicinePrescription extends javax.swing.JPanel {
     private  MedicalHelpWorkRequest request;
     private  EcoSystem business;
     Network network;
-    public MedicMedicinePrescription() {
+    public MedicMedicinePrescription(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, Person person, PersonDirectory persondirectory, MedicalHelpWorkRequest request, EcoSystem business) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = userAccount;
+        this.enterprise = enterprise;
+        this.person = person;
+        this.Persondirectory = Persondirectory;
+        this.business = business;
+        this.request = request;
+        for (Network net : business.getNetworkList()) {
+            for (Enterprise ent : net.getEnterpriseDirectory().getEnterpriseList()) {
+                if (ent.equals(enterprise)) {
+                    network = net;
+                }
+            }
+        }
     }
 
     /**
@@ -72,6 +86,40 @@ public class MedicMedicinePrescription extends javax.swing.JPanel {
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
+        
+        String prescription = txtPrescription.getText();
+        if (prescription.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter medicines to be prescribed");
+        } else {
+            PharmacistWorkRequest pharrequest = new PharmacistWorkRequest();
+            pharrequest.setMessage("Medicine Prescribed");
+            pharrequest.setSender(userAccount);
+            pharrequest.setPersonId(request.getPersonId());
+            pharrequest.setPersonName(request.getPersonName());
+            pharrequest.setStatus("Prescription Sent");
+            pharrequest.setPrescription(prescription);
+            request.setStatus("Medicine Prescribed");
+            request.setTestResult("Child Treated and medicines Prescribed");
+            JOptionPane.showMessageDialog(this, "Medicines prescribed! ");
+            Organization org = null;
+            for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                if (organization instanceof PharmacistOrganization) {
+                    org = organization;
+                    break;
+                }
+            }
+            if (org != null) {
+                org.getWorkQueue().getWorkRequestList().add(pharrequest);
+                userAccount.getWorkQueue().getWorkRequestList().add(pharrequest);
+            }
+        }
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        AssignPersonJPanel panel = (AssignPersonJPanel) component;
+        panel.populateMedicationTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
         
     }//GEN-LAST:event_SaveActionPerformed
 
