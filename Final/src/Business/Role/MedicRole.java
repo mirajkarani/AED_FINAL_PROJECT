@@ -13,6 +13,7 @@ import Business.Organization.Organization;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.MedicOrg.MedicWorkArea;
 
 /**
  *

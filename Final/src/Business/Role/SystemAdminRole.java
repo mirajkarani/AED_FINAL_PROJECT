@@ -4,7 +4,12 @@
  */
 package Business.Role;
 
+import Business.Adopter.AdopterDirectory;
+import Business.Donor.DonorDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
+import Business.Person.PersonDirectory;
 
 import Business.UserAccount.UserAccount;
 import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
@@ -16,8 +21,9 @@ import javax.swing.JPanel;
  */
 public class SystemAdminRole extends Role{
 
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem system) {
-        return new SystemAdminWorkAreaJPanel(userProcessContainer, system);
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system, PersonDirectory Persondirectory, AdopterDirectory adopterdirectory,DonorDirectory donorDirectory) {
+    return new SystemAdminWorkAreaJPanel(userProcessContainer, system);
     }
     
 }
