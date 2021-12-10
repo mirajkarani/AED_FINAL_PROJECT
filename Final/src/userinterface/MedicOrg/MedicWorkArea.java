@@ -4,6 +4,11 @@
  */
 package userinterface.MedicOrg;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mandardeshmukh
@@ -13,8 +18,27 @@ public class MedicWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form MedicWorkArea
      */
-    public MedicWorkArea() {
+    
+    JPanel userProcessContainer;
+    EcoSystem ecosystem;
+    private MedicOrganization medicorganization;
+    Enterprise enterprise;
+    Person Person;
+    private UserAccount userAccount;
+    PersonDirectory Persondirectory;
+    
+    public MedicWorkArea(JPanel userProcessContainer, UserAccount account, MedicOrganization medicorganization, Enterprise enterprise ,EcoSystem ecosystem, PersonDirectory Persondirectory) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;   
+        this.userAccount = account;
+        this.enterprise = enterprise;
+        this.ecosystem=ecosystem;
+        this.medicorganization = (MedicOrganization)doctororganization;
+        this.enterprise = enterprise;
+        this.Persondirectory = Persondirectory;
+        this.userAccount = account;
+        valueLabel.setText(medicorganization.getName());
+        manageMedicWorkAreaJPanel();
     }
 
     /**
@@ -96,12 +120,12 @@ public class MedicWorkArea extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DoctorWorkAreaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DoctorWorkAreaMousePressed
-        manageDoctorWorkAreaJPanel();
+        manageMedicWorkAreaJPanel();
     }//GEN-LAST:event_DoctorWorkAreaMousePressed
 
     private void manageNetworkPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageNetworkPanelMousePressed
         // TODO add your handling code here:
-        manageDoctorWorkAreaJPanel();
+        manageMedicWorkAreaJPanel();
     }//GEN-LAST:event_manageNetworkPanelMousePressed
 
 
