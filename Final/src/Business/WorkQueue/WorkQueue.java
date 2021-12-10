@@ -5,10 +5,11 @@
 package Business.WorkQueue;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
- * @author raunak
+ * @author milin
  */
 public class WorkQueue {
     
@@ -20,5 +21,16 @@ public class WorkQueue {
 
     public ArrayList<WorkRequest> getWorkRequestList() {
         return workRequestList;
+    }
+    
+      public void delete(int personId){
+        List<WorkRequest> list = new ArrayList<>();
+       for(WorkRequest wr:workRequestList) {
+           if(personId==wr.getPersonId()){
+               list.add(wr);
+               
+           }
+       }
+       workRequestList.removeAll(list);
     }
 }

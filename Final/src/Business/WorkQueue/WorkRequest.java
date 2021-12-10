@@ -9,17 +9,30 @@ import java.util.Date;
 
 /**
  *
- * @author raunak
+ * @author milin
  */
 public abstract class WorkRequest {
-
-    private String message;
-    private UserAccount sender;
-    private UserAccount receiver;
     private String status;
     private Date requestDate;
     private Date resolveDate;
+    private int personId;
+    private UserAccount receiver;
+    private int userId;
+    private String personName;
+    private String name;
+    private String message;
+    private UserAccount sender;
     
+
+    public String getName() {
+        return name;
+    }
+
+    
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
     public WorkRequest(){
         requestDate = new Date();
     }
@@ -36,6 +49,24 @@ public abstract class WorkRequest {
         return sender;
     }
 
+    
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public Date getRequestDate() {
+        return requestDate;
+    }
     public void setSender(UserAccount sender) {
         this.sender = sender;
     }
@@ -52,14 +83,6 @@ public abstract class WorkRequest {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Date getRequestDate() {
-        return requestDate;
-    }
-
     public void setRequestDate(Date requestDate) {
         this.requestDate = requestDate;
     }
@@ -71,4 +94,26 @@ public abstract class WorkRequest {
     public void setResolveDate(Date resolveDate) {
         this.resolveDate = resolveDate;
     }
+
+    public int getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(int personId) {
+        this.personId =personId;
+    }
+
+    public String getPersonName() {
+        return personName;
+    }
+
+    public void setPersonName(String personName) {
+        this.personName =personName;
+    }
+    
+    @Override
+    public String toString(){
+        return message;
+    }
+    
 }
