@@ -54,7 +54,7 @@ public class PaymentPanel extends javax.swing.JPanel {
         txtPostal = new javax.swing.JTextField();
         btnPay = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,9 +113,7 @@ public class PaymentPanel extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 2, 12)); // NOI18N
         jLabel6.setText("please enter your 16 digits card number");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, 270, 30));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ccard.png"))); // NOI18N
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 720, 420));
+        add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayActionPerformed
@@ -215,7 +213,7 @@ public class PaymentPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private javax.swing.JTextField txtCVV;
     private javax.swing.JTextField txtPostal;
     // End of variables declaration//GEN-END:variables
