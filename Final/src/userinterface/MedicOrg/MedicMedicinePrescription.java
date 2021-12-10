@@ -4,6 +4,12 @@
  */
 package userinterface.MedicOrg;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mandardeshmukh
@@ -13,6 +19,15 @@ public class MedicMedicinePrescription extends javax.swing.JPanel {
     /**
      * Creates new form MedicMedicinePrescription
      */
+    
+    private JPanel userProcessContainer;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private PersonDirectory persondirectory;
+    private Person person;
+    private  MedicalHelpWorkRequest request;
+    private  EcoSystem business;
+    Network network;
     public MedicMedicinePrescription() {
         initComponents();
     }
@@ -26,10 +41,46 @@ public class MedicMedicinePrescription extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        lblPrescription = new javax.swing.JLabel();
+        txtPrescription = new javax.swing.JTextField();
+        Save = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("MEDICINE PRESCRIPTION");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 309, -1));
+
+        lblPrescription.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        lblPrescription.setText("Prescription");
+        add(lblPrescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 160, 20));
+        add(txtPrescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 270, 90));
+
+        Save.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        Save.setText("Save");
+        Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveActionPerformed(evt);
+            }
+        });
+        add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 120, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 550, 570));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_SaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Save;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblPrescription;
+    private javax.swing.JTextField txtPrescription;
     // End of variables declaration//GEN-END:variables
 }
