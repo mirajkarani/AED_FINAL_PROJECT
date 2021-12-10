@@ -6,7 +6,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 
-import Business.Organization;
+import Business.Organization.*;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -19,9 +19,9 @@ public abstract class Role {
     
     public enum RoleType{
         Admin("Admin"),
-        Doctor("Doctor"),
+        Medic("Medic"),
         LabAssistant("Lab Assistant"),
-        ChildCare("Child Care Examinator"),
+        PersonCare("Person Care Examinator"),
         RayOfHope("Ray Of Hope Admin"),
         PersonRegistration("Person Registrar"), 
         Finance ("Accountant"),
