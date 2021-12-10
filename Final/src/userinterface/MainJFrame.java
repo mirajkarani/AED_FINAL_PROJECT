@@ -206,6 +206,25 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
             }
         }
+        if (userAccount == null) {
+            JOptionPane.showMessageDialog(null, "Please enter valid username and password");
+            return;
+        } 
+            else {
+            loginJPanel.setVisible(false);
+            container.setVisible(true);
+            logoutJButton.setVisible(true);
+            usernameJTextField.setText("");
+            jPasswordField.setText("");
+            if (userAccount != null && userAccount.getRole() != null) {
+            
+            container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system, personDirectory, adopterDirectory,donorDirectory));
+            
+            CardLayout layout = (CardLayout) container.getLayout();
+            layout.next(container);
+        }
+     }
+        
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     /**
