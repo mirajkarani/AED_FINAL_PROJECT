@@ -12,6 +12,7 @@ import Business.Organization.Organization;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.Funding.FundingWorkArea;
 
 /**
  *
@@ -26,6 +27,5 @@ public class FundingFinanceRole extends Role {
      @Override
     public String toString(){
         return (Role.RoleType.Finance.getValue());
-    }
-    
+    }   
 }
