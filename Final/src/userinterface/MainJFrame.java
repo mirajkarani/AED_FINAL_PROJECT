@@ -43,7 +43,7 @@ public class MainJFrame extends javax.swing.JFrame {
         adopterDirectory = system.getAdopterDirectory();
         personDirectory = system.getPersonDirectory();
         donorDirectory = system.getDonorDirectory();
-        this.setSize(1680, 1050);
+        this.setSize(1920, 1080); 
     }
 
     /**
