@@ -4,7 +4,10 @@
  */
 package Business.Role;
 
+import Business.Adopter.AdopterDirectory;
+import Business.Donor.DonorDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 
 import Business.Organization.*;
 import Business.Person.PersonDirectory;

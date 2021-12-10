@@ -7,8 +7,12 @@ package userinterface.labOrganization;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.LabOrganization;
+import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -29,7 +33,8 @@ public class LabWorkArea extends javax.swing.JPanel {
     private UserAccount userAccount;
     PersonDirectory personDirectory;
     
-    public LabWorkArea() {
+    public LabWorkArea(public LabWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem ecosystem) {
+
         initComponents();
         this.userProcessContainer=userProcessContainer;   
         this.userAccount = account;
@@ -153,6 +158,7 @@ public class LabWorkArea extends javax.swing.JPanel {
         manageLabWorkAreaJPanel();
     }//GEN-LAST:event_LabNetworkPanelMousePressed
 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel LabNetworkPanel;
