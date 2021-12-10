@@ -13,7 +13,12 @@ import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.MedicalAssistanceWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -30,7 +35,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
     private PharmacistOrganization pharmacistOrganization;
     private MedicOrganization medicorganization;
     private EcoSystem business;
-    MedicalHelpWorkRequest request;
+    MedicalAssistanceWorkRequest request;
     private PersonDirectory persondirectory;
     private Person person;
     private LabOrganization labOrganization;
@@ -71,7 +76,61 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
         lblMark.setEnabled(false);
     }
     
+    public void populateLabTable() {
+        DefaultTableModel model = (DefaultTableModel) tblLab.getModel();
+        model.setRowCount(0);
+        for (WorkRequest labrequest : userAccount.getWorkQueue().getWorkRequestList()) {
+            if (labrequest instanceof MedicalAssistanceWorkRequest || labrequest instanceof LabProcessWorkRequest) {
+                if (labrequest.getPersonId() == person.getPersonId()) {
+                    Object[] row = new Object[model.getColumnCount()];
+                    row[0] = labrequest;
+                    row[1] = labrequest.getPersonId();
+                    row[2] = labrequest.getPersonName();
+                    row[3] = labrequest.getReceiver();
+                    row[4] = labrequest.getStatus();
+                    if (labrequest instanceof MedicalAssistanceWorkRequest) {
+                        String result = ((MedicalAssistanceWorkRequest) labrequest).getTestResult();
+                        row[5] = result == null ? "Waiting" : result;
+                    } else if (labrequest instanceof LabProcessWorkRequest) {
+                        String result = ((LabProcessWorkRequest) labrequest).getResult();
+                        row[5] = result == null ? "Waiting" : result;
+                    }
+                    model.addRow(row);
+                }
+            }
+        }
+    }
     
+    public void populateMedicationTable() {
+        DefaultTableModel model = (DefaultTableModel) tblMedication.getModel();
+        model.setRowCount(0);
+        for (WorkRequest pharrequest : userAccount.getWorkQueue().getWorkRequestList()) {
+            if (pharrequest instanceof MedicalAssistanceWorkRequest || pharrequest instanceof PharmacistWorkRequest) {
+                if (pharrequest.getPersonId() == person.getPersonId()) {
+                    Object[] row = new Object[model.getColumnCount()];
+                    row[0] = pharrequest;
+                    row[1] = request.getPersonId();
+                    row[2] = request.getPersonName();
+                    row[3] = pharrequest.getReceiver();
+                    if (pharrequest instanceof MedicalAssistanceWorkRequest) {
+                        String result = ((MedicalAssistanceWorkRequest) pharrequest).getTestResult();
+                        row[4] = result == null ? "Prescribed Medicine" : result;
+                    } else if (pharrequest instanceof PharmacistWorkRequest) {
+                        String result = ((PharmacistWorkRequest) pharrequest).getResult();
+                        row[4] = result == null ? "Waiting" : result;
+                    }
+                    if (pharrequest instanceof MedicalAssistanceWorkRequest) {
+                        String medicalPrescription = ((MedicalAssistanceWorkRequest) pharrequest).getPrescription();
+                        row[5] = medicalPrescription == null ? "" : medicalPrescription;
+                    } else if (pharrequest instanceof PharmacistWorkRequest) {
+                        String medicalPrescription = ((PharmacistWorkRequest) pharrequest).getPrescription();
+                        row[5] = medicalPrescription == null ? "" : medicalPrescription;
+                    }
+                    model.addRow(row);
+                }
+            }
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
