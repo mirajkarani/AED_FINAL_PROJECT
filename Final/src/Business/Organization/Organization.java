@@ -25,7 +25,7 @@ public abstract class Organization {
     private Type type;
     
      public enum Type{
-        Admin("Admin Organization"), Doctor("Doctor Organization"), Lab("Lab Organization"),Pharmacy("Pharmacy Organization"),
+        Admin("Admin Organization"), Medic("Medic Organization"), Lab("Lab Organization"),Pharmacy("Pharmacy Organization"),
         OrphanageAdmin("Orphanage Admin Organization"), PersonCare("Person Care Organization"), PersonRegistration("Person Registeration Organization"), FinanceOrganization ("Finance Organization"),
         EsposualAdmin("Espousal Admin Organization"), Espousal("Espousal Organization"), CriminalCheck("Criminal Check Organization"), FinanceCheck("Finance Check Organization"),Adopter("Adopter Organization")
         ,Donor("Donor Organization");
