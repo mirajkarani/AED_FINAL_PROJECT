@@ -6,8 +6,9 @@ package userinterface;
 
 import Business.EcoSystem;
 import Business.DB4OUtil.DB4OUtil;
-
-import Business.Organization;
+import Business.Donor.DonorDirectory;
+import Business.Network.Network;
+import Business.Organization.*;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -15,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Lingfeng
+ * @author aniketmirajkar
  */
 public class MainJFrame extends javax.swing.JFrame {
 
@@ -24,6 +25,13 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    UserAccount userAccount;
+    Enterprise inEnterprise;
+    Organization inOrganization;
+    Network networkEmergency;
+    private PersonDirectory personDirectory;
+    private AdopterDirectory adopterDirectory;
+    private DonorDirectory donorDirectory;
 
     public MainJFrame() {
         initComponents();
