@@ -4,6 +4,12 @@
  */
 package userinterface.MedicOrg;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mandardeshmukh
@@ -13,8 +19,31 @@ public class MedicJPanel extends javax.swing.JPanel {
     /**
      * Creates new form MedicJPanel
      */
+    private JPanel userProcessContainer;
+    private MedicOrganization medicorganization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
+    private EcoSystem business;
+    PersonDirectory persondirectory;
+    Person person;
+    Network network;
     public MedicJPanel() {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.medicorganization = (MedicOrganization) organization;
+        this.enterprise = enterprise;
+        this.persondirectory = persondirectory;
+        this.userAccount = account;
+        this.business = business;
+        for (Network net : business.getNetworkList()) {
+            for (Enterprise ent : net.getEnterpriseDirectory().getEnterpriseList()) {
+                if (ent.equals(enterprise)) {
+                    network = net;
+                }
+            }
+        }
+        populateRequestTable();
+        btnProcess.setEnabled(false);
     }
 
     /**
