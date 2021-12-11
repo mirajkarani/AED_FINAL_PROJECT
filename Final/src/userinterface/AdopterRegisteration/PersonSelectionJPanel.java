@@ -4,6 +4,23 @@
  * and open the template in the editor.
  */
 package userinterface.AdopterRegisteration;
+import Business.Adopter.Adopter;
+import Business.Adopter.AdopterDirectory;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.AdopterOrganization;
+import Business.Organization.PersonCareOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PersonCareAdoptionWorkRequest;
+import Business.WorkQueue.PersonCareWorkRequest;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -26,8 +43,40 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PersonSelectionJPanel
      */
-    public PersonSelectionJPanel() {
+    public PersonSelectionJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, AdopterDirectory adopterdirectory, int uid, PersonDirectory persondirectory) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.adopterdirectory = adopterdirectory;
+        this.account = account;
+        this.enterprise = enterprise;
+        this.business = business;
+        this.adopterorganization = (AdopterOrganization) organization;
+        this.uid = uid;
+        this.childdirectory = childdirectory;
+        for (Adopter a : adopterdirectory.getAdoptersList()) {
+            if (a.getUsername().equals(account.getUsername())) {
+                adopter = a;
+                btnAdopt.setEnabled(!adopter.isFlag());
+            }
+        }
+        populatePersonTable();
+    }
+    
+    public void populatePersonTable() {
+        DefaultTableModel dtms = (DefaultTableModel) tblPerson.getModel();
+        dtms.setRowCount(0);
+        for (Person person : childdirectory.getChildList()) {
+            if ("Acquired".equalsIgnoreCase(person.getStatus()) || ("Adopted by " + adopter.getName()).startsWith(person.getStatus())) {
+                Object[] row = new Object[dtms.getColumnCount()];
+                row[0] = person;
+                row[1] = person.getName();
+                row[2] = person.getGender();
+                row[3] = person.getPersonAge();
+                row[4] = person.getStatus();
+                //row[5] = child.getStatus();
+                dtms.addRow(row);
+            }
+        }
     }
 
     /**
@@ -41,7 +90,7 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblChild = new javax.swing.JTable();
+        tblPerson = new javax.swing.JTable();
         btnAdopt = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -52,8 +101,8 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
         jLabel1.setText("CHILD SELECTION");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 383, -1));
 
-        tblChild.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        tblChild.setModel(new javax.swing.table.DefaultTableModel(
+        tblPerson.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tblPerson.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -72,7 +121,7 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblChild);
+        jScrollPane1.setViewportView(tblPerson);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 790, 120));
 
@@ -104,7 +153,7 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
         adc.setEmailId(adopter.getEmailId());
         //adc.s
         Organization org = null;
-        for (Network network : business.getNetworkList()) {
+        for (Network network : business.getNetworkCatalog()) {
             for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
                 for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
                     if (organization instanceof PersonCareOrganization) {
@@ -130,6 +179,6 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblChild;
+    private javax.swing.JTable tblPerson;
     // End of variables declaration//GEN-END:variables
 }

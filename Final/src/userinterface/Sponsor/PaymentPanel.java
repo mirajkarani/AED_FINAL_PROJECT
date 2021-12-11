@@ -4,6 +4,24 @@
  * and open the template in the editor.
  */
 package userinterface.Sponsor;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
+import Business.Donor.Donor;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.DonorOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.DonorWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 
 /**
@@ -21,7 +39,7 @@ public class PaymentPanel extends javax.swing.JPanel {
     PersonDirectory persondirectory;
     Person pr;
   
-    public PaymentPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,PersonDirectory persondirectory,person pr,Donor donor) { 
+    public PaymentPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,PersonDirectory persondirectory,Person pr,Donor donor) { 
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.account=account;
@@ -33,6 +51,49 @@ public class PaymentPanel extends javax.swing.JPanel {
         this.pr = pr;
          jXDatePicker1.getMonthView().setLowerBound(new Date());
          
+    }
+    
+     private boolean ValidateCardNo() {
+        String card = cardNo.getText();
+        Pattern pattern;
+        Matcher matcher;
+        String PHONE_PATTERN = "^[0-9]{16}$";
+        pattern = Pattern.compile(PHONE_PATTERN);
+        matcher = pattern.matcher(card);
+        return matcher.matches();    
+    }
+    
+    private boolean ValidatePostal() {
+        String zip = txtPostal.getText();
+        Pattern pattern;
+        Matcher matcher;
+        String PHONE_PATTERN = "^[0-9]{5}$";
+        pattern = Pattern.compile(PHONE_PATTERN);
+        matcher = pattern.matcher(zip);
+        return matcher.matches();
+    }
+
+
+private boolean validateExpDate(){
+        String selectedFormaString = "";
+         DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+        try {
+            Date selected = jXDatePicker1.getDate();
+            selectedFormaString = format.format(selected);
+            return true;
+        } catch (Exception e) {
+           // JOptionPane.showMessageDialog(null, "Please select the registration date");
+            return false;
+        }
+    }
+    private boolean ValidateCVV() {
+        String cvv = txtCVV.getText();
+        Pattern pattern;
+        Matcher matcher;
+        String PHONE_PATTERN = "^[0-9]{3}$";
+        pattern = Pattern.compile(PHONE_PATTERN);
+        matcher = pattern.matcher(cvv);
+        return matcher.matches();
     }
 
     /**
@@ -113,7 +174,7 @@ public class PaymentPanel extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 2, 12)); // NOI18N
         jLabel6.setText("please enter your 16 digits card number");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 150, 270, 30));
-        add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, -1, -1));
+        add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 180, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayActionPerformed
@@ -147,12 +208,12 @@ public class PaymentPanel extends javax.swing.JPanel {
         adc.setPersonId(pr.getPersonId());
         adc.setPersonName(pr.getName());
         adc.setUserId(account.getEmployee().getId());
-        adc.setUserName(donor.getName());
+        adc.setUserName(donor.getDonorName());
         adc.setMessage("Sponsored");
         adc.setAmount(pr.getAmt());
         adc.setStatus("Payment Successful");
         adc.setSender(account);
-        adc.setEmailId(donor.getEmailId());
+        adc.setEmailId(donor.getDonorEmail());
         adc.setRemarks("Payment Completed from Sponsor");
         donororganization.getWorkQueue().getWorkRequestList().add(adc);
         if (donororganization != null) {
@@ -170,7 +231,7 @@ public class PaymentPanel extends javax.swing.JPanel {
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         SponsorRequestTable panel = (SponsorRequestTable) component;
-        panel.populateChildTable();
+        panel.populatePersonTable();
         panel.getComponent(2).setEnabled(false);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);

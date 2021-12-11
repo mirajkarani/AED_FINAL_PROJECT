@@ -44,15 +44,29 @@ public class SponsorRequestTable extends javax.swing.JPanel {
         this.donororganization = (DonorOrganization) organization;
         this.persondirectory = persondirectory;
         this.donorDirectory = donorDirectory;
-        for (Donor a : donorDirectory.getDonorsList()) {
-            if (a.getUsername().equals(account.getUsername())) {
+        for (Donor a : donorDirectory.getDonorList()) {
+            if (a.getDonorName().equals(account.getUsername())) {
                 donor = a;
             }
         }
-        populateChildTable();
+        populatePersonTable();
     }
     
-    public void populateChildTable() {}
+    public void populatePersonTable() {
+    DefaultTableModel dtms = (DefaultTableModel) personTable.getModel();
+        dtms.setRowCount(0);
+        for (Person person : persondirectory.getChildList()) {
+            if (person.isFinancialHelp()) {
+                Object[] row = new Object[dtms.getColumnCount()];
+                row[0] = person;
+                row[1] = person.getName();
+                row[2] = person.getGender();
+                row[3] = person.getPersonAge();
+                row[4] = person.getAmt();
+                dtms.addRow(row);
+            }
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

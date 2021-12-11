@@ -7,6 +7,14 @@ package userinterface.AdopterRegisteration;
 
 import Business.Adopter.Adopter;
 import Business.Adopter.AdopterDirectory;
+import Business.Person.PersonDirectory;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.AdopterOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -25,7 +33,7 @@ public class AdopterWorkArea extends javax.swing.JPanel {
     AdopterOrganization adopterorganization;
     Adopter adopter;
     String bgcstatus,financestatus;
-    personDirectory persondirectory;
+    PersonDirectory persondirectory;
     
     
     public AdopterWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, AdopterDirectory adopterdirectory, PersonDirectory persondirectory) {
