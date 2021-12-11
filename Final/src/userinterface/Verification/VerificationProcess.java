@@ -4,6 +4,24 @@
  */
 package userinterface.Verification;
 
+import Business.Adopter.Adopter;
+import Business.Adopter.AdopterDirectory;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.Organization.FinanceOrganization;
+import Business.Organization.VerificationOrganization;
+import Business.UserAccount.UserAccount;
+import Business.Utility.SendMail;
+import Business.WorkQueue.AdopterWorkStatusCheckRequest;
+import Business.WorkQueue.BackgroundCheckWorkRequest;
+import Business.WorkQueue.FinanceCheckProcessWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author aniketmirajkar
@@ -13,8 +31,38 @@ public class VerificationProcess extends javax.swing.JPanel {
     /**
      * Creates new form VerificationProcess
      */
-    public VerificationProcess() {
+    
+    JPanel userProcessContainer;
+    UserAccount account;
+    Enterprise enterprise;
+    EcoSystem business;
+    AdopterDirectory adopterDirectory;
+    VerificationOrganization verificationOrganization;
+    Adopter adopter;
+    BackgroundCheckWorkRequest bgcWorkRequest;
+    
+    public VerificationProcess(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, AdopterDirectory adopterDirectory, BackgroundCheckWorkRequest bgcWorkRequest, Adopter adopter) {
         initComponents();
+        
+        this.userProcessContainer=userProcessContainer;
+        this.adopterDirectory=adopterDirectory;
+        this.account=account;
+        this.enterprise=enterprise;
+        this.business = business;
+        this.verificationOrganization = (VerificationOrganization)organization;
+        this.bgcWorkRequest = bgcWorkRequest;
+        this.adopter = adopter;
+        
+        populateWorkRequest();
+        setUserDetailsField();
+        
+        txtName.setEnabled(false);
+        txtAge.setEnabled(false);
+        txtSSN.setEnabled(false);
+        rdbMale.setEnabled(false);
+        rdbFemale.setEnabled(false);
+        txtIncome.setEnabled(false);
+        txtEmail.setEnabled(false);
     }
 
     /**
@@ -26,19 +74,416 @@ public class VerificationProcess extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblAge = new javax.swing.JLabel();
+        lblSSN = new javax.swing.JLabel();
+        lblGender = new javax.swing.JLabel();
+        lblIncome = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
+        txtAge = new javax.swing.JTextField();
+        txtSSN = new javax.swing.JTextField();
+        txtIncome = new javax.swing.JTextField();
+        rdbMale = new javax.swing.JRadioButton();
+        rdbFemale = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblRequest = new javax.swing.JTable();
+        lblRemarks = new javax.swing.JLabel();
+        txtRemarks = new javax.swing.JTextField();
+        btnApprove = new javax.swing.JButton();
+        btnDeny = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setText("BACKGROUND AND CRIMINAL CHECK PROCESS");
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel2.setText("ADOPTER DETAILS");
+
+        lblEmail.setText("Email ID");
+
+        lblName.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblName.setText("Name");
+
+        lblAge.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblAge.setText("Age");
+
+        lblSSN.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblSSN.setText("SSN");
+
+        lblGender.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblGender.setText("Gender");
+
+        lblIncome.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        lblIncome.setText("Income");
+
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+
+        rdbMale.setText("Male");
+
+        rdbFemale.setText("Female");
+
+        tblRequest.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tblRequest.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Message", "Sender", "Receiver", "Adopter ID", "Adopter Name", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblRequest);
+
+        lblRemarks.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        lblRemarks.setText("Remarks");
+
+        txtRemarks.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        txtRemarks.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btnApprove.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnApprove.setText("Approve");
+        btnApprove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnApproveActionPerformed(evt);
+            }
+        });
+
+        btnDeny.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnDeny.setText("Deny");
+        btnDeny.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDenyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 850, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(200, 200, 200)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblAge, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(290, 290, 290)
+                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(90, 90, 90)
+                            .addComponent(btnDeny, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(450, 450, 450)
+                            .addComponent(lblIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(550, 550, 550)
+                            .addComponent(txtIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(290, 290, 290)
+                            .addComponent(lblRemarks, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(650, 650, 650)
+                            .addComponent(rdbFemale))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addComponent(lblSSN, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(550, 550, 550)
+                            .addComponent(rdbMale, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(450, 450, 450)
+                            .addComponent(lblGender, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(160, 160, 160)
+                            .addComponent(txtSSN, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(400, 400, 400)
+                            .addComponent(txtRemarks, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(550, 550, 550)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(150, 150, 150)
+                            .addComponent(btnApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 670, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addGap(38, 38, 38)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(40, 40, 40)
+                            .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(20, 20, 20)
+                            .addComponent(lblAge, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(120, 120, 120)
+                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(530, 530, 530)
+                            .addComponent(btnDeny))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addComponent(lblIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(200, 200, 200)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addComponent(txtIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(440, 440, 440)
+                            .addComponent(lblRemarks))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(40, 40, 40)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(40, 40, 40)
+                            .addComponent(rdbFemale))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(120, 120, 120)
+                            .addComponent(lblSSN, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(40, 40, 40)
+                            .addComponent(rdbMale))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(40, 40, 40)
+                            .addComponent(lblGender, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(120, 120, 120)
+                            .addComponent(txtSSN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(410, 410, 410)
+                            .addComponent(txtRemarks, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(120, 120, 120)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(540, 540, 540)
+                            .addComponent(btnApprove))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
+
+    private void btnApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblRequest.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select the request to proceed.");
+            return;
+        }
+
+        Object statusval = tblRequest.getValueAt(selectedRow, 5);
+        Object receiverval = tblRequest.getValueAt(selectedRow, 2);
+
+        if ("Approved".equals(statusval) || "Denied".equals(statusval)) {
+            JOptionPane.showMessageDialog(null, "Request already processed");
+        } else {
+
+            if (receiverval.equals(account.getUsername())) {
+
+                BackgroundCheckWorkRequest request = (BackgroundCheckWorkRequest) tblRequest.getValueAt(selectedRow, 0);
+                request.setStatus("Approved");
+                request.setComment(txtRemarks.getText());
+                request.setUserId(adopter.getUserId());
+                request.setBgcStatus("Approved");
+                populateWorkRequest();
+                FinanceCheckProcessWorkRequest fcwreq = new FinanceCheckProcessWorkRequest();
+                fcwreq.setMessage("Please initiate Finance check");
+                fcwreq.setStatus("Pending with Finance organization");
+                fcwreq.setSender(account);
+                fcwreq.setUserId(adopter.getUserId());
+                fcwreq.setName(adopter.getName());
+
+                Organization org = null;
+                for (Network network : business.getNetworkCatalog()) {
+                    for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
+                        for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
+                            if (organization instanceof FinanceOrganization) {
+                                org = organization;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (org != null) {
+                    org.getWorkQueue().getWorkRequestList().add(fcwreq);
+                    account.getWorkQueue().getWorkRequestList().add(fcwreq);
+                    business.getWorkQueue().getWorkRequestList().add(fcwreq);
+                }
+
+                for (WorkRequest req : business.getWorkQueue().getWorkRequestList()) {
+                    if (req.getUserId() == adopter.getUserId()) {
+                        if (req instanceof AdopterWorkStatusCheckRequest) {
+                            ((AdopterWorkStatusCheckRequest) req).setFinanceStatus("Pending");
+                            ((AdopterWorkStatusCheckRequest) req).setBgcStatus("Approved");
+                            ((AdopterWorkStatusCheckRequest) req).setMessage("Finance check initialized");
+                        }
+                    }
+                }
+                String subject = "Background Check Approved";
+                String content = "Your background check has been completed and approved. The request is further sent to Finance check team .You can confirm your status through portal. \nThank you";
+                SendMail.sendEmailMessage(adopter.getEmailId(), subject, content);
+                JOptionPane.showMessageDialog(null, "Finance check initialized successfully!");
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Please select work request assigned to you");
+            }
+            txtRemarks.setText("");
+        }
+    }//GEN-LAST:event_btnApproveActionPerformed
+
+    private void btnDenyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDenyActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblRequest.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select the request to proceed.");
+            return;
+        }
+
+        Object statusval = tblRequest.getValueAt(selectedRow, 5);
+        Object receiverval = tblRequest.getValueAt(selectedRow, 2);
+        if ("Approved".equals(statusval) || "Denied".equals(statusval)) {
+            JOptionPane.showMessageDialog(null, "Request already processed");
+        } else {
+            if (receiverval.equals(account.getUsername())) {
+
+                BackgroundCheckWorkRequest request = (BackgroundCheckWorkRequest) tblRequest.getValueAt(selectedRow, 0);
+
+                request.setStatus("Denied");
+                request.setComment(txtRemarks.getText());
+                request.setSender(account);
+                request.setUserId(adopter.getUserId());
+                request.setBgcStatus("Denied");
+                populateWorkRequest();
+
+                for (WorkRequest req : business.getWorkQueue().getWorkRequestList()) {
+                    if (req.getUserId() == adopter.getUserId()) {
+                        if (req instanceof AdopterWorkStatusCheckRequest) {
+                            if (((AdopterWorkStatusCheckRequest) req).getFinanceStatus().equals("Pending")) {
+                                ((AdopterWorkStatusCheckRequest) req).setFinanceStatus("Cancelled");
+                                ((AdopterWorkStatusCheckRequest) req).setBgcStatus("Denied");
+                                ((AdopterWorkStatusCheckRequest) req).setMessage("BGC Failed.Request cancelled");
+
+                            }
+                        }
+                    }
+                }
+                String subject = "Background Verification failed";
+                String content = "We are sorry to inform you that your background check has been failed and cannot proceed with adoption procedure .You can confirm your status through portal. \nThank you";
+                SendMail.sendEmailMessage(adopter.getEmailId(), subject, content);
+                JOptionPane.showMessageDialog(null, "Background check denied. Adopt request cancelled");
+            } else {
+                JOptionPane.showMessageDialog(null, "Please select work request assigned to you");
+            }
+            txtRemarks.setText("");
+        }
+    }//GEN-LAST:event_btnDenyActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnApprove;
+    private javax.swing.JButton btnDeny;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAge;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblIncome;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblRemarks;
+    private javax.swing.JLabel lblSSN;
+    private javax.swing.JRadioButton rdbFemale;
+    private javax.swing.JRadioButton rdbMale;
+    private javax.swing.JTable tblRequest;
+    private javax.swing.JTextField txtAge;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtIncome;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtRemarks;
+    private javax.swing.JTextField txtSSN;
     // End of variables declaration//GEN-END:variables
+    public void populateWorkRequest() {
+
+        DefaultTableModel dtm = (DefaultTableModel) tblRequest.getModel();
+        dtm.setRowCount(0);
+        for (WorkRequest request : verificationOrganization.getWorkQueue().getWorkRequestList()) {
+            if (request instanceof BackgroundCheckWorkRequest) {
+                if (request.getUserId() == bgcWorkRequest.getUserId()) {
+                    Object[] row = new Object[dtm.getColumnCount()];
+                    row[0] = request;
+                    row[1] = request.getSender().getEmployee().getName();
+                    row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+                    row[3] = request.getUserId();
+                    row[4] = request.getName();
+                    row[5] = request.getStatus();
+                    dtm.addRow(row);
+                }
+            }
+        }
+    }
+
+    public void setUserDetailsField() {
+        txtAge.setText(String.valueOf(adopter.getAge()));
+        txtEmail.setText(adopter.getEmailId());
+        txtIncome.setText(String.valueOf(adopter.getAnnualIncome()));
+        txtName.setText(adopter.getName());
+        txtSSN.setText(adopter.getSsn());
+        if (adopter.getGender().equalsIgnoreCase("male")) {
+            rdbMale.setSelected(true);
+        } else {
+            rdbFemale.setSelected(true);
+        }
+    }
 }
