@@ -4,6 +4,16 @@
  */
 package userinterface.Pharmacy;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.PharmacyOrganization;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PharmacistAssistWorkRequest;
+import javax.swing.JPanel;
+
 /**
  *
  * @author aniketmirajkar
@@ -13,8 +23,26 @@ public class PharmacyProcessJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PharmacyProcessJPanel
      */
-    public PharmacyProcessJPanel() {
+    
+    private JPanel userProcessContainer;
+    private UserAccount userAccount;
+    private Enterprise enterprise;
+    private EcoSystem business;
+    PharmacistAssistWorkRequest request ;
+    private PersonDirectory personDirectory;
+    private Person person;
+    Network network;
+    
+    public PharmacyProcessJPanel(JPanel userProcessContainer, PharmacistAssistWorkRequest request, UserAccount userAccount, Enterprise enterprise, Person person, PersonDirectory personDirectory, EcoSystem business, PharmacyOrganization pharmacyOrganization) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.request = request;
+        this.userAccount = userAccount;
+        this.enterprise = enterprise;
+        this.person = person;
+        this.personDirectory = personDirectory;
+        this.business = business;
     }
 
     /**
