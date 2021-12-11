@@ -7,11 +7,17 @@ package userinterface.Pharmacy;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.Organization.PersonCareOrganization;
 import Business.Organization.PharmacyOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PersonCareWorkRequest;
 import Business.WorkQueue.PharmacistAssistWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -28,7 +34,7 @@ public class PharmacyProcessJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private Enterprise enterprise;
     private EcoSystem business;
-    PharmacistAssistWorkRequest request ;
+    PharmacistAssistWorkRequest request;
     private PersonDirectory personDirectory;
     private Person person;
     Network network;
@@ -62,19 +68,115 @@ public class PharmacyProcessJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblComments = new javax.swing.JLabel();
+        txtComments = new javax.swing.JTextField();
+        btnSave = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("PHARMACIST PROCESS");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 378, -1));
+
+        lblComments.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblComments.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblComments.setText("Comments");
+        jPanel1.add(lblComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 100, 20));
+        jPanel1.add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 310, 130));
+
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 100, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 590, 470));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 885, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 885, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 614, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
+        if (txtComments.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter message");
+        } else {
+            request.setResult(txtComments.getText());
+            request.setStatus("Delivered");
+            PersonCareWorkRequest temp = new PersonCareWorkRequest();
+            temp.setStatus("Medically Fit");
+            temp.setMessage("Child has been medicated");
+            temp.setSender(userAccount);
+            temp.setResult("Completed");
+            temp.setPersonId(request.getPersonId());
+            temp.setPersonName(request.getPersonName());
+            if (this.personDirectory != null && this.personDirectory.getPersonList().size() > 0) {
+                for (Person p: this.personDirectory.getPersonList()) {
+                    if (request.getPersonId() == p.getPersonId()) {
+                        if ("Acquired".equalsIgnoreCase(p.getStatus())) {
+                            p.setMedicalHelp(false);
+                            temp.setIsAcquiredReq(false);
+                        } else {
+                            temp.setIsAcquiredReq(true);
+                        }
+                        break;
+                    }
+                }
+            }
+            Organization org = null;
+            for (Network network : business.getNetworkCatalog()) {
+                for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
+                    for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
+                        if (organization instanceof PersonCareOrganization) {
+                            org = organization;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (org != null) {
+                org.getWorkQueue().getWorkRequestList().add(temp);
+                userAccount.getWorkQueue().getWorkRequestList().add(temp);
+                business.getWorkQueue().getWorkRequestList().add(temp);
+            }
+        }
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        PharmacyJPanel panel = (PharmacyJPanel) component;
+        panel.populateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnSaveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSave;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblComments;
+    private javax.swing.JTextField txtComments;
     // End of variables declaration//GEN-END:variables
 }
