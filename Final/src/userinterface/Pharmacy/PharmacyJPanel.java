@@ -75,7 +75,6 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         btnProcess = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 153, 255)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -156,7 +155,6 @@ public class PharmacyJPanel extends javax.swing.JPanel {
             return;
         }
         WorkRequest request = (WorkRequest) tblPharmacist.getValueAt(selectedRow, 0);
-        //if (request.getStatus().equalsIgnoreCase("Delivered")) {
             if ("Delivered".equalsIgnoreCase(request.getStatus())) {
                 JOptionPane.showMessageDialog(null, "Request already completed.");
                 return;
