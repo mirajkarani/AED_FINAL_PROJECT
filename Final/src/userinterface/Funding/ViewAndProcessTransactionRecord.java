@@ -11,6 +11,7 @@ import Business.Organization.Organization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import Business.Utility.SendMail;
 import Business.WorkQueue.DonorWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import javax.swing.JOptionPane;
@@ -212,7 +213,7 @@ public class ViewAndProcessTransactionRecord extends javax.swing.JPanel {
             }
             String subject = "Payment Receipt";
             String content = "Dear Sponsor, this is an acknowledgement receipt. We have recieved your payment. Thank you so much for your kind donation. Your caring support will make a great difference in the child's academic success. We hope that you will continue serving and make world a better place for children.";
-            //CommonMail.sendEmailMessage(req.getEmailId(), subject, content);
+            SendMail.sendEmailMessage(req.getEmailId(), subject, content);
         }
         populateDonorRequesttable();
         txtComments.setText("");
