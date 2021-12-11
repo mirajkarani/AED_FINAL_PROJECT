@@ -55,7 +55,7 @@ public class SponsorRequestTable extends javax.swing.JPanel {
     public void populatePersonTable() {
     DefaultTableModel dtms = (DefaultTableModel) personTable.getModel();
         dtms.setRowCount(0);
-        for (Person person : persondirectory.getChildList()) {
+        for (Person person : persondirectory.getPersonList()) {
             if (person.isFinancialHelp()) {
                 Object[] row = new Object[dtms.getColumnCount()];
                 row[0] = person;
