@@ -4,6 +4,9 @@
  */
 package userinterface.labOrganization;
 
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -65,6 +68,20 @@ public class LabProcessJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        if (txtResult.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter the test result");
+        } else {
+            request.setResult(txtResult.getText());
+            request.setStatus("Completed");
+            JOptionPane.showMessageDialog(null, "Results saved!");
+        }
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        LabJPanel panel = (LabJPanel) component;
+        panel.populateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
         
     }//GEN-LAST:event_btnSaveActionPerformed
 
