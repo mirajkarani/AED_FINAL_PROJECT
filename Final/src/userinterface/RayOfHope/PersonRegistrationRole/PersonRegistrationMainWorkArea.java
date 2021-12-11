@@ -26,7 +26,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
      */
      JPanel userProcessContainer;
     UserAccount account;
-    PersonRegistrationOrganization PersonRegistrationOrganization;
+    PersonRegistrationOrganization personRegistrationOrganization;
     Enterprise enterprise;
     Person person;
     PersonDirectory persondirectory;
@@ -45,7 +45,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
     }
     
     private void personRegistrationArea() {
-        RegisterNewPersonJPanel panel = new RegisterNewPersonJPanel(rightSystemAdminPanel, persondirectory, account, enterprise, business, personRegistrationOrganization);
+        NewPersonRegistrationJPanel panel = new NewPersonRegistrationJPanel(rightSystemAdminPanel, persondirectory, account, enterprise, business, personRegistrationOrganization);
         rightSystemAdminPanel.add("ManageNetworkJPanel", panel);
         CardLayout layout = (CardLayout) rightSystemAdminPanel.getLayout();
         layout.next(rightSystemAdminPanel);

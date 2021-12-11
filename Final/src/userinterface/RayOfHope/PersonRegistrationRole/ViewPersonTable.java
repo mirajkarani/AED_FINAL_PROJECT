@@ -39,7 +39,7 @@ public class ViewPersonTable extends javax.swing.JPanel {
     PersonDirectory persondirectory;
     EcoSystem business;
     Network network;
-    public ViewPersonTable() {
+    public ViewPersonTable(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory persondirectory) {
         initComponents();
          this.userProcessContainer = userProcessContainer;
         this.account = account;

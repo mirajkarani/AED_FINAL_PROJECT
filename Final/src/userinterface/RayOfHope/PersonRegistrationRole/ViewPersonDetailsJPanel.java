@@ -284,7 +284,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
      }
  
      if(nameTextField.getText().isEmpty()){
-         JOptionPane.showMessageDialog(null, "Please enter the name of the child");
+         JOptionPane.showMessageDialog(null, "Please enter the name of the person");
          return true;
      }
      else if(!validateName()){
@@ -293,7 +293,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
      }
     
      else if(!maleRDB.isSelected()&& !femaleRDB.isSelected()){
-         JOptionPane.showMessageDialog(null, "Please select the gender of the child");
+         JOptionPane.showMessageDialog(null, "Please select the gender of the person");
          return true;
      }
 
@@ -311,7 +311,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
          return true;
      }
      else if(imageTextField.getText().isEmpty()){
-          JOptionPane.showMessageDialog(null, "Please select the image of the child");
+          JOptionPane.showMessageDialog(null, "Please select the image of the person");
          return true;
      }
       
@@ -394,7 +394,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         ViewPersonTable panel = (ViewPersonTable) component;
-        panel.poplulateTable();
+        panel.populateTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_lblBackMousePressed

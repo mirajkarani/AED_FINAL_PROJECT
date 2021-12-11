@@ -165,7 +165,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel7.setText("Does person have special needs?");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 220, 30));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 230, 30));
 
         yesBtn.setText("Yes");
         add(yesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, -1, -1));
@@ -247,7 +247,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
                 txtMark.setText("");
                 photoText.setText("");
                 buttonGroup2.clearSelection();
-                JOptionPane.showMessageDialog(null, "Child registered successfully");
+                JOptionPane.showMessageDialog(null, "Person registered successfully");
             }
         } catch (ParseException ex) {
             Logger.getLogger(NewPersonRegistrationJPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -280,17 +280,17 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
             return true;
         }
         if (txtName.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please enter the name of the child");
+            JOptionPane.showMessageDialog(null, "Please enter the name of the person");
             return true;
         } //else if (!ValidationHelper.validateName(txtName.getText())) {
            // JOptionPane.showMessageDialog(null, "Please enter the name in the correct format(No special characters)");
            // return true;
         //} 
         else if (cmbAge.getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(null, "Please provide the age of the child");
+            JOptionPane.showMessageDialog(null, "Please provide the age of the person");
             return true;
         } else if (!maleRDB.isSelected() && !femaleRDB.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Please select the gender of the child");
+            JOptionPane.showMessageDialog(null, "Please select the gender of the person");
             return true;
         } else if (selectedFormaString.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please select the registration date");
@@ -303,10 +303,10 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
            // return true;
        // } 
         else if (photoText.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please select the image of the child");
+            JOptionPane.showMessageDialog(null, "Please select the image of the person");
             return true;
         } else if (!yesBtn.isSelected() && !noBtn.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Please select whether child has special needs question");
+            JOptionPane.showMessageDialog(null, "Please select whether person has special needs question");
             return true;
         }
         return false;
