@@ -43,6 +43,14 @@ public class PharmacyProcessJPanel extends javax.swing.JPanel {
         this.person = person;
         this.personDirectory = personDirectory;
         this.business = business;
+        
+        for (Network n : business.getNetworkCatalog()) {
+            for (Enterprise ent : n.getEnterpriseDirectory().getEnterpriseList()) {
+                if (ent.equals(enterprise)) {
+                    network = n;
+                }
+            }
+        }
     }
 
     /**
