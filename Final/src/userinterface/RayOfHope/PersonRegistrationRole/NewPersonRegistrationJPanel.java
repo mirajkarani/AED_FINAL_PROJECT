@@ -7,16 +7,20 @@ package userinterface.RayOfHope.PersonRegistrationRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.MedicOrganization;
 import Business.Organization.Organization;
 import Business.Organization.PersonRegistrationOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.MedicalAssistanceWorkRequest;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -172,8 +176,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterChildActionPerformed
-        
-        try {
+    try {
             if (!validation()) {
                 String personName = txtName.getText();
                 String ageString = cmbAge.getSelectedItem().toString();
@@ -212,12 +215,45 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
                     person.setIsChallenged(false);
                 }
                 person.setMedicalStatus((person.getMedicalStatus() == null ? "" : person.getMedicalStatus()) + "Sent to Doctor");
+                MedicalAssistanceWorkRequest docwrkreq = new MedicalAssistanceWorkRequest();
+                docwrkreq.setStatus("Sent to Doctor");
+                docwrkreq.setMessage("Please medically examine the newly registered child");
+                docwrkreq.setSender(account);
+                docwrkreq.setPersonId(person.getPersonId());
+                docwrkreq.setPersonName(person.getName());
+                List<MedicOrganization> list = new ArrayList<>();
+                for (Network network : business.getNetworkCatalog()) {
+                    for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
+                        if (this.network.equals(network)) {
+                            for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
+                                if (organization instanceof MedicOrganization) {
+                                    list.add((MedicOrganization) organization);
+                                }
+                            }
+                        }
+                    }
+                }
+                for (MedicOrganization org : list) {
+                    org.getWorkQueue().getWorkRequestList().add(docwrkreq);
+                }
+                if (list != null && list.size() > 0) {
+                    account.getWorkQueue().getWorkRequestList().add(docwrkreq);
+                    business.getWorkQueue().getWorkRequestList().add(docwrkreq);
+                }
+                txtName.setText("");
+                buttonGroup1.clearSelection();
+                cmbAge.getModel().setSelectedItem(0);
+                jXDatePicker1.getEditor().setText("");
+                txtMark.setText("");
+                photoText.setText("");
+                buttonGroup2.clearSelection();
+                JOptionPane.showMessageDialog(null, "Child registered successfully");
             }
+        } catch (ParseException ex) {
+            Logger.getLogger(NewPersonRegistrationJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch (ParseException ex) {
-        Logger.getLogger(NewPersonRegistrationJPanel.class.getName()).log(Level.SEVERE, null, ex);
     }//GEN-LAST:event_btnRegisterChildActionPerformed
-            }  
+               
     private void uploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadButtonActionPerformed
        
          browseImageFile();
