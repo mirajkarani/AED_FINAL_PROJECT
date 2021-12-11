@@ -47,7 +47,7 @@ public class SponsorWorkArea extends javax.swing.JPanel {
         this.donorDirectory = donorDirectory;
         this.adopterdirectory = adopterdirectory;
         valueLabel.setText(organization.getName());
-        for (Donor a : donorDirectory.getDonorsList()) {
+        for (Donor a : donorDirectory.getDonorList()) {
             if (a.getUserName().equals(account.getUsername())) {
                 donor = a;
             }

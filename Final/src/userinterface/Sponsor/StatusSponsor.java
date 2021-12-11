@@ -46,8 +46,8 @@ public class StatusSponsor extends javax.swing.JPanel {
         this.donororganization = (DonorOrganization) organization;
         this.persondirectory = persondirectory;
         this.donorDirectory = donorDirectory;
-        for (Donor a : donorDirectory.getDonorsList()) {
-            if (a.getUsername().equals(account.getUsername())) {
+        for (Donor a : donorDirectory.getDonorList()) {
+            if (a.getDonorName().equals(account.getUsername())) {
                 donor = a;
             }
         }

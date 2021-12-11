@@ -231,7 +231,7 @@ private boolean validateExpDate(){
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         SponsorRequestTable panel = (SponsorRequestTable) component;
-        panel.populateChildTable();
+        panel.populatePersonTable();
         panel.getComponent(2).setEnabled(false);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
