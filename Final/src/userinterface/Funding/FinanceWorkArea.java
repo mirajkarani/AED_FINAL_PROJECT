@@ -156,7 +156,6 @@ public class FinanceWorkArea extends javax.swing.JPanel {
             return;
         }
         EducationAssistWorkRequest req = (EducationAssistWorkRequest) jTable1.getValueAt(selectedRow, 0);
-        //if (req.getStatus().equalsIgnoreCase("Approved") || req.getStatus().equalsIgnoreCase("Assigned")) {
             if (("Approved".equalsIgnoreCase(req.getStatus())) || ("Assigned".equalsIgnoreCase(req.getStatus()))) {
                 JOptionPane.showMessageDialog(null, "Request already processed.");
                 return;
@@ -175,13 +174,13 @@ public class FinanceWorkArea extends javax.swing.JPanel {
             return;
         }
         EducationAssistWorkRequest req = (EducationAssistWorkRequest) jTable1.getValueAt(selectedRow, 0);
-        //if (req.getStatus().equalsIgnoreCase("Approved")) {
+
             if ("Approved".equalsIgnoreCase(req.getStatus())) {
                 JOptionPane.showMessageDialog(null, "Request already processed.");
                 return;
             }
-            if (this.personDirectory != null && this.personDirectory.getChildList().size() > 0) {
-                for (Person p: this.personDirectory.getChildList()) {
+            if (this.personDirectory != null && this.personDirectory.getPersonList().size() > 0) {
+                for (Person p: this.personDirectory.getPersonList()) {
                     if (req.getPersonId() == p.getPersonId()) {
                         p.setFinancialHelp(true);
                         p.setAmt(req.getAmt());
@@ -223,15 +222,15 @@ public class FinanceWorkArea extends javax.swing.JPanel {
                 row[6] = req.getStatus();
                 if (result == "Approved") {
                     countApprove++;
-                } else if (result == "Denied") {
+                } 
+                else if (result == "Denied") {
                     countDeny++;
-                } else {
+                } 
+                else {
                     countPending++;
                 }
                 dtms.addRow(row);
             }
-
         }
-
     }
 }

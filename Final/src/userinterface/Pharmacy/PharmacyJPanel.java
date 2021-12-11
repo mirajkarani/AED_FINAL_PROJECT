@@ -4,6 +4,20 @@
  */
 package userinterface.Pharmacy;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.UserAccount.UserAccount;
+import Business.Organization.PharmacyOrganization;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
+import Business.WorkQueue.PharmacistAssistWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author aniketmirajkar
@@ -13,8 +27,35 @@ public class PharmacyJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PharmacyJPanel
      */
-    public PharmacyJPanel() {
+    
+    private JPanel userProcessContainer;
+    private PharmacyOrganization pharmacyOrganization;
+    private Enterprise enterprise;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private PersonDirectory personDirectory;
+    private Person person;
+    Network network;
+    
+    public PharmacyJPanel(JPanel userProcessContainer, UserAccount account, PharmacyOrganization pharmacyOrganization, Enterprise enterprise, EcoSystem business, PersonDirectory personDirectory) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.pharmacyOrganization = (PharmacyOrganization) pharmacyOrganization;
+        this.enterprise = enterprise;
+        this.business = business;
+        this.personDirectory = personDirectory;
+        
+        for (Network n : business.getNetworkCatalog()) {
+            for (Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()) {
+                if (e.equals(enterprise)) {
+                    network = n;
+                }
+            }
+        }
+        btnProcess.setEnabled(false);
+        populateTable();
     }
 
     /**
@@ -26,19 +67,152 @@ public class PharmacyJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblPharmacist = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblPharmacist = new javax.swing.JTable();
+        btnAssignToMe = new javax.swing.JButton();
+        btnProcess = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 153, 255)));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblPharmacist.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        lblPharmacist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPharmacist.setText("PHARMACIST ORGANIZATION");
+        jPanel1.add(lblPharmacist, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 450, -1));
+
+        tblPharmacist.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Message", "Patient's ID", "Patients Name", "Doctor", "Prescription", "Receiver", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblPharmacist);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 850, 150));
+
+        btnAssignToMe.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnAssignToMe.setText("Assign To Me");
+        btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignToMeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAssignToMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 170, 30));
+
+        btnProcess.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnProcess.setText("Process");
+        btnProcess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProcessActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 500, 140, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 500, 460));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 951, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 951, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 622, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAssignToMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignToMeActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblPharmacist.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a child from table to assign");
+            return;
+        }
+        WorkRequest request = (WorkRequest) tblPharmacist.getValueAt(selectedRow, 0);
+            if ("Delivered".equalsIgnoreCase(request.getStatus())) {
+                JOptionPane.showMessageDialog(null, "Request already completed.");
+                return;
+            } else {
+                request.setReceiver(userAccount);
+                request.setStatus("Pending");
+                btnProcess.setEnabled(true);
+            }
+            populateTable();
+    }//GEN-LAST:event_btnAssignToMeActionPerformed
+
+    private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblPharmacist.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a child from table before proceeding");
+            return;
+        }
+        PharmacistAssistWorkRequest request = (PharmacistAssistWorkRequest) tblPharmacist.getValueAt(selectedRow, 0);
+            if ("Delivered".equalsIgnoreCase(request.getStatus())) {
+                JOptionPane.showMessageDialog(null, "Request already completed.");
+                return;
+            } else {
+                request.setStatus("Processing");
+            }
+            PharmacyProcessJPanel processWorkRequestJPanel = new PharmacyProcessJPanel(userProcessContainer, request, userAccount, enterprise, person, personDirectory, business, pharmacyOrganization);
+            userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnProcessActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAssignToMe;
+    private javax.swing.JButton btnProcess;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblPharmacist;
+    private javax.swing.JTable tblPharmacist;
     // End of variables declaration//GEN-END:variables
+        
+    public void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tblPharmacist.getModel();
+        model.setRowCount(0);
+        for (WorkRequest request : pharmacyOrganization.getWorkQueue().getWorkRequestList()) {
+            if(request instanceof PharmacistAssistWorkRequest){
+            PharmacistAssistWorkRequest pharrequest =(PharmacistAssistWorkRequest)request;
+            Object[] row = new Object[model.getColumnCount()];
+            row[0] = request;
+            row[1] = request.getPersonId();
+            row[2] = request.getPersonName();
+            row[3] = request.getSender().getEmployee().getName();
+            row[4] = pharrequest.getPrescription();
+            row[5] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[6] = request.getStatus();
+            model.addRow(row);
+            }
+        }
+    }    
 }
