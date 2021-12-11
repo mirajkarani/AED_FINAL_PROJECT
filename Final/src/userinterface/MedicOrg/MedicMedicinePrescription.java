@@ -7,7 +7,16 @@ package userinterface.MedicOrg;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.Organization.PharmacyOrganization;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.MedicalAssistanceWorkRequest;
+import Business.WorkQueue.PharmacistAssistWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -25,19 +34,19 @@ public class MedicMedicinePrescription extends javax.swing.JPanel {
     private UserAccount userAccount;
     private PersonDirectory persondirectory;
     private Person person;
-    private  MedicalHelpWorkRequest request;
+    private  MedicalAssistanceWorkRequest request;
     private  EcoSystem business;
     Network network;
-    public MedicMedicinePrescription(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, Person person, PersonDirectory persondirectory, MedicalHelpWorkRequest request, EcoSystem business) {
+    public MedicMedicinePrescription(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, Person person, PersonDirectory persondirectory, MedicalAssistanceWorkRequest request, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.enterprise = enterprise;
         this.person = person;
-        this.Persondirectory = Persondirectory;
+        this.persondirectory = persondirectory;
         this.business = business;
         this.request = request;
-        for (Network net : business.getNetworkList()) {
+        for (Network net : business.getNetworkCatalog()) {
             for (Enterprise ent : net.getEnterpriseDirectory().getEnterpriseList()) {
                 if (ent.equals(enterprise)) {
                     network = net;
@@ -91,7 +100,7 @@ public class MedicMedicinePrescription extends javax.swing.JPanel {
         if (prescription.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please enter medicines to be prescribed");
         } else {
-            PharmacistWorkRequest pharrequest = new PharmacistWorkRequest();
+            PharmacistAssistWorkRequest pharrequest = new PharmacistAssistWorkRequest();
             pharrequest.setMessage("Medicine Prescribed");
             pharrequest.setSender(userAccount);
             pharrequest.setPersonId(request.getPersonId());
@@ -103,7 +112,7 @@ public class MedicMedicinePrescription extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Medicines prescribed! ");
             Organization org = null;
             for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-                if (organization instanceof PharmacistOrganization) {
+                if (organization instanceof PharmacyOrganization) {
                     org = organization;
                     break;
                 }

@@ -6,7 +6,11 @@ package userinterface.MedicOrg;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Organization.MedicOrganization;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -33,13 +37,20 @@ public class MedicWorkArea extends javax.swing.JPanel {
         this.userAccount = account;
         this.enterprise = enterprise;
         this.ecosystem=ecosystem;
-        this.medicorganization = (MedicOrganization)doctororganization;
+        this.medicorganization = (MedicOrganization)medicorganization;
         this.enterprise = enterprise;
         this.Persondirectory = Persondirectory;
         this.userAccount = account;
         valueLabel.setText(medicorganization.getName());
         manageMedicWorkAreaJPanel();
     }
+    
+    private void manageMedicWorkAreaJPanel(){
+        MedicJPanel panel = new MedicJPanel(rightSystemAdminPanel, userAccount, medicorganization, enterprise, ecosystem, Persondirectory);
+        rightSystemAdminPanel.add("ManageNetworkJPanel",panel);
+        CardLayout layout = (CardLayout) rightSystemAdminPanel.getLayout();
+        layout.next(rightSystemAdminPanel);
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -26,7 +26,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
      */
      JPanel userProcessContainer;
     UserAccount account;
-    PersonRegistrationOrganization PersonRegistrationOrganization;
+    PersonRegistrationOrganization personRegistrationOrganization;
     Enterprise enterprise;
     Person person;
     PersonDirectory persondirectory;
@@ -45,7 +45,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
     }
     
     private void personRegistrationArea() {
-        RegisterNewPersonJPanel panel = new RegisterNewPersonJPanel(rightSystemAdminPanel, persondirectory, account, enterprise, business, personRegistrationOrganization);
+        NewPersonRegistrationJPanel panel = new NewPersonRegistrationJPanel(rightSystemAdminPanel, persondirectory, account, enterprise, business, personRegistrationOrganization);
         rightSystemAdminPanel.add("ManageNetworkJPanel", panel);
         CardLayout layout = (CardLayout) rightSystemAdminPanel.getLayout();
         layout.next(rightSystemAdminPanel);
@@ -94,7 +94,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
 
         childRegistration.setBackground(new java.awt.Color(255, 204, 204));
         childRegistration.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        childRegistration.setText("Child Registration Area");
+        childRegistration.setText("Person Registration Area");
         childRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 childRegistrationMousePressed(evt);
@@ -126,7 +126,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
 
         lblViewChild.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblViewChild.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblViewChild.setText("View Child Records");
+        lblViewChild.setText("View Person Records");
         lblViewChild.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblViewChildMousePressed(evt);

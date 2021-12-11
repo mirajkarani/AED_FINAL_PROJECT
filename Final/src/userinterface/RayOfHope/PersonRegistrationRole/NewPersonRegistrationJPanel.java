@@ -7,16 +7,20 @@ package userinterface.RayOfHope.PersonRegistrationRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.MedicOrganization;
 import Business.Organization.Organization;
 import Business.Organization.PersonRegistrationOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.MedicalAssistanceWorkRequest;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -104,7 +108,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CHILD REGISTRATION");
+        jLabel1.setText("PERSON REGISTRATION");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 320, 30));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 190, 30));
 
@@ -160,8 +164,8 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 190, -1));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel7.setText("Does child have special needs?");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 220, 30));
+        jLabel7.setText("Does person have special needs?");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 230, 30));
 
         yesBtn.setText("Yes");
         add(yesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, -1, -1));
@@ -172,8 +176,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterChildActionPerformed
-        
-        try {
+    try {
             if (!validation()) {
                 String personName = txtName.getText();
                 String ageString = cmbAge.getSelectedItem().toString();
@@ -212,12 +215,45 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
                     person.setIsChallenged(false);
                 }
                 person.setMedicalStatus((person.getMedicalStatus() == null ? "" : person.getMedicalStatus()) + "Sent to Doctor");
+                MedicalAssistanceWorkRequest docwrkreq = new MedicalAssistanceWorkRequest();
+                docwrkreq.setStatus("Sent to Doctor");
+                docwrkreq.setMessage("Please medically examine the newly registered child");
+                docwrkreq.setSender(account);
+                docwrkreq.setPersonId(person.getPersonId());
+                docwrkreq.setPersonName(person.getName());
+                List<MedicOrganization> list = new ArrayList<>();
+                for (Network network : business.getNetworkCatalog()) {
+                    for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
+                        if (this.network.equals(network)) {
+                            for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
+                                if (organization instanceof MedicOrganization) {
+                                    list.add((MedicOrganization) organization);
+                                }
+                            }
+                        }
+                    }
+                }
+                for (MedicOrganization org : list) {
+                    org.getWorkQueue().getWorkRequestList().add(docwrkreq);
+                }
+                if (list != null && list.size() > 0) {
+                    account.getWorkQueue().getWorkRequestList().add(docwrkreq);
+                    business.getWorkQueue().getWorkRequestList().add(docwrkreq);
+                }
+                txtName.setText("");
+                buttonGroup1.clearSelection();
+                cmbAge.getModel().setSelectedItem(0);
+                jXDatePicker1.getEditor().setText("");
+                txtMark.setText("");
+                photoText.setText("");
+                buttonGroup2.clearSelection();
+                JOptionPane.showMessageDialog(null, "Person registered successfully");
             }
+        } catch (ParseException ex) {
+            Logger.getLogger(NewPersonRegistrationJPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch (ParseException ex) {
-        Logger.getLogger(NewPersonRegistrationJPanel.class.getName()).log(Level.SEVERE, null, ex);
     }//GEN-LAST:event_btnRegisterChildActionPerformed
-            }  
+               
     private void uploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadButtonActionPerformed
        
          browseImageFile();
@@ -244,17 +280,17 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
             return true;
         }
         if (txtName.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please enter the name of the child");
+            JOptionPane.showMessageDialog(null, "Please enter the name of the person");
             return true;
         } //else if (!ValidationHelper.validateName(txtName.getText())) {
            // JOptionPane.showMessageDialog(null, "Please enter the name in the correct format(No special characters)");
            // return true;
         //} 
         else if (cmbAge.getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(null, "Please provide the age of the child");
+            JOptionPane.showMessageDialog(null, "Please provide the age of the person");
             return true;
         } else if (!maleRDB.isSelected() && !femaleRDB.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Please select the gender of the child");
+            JOptionPane.showMessageDialog(null, "Please select the gender of the person");
             return true;
         } else if (selectedFormaString.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please select the registration date");
@@ -267,10 +303,10 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
            // return true;
        // } 
         else if (photoText.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please select the image of the child");
+            JOptionPane.showMessageDialog(null, "Please select the image of the person");
             return true;
         } else if (!yesBtn.isSelected() && !noBtn.isSelected()) {
-            JOptionPane.showMessageDialog(null, "Please select whether child has special needs question");
+            JOptionPane.showMessageDialog(null, "Please select whether person has special needs question");
             return true;
         }
         return false;

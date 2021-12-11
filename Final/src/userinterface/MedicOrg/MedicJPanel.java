@@ -106,7 +106,7 @@ public class MedicJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Child ID", "Child Name", "Status", "Sender", "Receiver", "Comments"
+                "Message", "Person ID", "Person Name", "Status", "Sender", "Receiver", "Comments"
             }
         ) {
             boolean[] canEdit = new boolean [] {

@@ -120,7 +120,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Child Registration Area"/>
+                    <Property name="text" type="java.lang.String" value="Person Registration Area"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="childRegistrationMousePressed"/>
@@ -134,7 +134,7 @@
                   <Font name="SansSerif" size="14" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="View Child Records"/>
+                <Property name="text" type="java.lang.String" value="View Person Records"/>
               </Properties>
               <Events>
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblViewChildMousePressed"/>

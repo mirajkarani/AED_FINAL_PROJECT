@@ -36,8 +36,22 @@ public class MedicLabRequest extends javax.swing.JPanel {
     private  MedicalAssistanceWorkRequest request;
     private  EcoSystem business;
     Network network;
-    public MedicLabRequest() {
+    public MedicLabRequest(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, Person person, PersonDirectory persondirectory, MedicalAssistanceWorkRequest request, EcoSystem business) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.userAccount = userAccount;
+        this.person = person;
+        this.persondirectory = persondirectory;
+        this.business = business;
+        this.request = request;
+        for (Network net : business.getNetworkCatalog()) {
+            for (Enterprise ent : net.getEnterpriseDirectory().getEnterpriseList()) {
+                if (ent.equals(enterprise)) {
+                    network = net;
+                }
+            }
+        }
     }
 
     /**
