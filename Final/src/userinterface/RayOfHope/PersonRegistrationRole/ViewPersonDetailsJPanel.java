@@ -8,6 +8,8 @@ import Business.Person.Person;
 import java.util.Date;
 import javax.swing.JPanel;
 import Business.Person.Person;
+import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.text.DateFormat;
@@ -19,6 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -55,7 +58,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         yesBtn.setEnabled(false);
         noBtn.setEnabled(false);
         displayImage();
-        
+        disableInput();
         jXDatePicker1.getMonthView().setUpperBound(new Date());
     }
 
@@ -222,7 +225,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
-        
+       enableInput(); 
         
     }//GEN-LAST:event_updateBtnActionPerformed
 
@@ -256,7 +259,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
                 person.setImageDetails(imageTextField.getText());
                 person.setRegistrationDate(regDate);
                 person.setGender(gender);
-                JOptionPane.showMessageDialog(null, "Child Details Updated");
+                JOptionPane.showMessageDialog(null, "Person Details Updated");
             }
         }   catch (ParseException ex) {
             Logger.getLogger(ViewPersonDetailsJPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -264,7 +267,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
-       
+         disableInput();
         
     }//GEN-LAST:event_CancelBtnActionPerformed
 
@@ -317,6 +320,63 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
        return false;
     }
     
+      public boolean validateName(){
+    boolean b=false;
+    Pattern p = Pattern.compile("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$");
+    String name = nameTextField.getText();
+    Matcher m = p.matcher(name);
+    b = m.matches();
+    return b;
+}  
+
+    private boolean validateIdentity() {
+         boolean b=false;
+    Pattern p = Pattern.compile("^[A-Za-z0-9. ]*$");
+    String name = jTextArea1.getText();
+    Matcher m = p.matcher(name);
+    b = m.matches();
+    return b;
+    }
+    
+    private void enableInput() {
+        CancelBtn.setEnabled(true);
+        femaleRDB.setEnabled(true);
+        imageLable.setEnabled(true);
+        cmbAge.setEnabled(true);
+        jScrollPane1.setEnabled(true);
+        jTextArea1.setEnabled(true);
+        jXDatePicker1.setEnabled(true);
+        maleRDB.setEnabled(true);
+        nameTextField.setEnabled(true);
+        saveBtn.setEnabled(true);
+        updateBtn.setEnabled(true);
+        uploadBtn.setEnabled(true);
+    }
+
+    private void disableInput() {
+        CancelBtn.setEnabled(false);
+        femaleRDB.setEnabled(false);
+        cmbAge.setEnabled(false);
+        imageTextField.setEnabled(false);
+        jScrollPane1.setEnabled(false);
+        jTextArea1.setEnabled(false);
+        jXDatePicker1.setEnabled(false);
+        maleRDB.setEnabled(false);
+        nameTextField.setEnabled(false);
+        saveBtn.setEnabled(false);
+        updateBtn.setEnabled(true);
+        uploadBtn.setEnabled(false);
+    }
+    
+    private String browseImageFile() {
+        JFileChooser chooseFile = new JFileChooser();
+        chooseFile.showOpenDialog(null);
+        File file = chooseFile.getSelectedFile();
+        String filePath = file.getPath();
+        System.out.println(filePath);
+        imageTextField.setText(filePath);
+        return filePath;
+    }
    
     
     private void imageTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imageTextFieldActionPerformed
@@ -325,12 +385,19 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
 
     private void uploadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadBtnActionPerformed
         imageTextField.setEnabled(true);
+        browseImageFile();
         
     }//GEN-LAST:event_uploadBtnActionPerformed
 
     private void lblBackMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMousePressed
         // TODO add your handling code here:
-       
+       userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        ViewPersonTable panel = (ViewPersonTable) component;
+        panel.poplulateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_lblBackMousePressed
 
     public void displayImage() {
