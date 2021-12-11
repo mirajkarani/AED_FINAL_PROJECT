@@ -5,8 +5,8 @@
 package userinterface.labOrganization;
 
 import Business.EcoSystem;
-import Business.Organization.LabOrganization;
-import Business.Organization.Organization;
+import Business.Organizations.LabOrganization;
+import Business.Organizations.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabAssistanceWorkRequest;
 import Business.WorkQueue.WorkRequest;

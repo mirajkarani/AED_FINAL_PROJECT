@@ -2,10 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Business.Organization;
+package Business.Organizations;
 
-import Business.Person.PersonDirectory;
-import Business.Role.PersonRegistrationRole;
+import Business.Role.FundingFinanceRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -13,26 +12,26 @@ import java.util.ArrayList;
  *
  * @author aniketmirajkar
  */
-public class PersonRegistrationOrganization extends Organization {
+public class FinanceOrganization extends Organization {
     
-    PersonDirectory personDirectory;
     String name;
-
-    public PersonRegistrationOrganization(String name) {
+    
+    public FinanceOrganization(String name) {
         super(name);
         this.name=name;
     }
+    public FinanceOrganization() {
+       super(Organization.Type.FinanceOrganization.getValue());
+    }
 
-    @Override
+   @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new PersonRegistrationRole());
+        roles.add(new FundingFinanceRole());
         return roles;
     }
-    
     @Override
     public Organization.Type getType() {
-        return  Organization.Type.PersonRegistration;
+        return  Organization.Type.FinanceOrganization;
     }
-    
 }

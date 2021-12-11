@@ -7,8 +7,8 @@ package userinterface.Pharmacy;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.OrganizationDirectory;
-import Business.Organization.PharmacyOrganization;
+import Business.Organizations.OrganizationDirectory;
+import Business.Organizations.PharmacyOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;

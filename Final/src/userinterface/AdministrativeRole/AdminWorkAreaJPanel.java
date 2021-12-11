@@ -10,7 +10,7 @@ import Business.Donor.DonorDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.Organization;
+import Business.Organizations.Organization;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import userinterface.AdopterRoleAdmin.AdoptionUnitWorkRequestJPanel;

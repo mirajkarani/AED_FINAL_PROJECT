@@ -4,8 +4,8 @@
  */
 package userinterface.AdministrativeRole;
 import Business.Employee.Employee;
-import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
+import Business.Organizations.Organization;
+import Business.Organizations.OrganizationDirectory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;

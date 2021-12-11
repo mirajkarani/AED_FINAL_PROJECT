@@ -5,8 +5,8 @@
 package userinterface.RayOfHope.PersonCare;
 
 import Business.EcoSystem;
-import Business.Organization.Organization;
-import Business.Organization.PersonCareOrganization;
+import Business.Organizations.Organization;
+import Business.Organizations.PersonCareOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.Role.Role;

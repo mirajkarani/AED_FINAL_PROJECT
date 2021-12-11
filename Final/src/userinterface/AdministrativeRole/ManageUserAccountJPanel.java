@@ -7,7 +7,7 @@ package userinterface.AdministrativeRole;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
-import Business.Organization.Organization;
+import Business.Organizations.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;

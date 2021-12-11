@@ -5,8 +5,8 @@
  */
 package Business.Enterprise;
 
-import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
+import Business.Organizations.Organization;
+import Business.Organizations.OrganizationDirectory;
 
 /**
  *
