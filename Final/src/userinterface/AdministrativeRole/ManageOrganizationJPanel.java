@@ -8,6 +8,17 @@ package userinterface.AdministrativeRole;
 
 import Business.Enterprise.AdoptionEnterprise;
 import Business.Enterprise.Enterprise;
+import Business.Enterprise.RayOfHopeEnterprise;
+import Business.Enterprise.FundingEnterprise;
+
+import Business.Enterprise.HospitalEnterprise;
+import Business.Organization.Organization;
+import Business.Organization.Organization.Type;
+import Business.Organization.OrganizationDirectory;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -23,7 +34,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
      * Creates new form ManageOrganizationJPanel
      */
     public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory, Enterprise enterprise) {
-        initComponents();
+       initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
         this.enterprise=enterprise;
@@ -31,20 +42,47 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         //populateCombos();
          organizationJComboBox.removeAllItems();
         if(enterprise instanceof HospitalEnterprise){
-             organizationJComboBox.addItem(Type.Doctor);
+             organizationJComboBox.addItem(Type.Medic);
                organizationJComboBox.addItem(Type.Lab);
-               organizationJComboBox.addItem(Type.Pharmacist);
+               organizationJComboBox.addItem(Type.Pharmacy);
         }
-        if(enterprise instanceof FosterCareEnterprise){
-          organizationJComboBox.addItem(Type.ChildCare);
-               organizationJComboBox.addItem(Type.ChildRegistration);
+        if(enterprise instanceof RayOfHopeEnterprise){
+          organizationJComboBox.addItem(Type.PersonCare);
+               organizationJComboBox.addItem(Type.PersonRegistration);
         }
-        
+        if(enterprise instanceof AdoptionEnterprise){
+           //organizationJComboBox.addItem(Type.Adopter);
+               organizationJComboBox.addItem(Type.Espousal);
+               organizationJComboBox.addItem(Type.FinanceCheck); 
+                 organizationJComboBox.addItem(Type.CriminalCheck); 
+        }
+        if(enterprise instanceof FundingEnterprise){
+           organizationJComboBox.addItem(Type.FinanceOrganization);
+               //organizationJComboBox.addItem(Type.Donor);
                
         }
     }
     
+    private void populateCombo(){
+        organizationJComboBox.removeAllItems();
+       
+        for (Type type : Organization.Type.values()){
+            if (!type.getValue().equals(Type.Admin.getValue()))
+                organizationJComboBox.addItem(type);
+        }
+    }
     
+    private void populateTable(){
+        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
+        model.setRowCount(0);
+        for (Organization organization : directory.getOrganizationList()){
+            Object[] row = new Object[2];
+            row[0] = organization.getType();
+            row[1] = organization.getName();
+            
+            model.addRow(row);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
