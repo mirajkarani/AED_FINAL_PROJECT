@@ -4,6 +4,15 @@
  */
 package userinterface.RayOfHope.PersonCare;
 
+import Business.EcoSystem;
+import Business.Organization.Organization;
+import Business.Organization.PersonCareOrganization;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.PersonCareWorkRequest;
+import javax.swing.JPanel;
+
 /**
  *
  * @author aniketmirajkar
@@ -13,8 +22,24 @@ public class ProcessAcquiredPerson extends javax.swing.JPanel {
     /**
      * Creates new form ProcessAcquiredPerson
      */
-    public ProcessAcquiredPerson() {
+    
+    JPanel userProcessContainer;
+    PersonCareWorkRequest request;
+    Person person;
+    PersonDirectory personDirectory;
+    PersonCareOrganization personCareOrganization;
+    UserAccount account;
+    EcoSystem business;
+    
+    public ProcessAcquiredPerson(JPanel userProcessContainer, Organization organization, PersonCareWorkRequest request, PersonDirectory personDirectory, Person person, UserAccount account, EcoSystem business) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.personCareOrganization = (PersonCareOrganization) organization;
+        this.request = request;
+        this.business = business;
+        this.person = person;
+        this.account = account;
     }
 
     /**
