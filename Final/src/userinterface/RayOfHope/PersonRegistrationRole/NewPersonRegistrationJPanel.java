@@ -73,19 +73,20 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        maleRDB = new javax.swing.JRadioButton();
         femaleRDB = new javax.swing.JRadioButton();
+        maleRDB = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         photoText = new javax.swing.JTextField();
         btnRegisterChild = new javax.swing.JButton();
         uploadButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jXDatePicker1 = new org.netbeans.modules.form.InvalidComponent();
         jLabel6 = new javax.swing.JLabel();
         txtMark = new javax.swing.JTextField();
         cmbAge = new javax.swing.JComboBox<>();
@@ -93,6 +94,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         yesBtn = new javax.swing.JRadioButton();
         noBtn = new javax.swing.JRadioButton();
         jLabel8 = new javax.swing.JLabel();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -112,11 +114,11 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 320, 30));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 190, 30));
 
-        maleRDB.setText("Male");
-        add(maleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 35));
-
         femaleRDB.setText("Female");
         add(femaleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, -1, 35));
+
+        maleRDB.setText("Male");
+        add(maleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 35));
 
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -152,7 +154,6 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Registration Date");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 130, 35));
-        add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 190, 30));
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -173,6 +174,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         noBtn.setText("No");
         add(noBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, -1, -1));
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 720, 350));
+        add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 190, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterChildActionPerformed
@@ -314,6 +316,8 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegisterChild;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cmbAge;
     private javax.swing.JRadioButton femaleRDB;
     private javax.swing.JLabel jLabel1;
@@ -325,7 +329,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private org.netbeans.modules.form.InvalidComponent jXDatePicker1;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private javax.swing.JRadioButton maleRDB;
     private javax.swing.JRadioButton noBtn;
     private javax.swing.JTextField photoText;

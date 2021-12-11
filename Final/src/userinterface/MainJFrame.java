@@ -16,6 +16,7 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import userinterface.UserRegisteration.AdopterRegistrationJPanel;
 
 /**
  *

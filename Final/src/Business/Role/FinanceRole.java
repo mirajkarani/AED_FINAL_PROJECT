@@ -13,6 +13,7 @@ import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userinterface.Funding.FinanceWorkArea;
+import Business.Adopter.AdopterDirectory;
 
 /**
  *
