@@ -7,11 +7,20 @@ package userinterface.RayOfHope.PersonRegistrationRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.Organization;
 import Business.Organization.PersonRegistrationOrganization;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import java.io.File;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -31,7 +40,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
     PersonRegistrationOrganization organization;
     Network network;
     Random rand;
-    public NewPersonRegistrationJPanel() {
+    public NewPersonRegistrationJPanel(JPanel userProcessContainer, PersonDirectory persondirectory, UserAccount account, Enterprise enterprise, EcoSystem business, Organization organization) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.persondirectory = persondirectory;
@@ -163,12 +172,60 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
 
     private void btnRegisterChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterChildActionPerformed
         
+        try {
+            if (!validation()) {
+                String childName = txtName.getText();
+                String ageString = cmbAge.getSelectedItem().toString();
+                int childAge = Integer.parseInt(ageString);
+                String gender = "";
+                if (maleRDB.isSelected()) {
+                    gender = "Male";
+                } else if (femaleRDB.isSelected()) {
+                    gender = "Female";
+                }
+                Date date = jXDatePicker1.getDate();
+                DateFormat formatit = new SimpleDateFormat("yyyy-MM-dd");
+                String temp = "";
+                Date regDate = new Date();
+                try {
+                    temp = formatit.format(date);
+                    regDate = formatit.parse(temp);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, "Please select the registration date");
+                }
+            }
+        }
+        catch (ParseException ex) {
+        Logger.getLogger(NewPersonRegistrationJPanel.class.getName()).log(Level.SEVERE, null, ex);
     }//GEN-LAST:event_btnRegisterChildActionPerformed
-
+            }  
     private void uploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadButtonActionPerformed
        
+         browseImageFile();
     }//GEN-LAST:event_uploadButtonActionPerformed
 
+    private String browseImageFile() {
+        JFileChooser chooseFile = new JFileChooser();
+        chooseFile.showOpenDialog(null);
+        File file = chooseFile.getSelectedFile();
+        String pathofFile = file.getPath();
+        photoText.setText(pathofFile);
+        return pathofFile;
+    }
+    
+    public boolean validation() throws ParseException {
+        DateFormat formait = new SimpleDateFormat("yyyy/MM/dd");
+
+        String selectedFormaString = "";
+        try {
+            Date selected = jXDatePicker1.getDate();
+            selectedFormaString = formait.format(selected);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Please select the registration date");
+            return true;
+        }
+        return false;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegisterChild;
