@@ -16,9 +16,14 @@ import Business.WorkQueue.MedicalAssistanceWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import Business.Organization.PharmacyOrganization;
 
 /**
  *
@@ -32,7 +37,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Enterprise enterprise;
     private UserAccount userAccount;
-    private PharmacistOrganization pharmacistOrganization;
+    private PharmacyOrganization pharmacyOrganization;
     private MedicOrganization medicorganization;
     private EcoSystem business;
     MedicalAssistanceWorkRequest request;
@@ -54,7 +59,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
         this.person = person;
         this.medicorganization = medicorganization;
         this.business = business;
-        for (Network net : business.getNetworkList()) {
+        for (Network net : business.getNetworkCatalog()) {
             for (Enterprise ent : net.getEnterpriseDirectory().getEnterpriseList()) {
                 if (ent.equals(enterprise)) {
                     network = net;
@@ -162,7 +167,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
         btnMale = new javax.swing.JRadioButton();
         btnFemale = new javax.swing.JRadioButton();
         btnSave = new javax.swing.JButton();
-        lblChildPic = new javax.swing.JLabel();
+        lblPersonPic = new javax.swing.JLabel();
         txtAge = new javax.swing.JTextField();
         ScrollPaneLabWork = new javax.swing.JScrollPane();
         tblLab = new javax.swing.JTable();
@@ -251,7 +256,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
             }
         });
         add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 90, -1));
-        add(lblChildPic, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 180));
+        add(lblPersonPic, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 180));
         add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 210, 30));
 
         tblLab.setModel(new javax.swing.table.DefaultTableModel(
@@ -320,7 +325,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
     private void btnRequestTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestTestActionPerformed
         // TODO add your handling code here:
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        userProcessContainer.add("MedicRequestLab", new MedicRequestLab(userProcessContainer, userAccount, enterprise, person, persondirectory, request ,business));
+        userProcessContainer.add("MedicRequestLab", new MedicLabRequest(userProcessContainer, userAccount, enterprise, person, persondirectory, request ,business));
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnRequestTestActionPerformed
 
@@ -405,6 +410,43 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    public void displayImage() {
+        BufferedImage image = null; //Buffered image object
+        String filename = person.getImageDetails(); //Getting the filepath and storing into the string
+        try {
+            image = ImageIO.read(new File(filename));  //Reading the filename and storing it in image
+        } catch (Exception e) { //Generic exception if something goes wrong while reading the image
+            JOptionPane.showMessageDialog(null, "File not found");
+            //Setting the image to the icon and then passing it ot he image JLabel  
+        }
+            ImageIcon icon = new ImageIcon(image);
+            lblPersonPic.setIcon(icon);
+        
+    }
+    
+    private void getPersonDetails() {
+        displayImage();
+        txtName.setText(person.getName());
+        txtAge.setText(String.valueOf(person.getPersonAge()));
+        if (person.getGender().equalsIgnoreCase("male")) {
+            btnMale.setSelected(true);
+        } else {
+            btnFemale.setSelected(true);
+        }
+        txtMark.setText(person.getIdentificationMark());
+        txtTemp.setText(String.valueOf(person.getBodytemp()));
+        txtPulse.setText(String.valueOf(person.getPulseRate()));
+        txtBP.setText(String.valueOf(person.getBP()));
+        txtRR.setText(String.valueOf(person.getRespirationRate()));
+        if (person.getBodytemp() == 0.0 || person.getBP() == 0.0 || person.getPulseRate() == 0.0 || person.getRespirationRate() == 0.0) {
+            btnRequestTest.setEnabled(false);
+            btnPrescribeMedication.setEnabled(false);
+        } else {
+            btnRequestTest.setEnabled(true);
+            btnPrescribeMedication.setEnabled(true);
+        }
+        displayImage();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollPaneLabWork;
@@ -419,12 +461,12 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblBP;
-    private javax.swing.JLabel lblChildPic;
     private javax.swing.JLabel lblGender;
     private javax.swing.JLabel lblLabWork;
     private javax.swing.JLabel lblMark;
     private javax.swing.JLabel lblMedicationHistory;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPersonPic;
     private javax.swing.JLabel lblPulseRate;
     private javax.swing.JLabel lblRespiratoryRate;
     private javax.swing.JLabel lblTemp;
