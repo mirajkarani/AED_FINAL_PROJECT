@@ -9,6 +9,7 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.PersonRegistrationOrganization;
+import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import java.io.File;
@@ -174,9 +175,9 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         
         try {
             if (!validation()) {
-                String childName = txtName.getText();
+                String personName = txtName.getText();
                 String ageString = cmbAge.getSelectedItem().toString();
-                int childAge = Integer.parseInt(ageString);
+                int personAge = Integer.parseInt(ageString);
                 String gender = "";
                 if (maleRDB.isSelected()) {
                     gender = "Male";
@@ -193,6 +194,24 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Please select the registration date");
                 }
+                String identificationMark = txtMark.getText();
+                Person person = new Person();
+                int personId = rand.nextInt(100);
+                person = persondirectory.addPerson();
+                person.setPersonAge(personAge);
+                person.setChildId(personId);
+                person.setName(personName);
+                person.setIdentificationMark(identificationMark);
+                person.setImageDetails(photoText.getText());
+                person.setRegistrationDate(regDate);
+                person.setGender(gender);
+                person.setStatus("Newly Registered");
+                if (yesBtn.isSelected()) {
+                    person.setIsChallenged(true);
+                } else if (noBtn.isSelected()) {
+                    person.setIsChallenged(false);
+                }
+                person.setMedicalStatus((person.getMedicalStatus() == null ? "" : person.getMedicalStatus()) + "Sent to Doctor");
             }
         }
         catch (ParseException ex) {
@@ -222,6 +241,36 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
             selectedFormaString = formait.format(selected);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Please select the registration date");
+            return true;
+        }
+        if (txtName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter the name of the child");
+            return true;
+        } //else if (!ValidationHelper.validateName(txtName.getText())) {
+           // JOptionPane.showMessageDialog(null, "Please enter the name in the correct format(No special characters)");
+           // return true;
+        //} 
+        else if (cmbAge.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Please provide the age of the child");
+            return true;
+        } else if (!maleRDB.isSelected() && !femaleRDB.isSelected()) {
+            JOptionPane.showMessageDialog(null, "Please select the gender of the child");
+            return true;
+        } else if (selectedFormaString.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please select the registration date");
+            return true;
+        } else if (txtMark.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter the identification mark. If there are none, please write NA/None");
+            return true;
+        } //else if (!ValidationHelper.validateIdentity(txtMark.getText())) {
+          //  JOptionPane.showMessageDialog(null, "No special character in identification mark");
+           // return true;
+       // } 
+        else if (photoText.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please select the image of the child");
+            return true;
+        } else if (!yesBtn.isSelected() && !noBtn.isSelected()) {
+            JOptionPane.showMessageDialog(null, "Please select whether child has special needs question");
             return true;
         }
         return false;
