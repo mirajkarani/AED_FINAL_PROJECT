@@ -4,6 +4,19 @@
  */
 package userinterface.Funding;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.FinanceOrganization;
+import Business.Organization.Organization;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.DonorWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author aniketmirajkar
@@ -13,8 +26,26 @@ public class ViewAndProcessTransactionRecord extends javax.swing.JPanel {
     /**
      * Creates new form ViewAndProcessTransactionRecord
      */
-    public ViewAndProcessTransactionRecord() {
+    
+    JPanel userProcessContainer;
+    UserAccount account;
+    FinanceOrganization financeOrganization;
+    Enterprise enterprise;
+    EcoSystem business;
+    PersonDirectory personDirectory;
+    int countApprove=0, countDeny=0, countPending=0; 
+    
+    public ViewAndProcessTransactionRecord(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory personDirectory) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.financeOrganization = (FinanceOrganization) organization;
+        this.enterprise = enterprise;
+        this.personDirectory = personDirectory;
+        this.business = business;
+        btnProcess.setEnabled(false);
+        populateDonorRequesttable();
     }
 
     /**
@@ -169,17 +200,17 @@ public class ViewAndProcessTransactionRecord extends javax.swing.JPanel {
             req.setMessage(txtComments.getText());
             req.setStatus("Received");
             JOptionPane.showMessageDialog(null, "Request is processed");
-            if (this.childdirectory != null && this.childdirectory.getChildList().size() > 0) {
-                for (Child ch : this.childdirectory.getChildList()) {
-                    if (req.getChildId() == ch.getChildId()) {
-                        ch.setFinancialHelp(false);
+            if (this.personDirectory != null && this.personDirectory.getPersonList().size() > 0) {
+                for (Person p: this.personDirectory.getPersonList()) {
+                    if (req.getPersonId() == p.getPersonId()) {
+                        p.setFinancialHelp(false);
                         break;
                     }
                 }
             }
             String subject = "Payment Receipt";
             String content = "Dear Sponsor, this is an acknowledgement receipt. We have recieved your payment. Thank you so much for your kind donation. Your caring support will make a great difference in the child's academic success. We hope that you will continue serving and make world a better place for children.";
-            CommonMail.sendEmailMessage(req.getEmailId(), subject, content);
+            //CommonMail.sendEmailMessage(req.getEmailId(), subject, content);
         }
         populateDonorRequesttable();
         txtComments.setText("");
@@ -196,4 +227,24 @@ public class ViewAndProcessTransactionRecord extends javax.swing.JPanel {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField txtComments;
     // End of variables declaration//GEN-END:variables
+public void populateDonorRequesttable() {
+        DefaultTableModel dtms = (DefaultTableModel) jTable2.getModel();
+        dtms.setRowCount(0);
+
+        for (WorkRequest req : business.getWorkQueue().getWorkRequestList()) {
+            if (req instanceof DonorWorkRequest) {
+                Object[] row = new Object[dtms.getColumnCount()];
+                req.setReceiver(account);
+                row[0] = req;
+                row[1] = req.getSender();
+                row[2] = req.getReceiver();
+                row[3] = req.getPersonId();
+                row[4] = req.getPersonName();
+                String remarks = ((DonorWorkRequest) req).getRemarks();
+                row[5] = remarks;
+                row[6] = req.getStatus();
+                dtms.addRow(row);
+            }
+        }
+    }
 }
