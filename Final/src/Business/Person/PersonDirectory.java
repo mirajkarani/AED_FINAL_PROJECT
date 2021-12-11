@@ -23,7 +23,7 @@ public class PersonDirectory {
         return Persondirectory;
     }
     
-        public List<Person> getChildList() {
+        public List<Person> getPersonList() {
         return PersonList;
     }
 

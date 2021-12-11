@@ -21,7 +21,7 @@ public class Person {
     String gender;
     private String amt;
     private static int count = 1;
-    private boolean isSpecialChild;
+    private boolean isChallenged;
     Date registrationDate;
     String medicalStatus;
     private double bodytemp;
@@ -172,12 +172,12 @@ public class Person {
         this.medicalHelp = medicalHelp;
     }
 
-    public boolean isIsSpecialChild() {
-        return isSpecialChild;
+    public boolean isIsChallenged() {
+        return isChallenged;
     }
 
-    public void setIsSpecialChild(boolean isSpecialChild) {
-        this.isSpecialChild = isSpecialChild;
+    public void setIsChallenged(boolean isCjhallenged) {
+        this.isChallenged = isChallenged;
     }
 
     @Override
