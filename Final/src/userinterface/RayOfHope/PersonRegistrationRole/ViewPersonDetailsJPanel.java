@@ -8,6 +8,18 @@ import Business.Person.Person;
 import java.util.Date;
 import javax.swing.JPanel;
 import Business.Person.Person;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,7 +54,8 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         }
         yesBtn.setEnabled(false);
         noBtn.setEnabled(false);
-      
+        displayImage();
+        
         jXDatePicker1.getMonthView().setUpperBound(new Date());
     }
 
@@ -210,16 +223,102 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         
+        
     }//GEN-LAST:event_updateBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         
+        try {
+            if (!validation()) {
+                String childName = nameTextField.getText();
+                String ageString = cmbAge.getSelectedItem().toString();
+                int childAge = Integer.parseInt(ageString);
+                String gender = "";
+                if (maleRDB.isSelected()) {
+                    gender = "Male";
+                } else if (femaleRDB.isSelected()) {
+                    gender = "Female";
+                }
+                Date date = jXDatePicker1.getDate();
+                DateFormat formatit = new SimpleDateFormat("yyyy-MM-dd");
+                String temp = formatit.format(date);
+                Date regDate = new Date();
+                try {
+                    regDate = formatit.parse(temp);
+                } catch (ParseException ex) {
+                    Logger.getLogger(ViewPersonDetailsJPanel.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                String identificationMark = jTextArea1.getText();
+                person.setPersonAge(childAge);
+                person.setChildId(person.getPersonId());
+                person.setName(childName);
+                person.setIdentificationMark(identificationMark);
+                person.setImageDetails(imageTextField.getText());
+                person.setRegistrationDate(regDate);
+                person.setGender(gender);
+                JOptionPane.showMessageDialog(null, "Child Details Updated");
+            }
+        }   catch (ParseException ex) {
+            Logger.getLogger(ViewPersonDetailsJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_saveBtnActionPerformed
 
     private void CancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBtnActionPerformed
+       
         
     }//GEN-LAST:event_CancelBtnActionPerformed
 
+    public boolean validation() throws ParseException {
+      DateFormat formait = new SimpleDateFormat("yyyy/MM/dd");
+    
+     String selectedFormaString ="";
+      try{
+      Date selected = jXDatePicker1.getDate();
+    selectedFormaString = formait.format(selected);
+     }
+     catch(Exception e){
+      JOptionPane.showMessageDialog(null, "Please select the registration date");
+      return true;
+     }
+ 
+     if(nameTextField.getText().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Please enter the name of the child");
+         return true;
+     }
+     else if(!validateName()){
+         JOptionPane.showMessageDialog(null, "Please enter the name in the correct format(No special characters)");
+         return true;
+     }
+    
+     else if(!maleRDB.isSelected()&& !femaleRDB.isSelected()){
+         JOptionPane.showMessageDialog(null, "Please select the gender of the child");
+         return true;
+     }
+
+     else if(selectedFormaString.isEmpty())
+     {
+        JOptionPane.showMessageDialog(null, "Please select the registration date");
+         return true;  
+     }
+     else if(jTextArea1.getText().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Please enter the identification mark. If there are none, please write NA/None");
+         return true;
+     }
+     else if(!validateIdentity()){
+         JOptionPane.showMessageDialog(null, "No special character in identification mark");
+         return true;
+     }
+     else if(imageTextField.getText().isEmpty()){
+          JOptionPane.showMessageDialog(null, "Please select the image of the child");
+         return true;
+     }
+      
+      else
+       return false;
+    }
+    
+   
+    
     private void imageTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imageTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_imageTextFieldActionPerformed
@@ -234,6 +333,17 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
        
     }//GEN-LAST:event_lblBackMousePressed
 
+    public void displayImage() {
+        BufferedImage image = null;
+        String filename = person.getImageDetails();
+        try {
+            image = ImageIO.read(new File(filename));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "File not found");
+        }
+        ImageIcon icon = new ImageIcon(image);
+        imageLable.setIcon(icon);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelBtn;
