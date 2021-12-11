@@ -7,9 +7,17 @@ package userinterface.AdopterRegisteration;
 
 import Business.Adopter.Adopter;
 import Business.Adopter.AdopterDirectory;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.AdopterOrganization;
+import Business.Organization.Organization;
+import Business.Person.PersonDirectory;
+import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import Business.WorkQueue.AdopterWorkStatusCheckRequest;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -57,17 +65,17 @@ public class CheckStatusJPanel extends javax.swing.JPanel {
         dtms.setRowCount(0);
 
         for (WorkRequest req : adopterorganization.getWorkQueue().getWorkRequestList()) {
-            if (req instanceof AdopterStatusCheckWorkRequest) {
+            if (req instanceof AdopterWorkStatusCheckRequest) {
                 if (req.getUserId() == adopter.getUserId()) {
                     Object[] row = new Object[dtms.getColumnCount()];
                     row[0] = req;
-                    row[1] = ((AdopterStatusCheckWorkRequest) req).getBgcStatus();
-                    row[2] = ((AdopterStatusCheckWorkRequest) req).getFinanceStatus();
-                    row[3] = ((AdopterStatusCheckWorkRequest) req).getChildCareStatus();
+                    row[1] = ((AdopterWorkStatusCheckRequest) req).getBgcStatus();
+                    row[2] = ((AdopterWorkStatusCheckRequest) req).getFinanceStatus();
+                    row[3] = ((AdopterWorkStatusCheckRequest) req).getPersonCareStatus();
                     dtms.addRow(row);
 
-                    bgcstatus = ((AdopterStatusCheckWorkRequest) req).getBgcStatus();
-                    financestatus = ((AdopterStatusCheckWorkRequest) req).getFinanceStatus();
+                    bgcstatus = ((AdopterWorkStatusCheckRequest) req).getBgcStatus();
+                    financestatus = ((AdopterWorkStatusCheckRequest) req).getFinanceStatus();
                 }
             }
         }
@@ -138,8 +146,8 @@ public class CheckStatusJPanel extends javax.swing.JPanel {
         if (tblReq.getRowCount() < 1) {
             JOptionPane.showMessageDialog(null, "Adoption request is still in process with the Investigation team");
         } else if ("Approved".equals(bgcstatus) && "Approved".equals((financestatus))) {
-            PersonSelectionJpanel csjp = new PersonSelectionJpanel(userProcessContainer, account, adopterorganization, enterprise, business, adopterdirectory, uid, childdirectory);
-            this.userProcessContainer.add("ChildSelectionJPanel", csjp);
+            PersonSelectionJPanel csjp = new PersonSelectionJPanel(userProcessContainer, account, adopterorganization, enterprise, business, adopterdirectory, uid, persondirectory);
+            this.userProcessContainer.add("PersonSelectionJPanel", csjp);
             CardLayout layout = (CardLayout) this.userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         } else if ("Pending".equals(bgcstatus) || "Pending".equals(financestatus)) {
