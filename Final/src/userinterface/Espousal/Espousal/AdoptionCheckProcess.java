@@ -4,6 +4,24 @@
  * and open the template in the editor.
  */
 package userinterface.Espousal.Espousal;
+import Business.Adopter.Adopter;
+import Business.Adopter.AdopterDirectory;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.AdopterOrganization;
+import Business.Organization.EspousalOrganization;
+import Business.Organization.VerificationOrganization;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.Utility.SendMail;
+import Business.WorkQueue.AdopterWorkStatusCheckRequest;
+import Business.WorkQueue.AdoptionProcessWorkRequest;
+import Business.WorkQueue.BackgroundCheckWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -22,7 +40,7 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
     Enterprise enterprise;
     EcoSystem business;
     AdopterDirectory adopterdirectory;
-    AdoptionOrganization adoptionOrganization;
+    EspousalOrganization adoptionOrganization;
     Adopter adopter;
     AdoptionProcessWorkRequest adoptionWorkRequest;
     
@@ -34,7 +52,7 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
         this.account=account;
         this.enterprise=enterprise;
         this.business = business;
-        this.adoptionOrganization = (AdoptionOrganization)organization;
+        this.adoptionOrganization = (EspousalOrganization)organization;
         this.adopter = adopter;
         this.adoptionWorkRequest = adoptionWorkRequest;
         populateWorkRequest();
@@ -60,6 +78,29 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
             rdbFemale.setSelected(true);
         }
     }
+    
+    
+    public void populateWorkRequest() {
+
+        DefaultTableModel model = (DefaultTableModel) tblInitiateBCG.getModel();
+        model.setRowCount(0);
+
+        for (WorkRequest request : adoptionOrganization.getWorkQueue().getWorkRequestList()) {
+
+            if (request instanceof AdoptionProcessWorkRequest) {
+                if (request.getUserId() == adoptionWorkRequest.getUserId()) {
+                    Object[] row = new Object[model.getColumnCount()];
+                    row[0] = request;
+                    row[1] = request.getName();
+                    row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+                    row[3] = request.getUserId();
+                    row[4] = request.getStatus();
+                    model.addRow(row);
+                }
+            }
+        }
+    }
+
 
     
 
@@ -206,6 +247,89 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
 
     private void btnInitiateBCGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInitiateBCGActionPerformed
         // TODO add your handling code here:
+        
+        int selectedRow = tblInitiateBCG.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a workrequest");
+            return;
+        }
+
+        Object receiverval = tblInitiateBCG.getValueAt(selectedRow, 2);
+        Object statusval = tblInitiateBCG.getValueAt(selectedRow, 4);
+        AdoptionProcessWorkRequest request = (AdoptionProcessWorkRequest) tblInitiateBCG.getValueAt(selectedRow, 0);
+
+        if ("Initialized BGC".equalsIgnoreCase(request.getStatus())) {
+            JOptionPane.showMessageDialog(null, "BGC already initiated");
+        } else {
+            if (receiverval.equals(account.getUsername()) && "Pending with Adoption Organization".equals(statusval)) {
+                request.setStatus("Initialized BGC");
+                request.setSender(account);
+                request.setUserId(adopter.getUserId());
+                request.setName(adopter.getName());
+
+                //populateWorkRequest();
+                BackgroundCheckWorkRequest bgcreq = new BackgroundCheckWorkRequest();
+                bgcreq.setMessage("Please initiate BGC");
+                bgcreq.setStatus("Pending with BGC organization");
+                bgcreq.setSender(account);
+                bgcreq.setUserId(adopter.getUserId());
+                bgcreq.setName(adopter.getName());
+
+                Organization org = null;
+                for (Network network : business.getNetworkCatalog()) {
+                    for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
+                        for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
+                            if (organization instanceof VerificationOrganization) {
+
+                                org = organization;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (org != null) {
+                    org.getWorkQueue().getWorkRequestList().add(bgcreq);
+                    account.getWorkQueue().getWorkRequestList().add(bgcreq);
+                    business.getWorkQueue().getWorkRequestList().add(bgcreq);
+                }
+
+                AdopterWorkStatusCheckRequest wrk = new AdopterWorkStatusCheckRequest();
+                wrk.setUserId(adopter.getUserId());
+                wrk.setBgcStatus("Pending");
+                wrk.setFinanceStatus("Pending");
+                wrk.setMessage("BGC initialized");
+                wrk.setName(adopter.getName());
+
+                Organization org1 = null;
+                for (Network network : business.getNetworkCatalog()) {
+                    for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
+                        for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
+                            if (organization instanceof AdopterOrganization) {
+                                        if(adopter.getName().equalsIgnoreCase(organization.getName())){
+                                org1 = organization;
+                                break;
+                                        }
+                            }
+                        }
+                    }
+                }
+
+                if (org1 != null) {
+                    org1.getWorkQueue().getWorkRequestList().add(wrk);
+                    account.getWorkQueue().getWorkRequestList().add(wrk);
+                    business.getWorkQueue().getWorkRequestList().add(wrk);
+                }
+                String subject = "Background check process initiated";
+                String content = "Your background check process has been initiated and sent to respective team. You can check your status through your credentials. \nThank you.";
+                SendMail.sendEmailMessage(adopter.getEmailId(), subject, content);
+                JOptionPane.showMessageDialog(null, "BGC check initialized successfully!");
+            } else if (!receiverval.equals(account.getUsername())) {
+                JOptionPane.showMessageDialog(null, "Please select the work request assigned to you to proceed");
+            } else if (!"Pending with Adoption Organization".equals(statusval)) {
+                JOptionPane.showMessageDialog(null, "The selected work request assigned to you is already processed");
+            }
+        }
         
     }//GEN-LAST:event_btnInitiateBCGActionPerformed
 
