@@ -12,9 +12,9 @@ import Business.Enterprise.RayOfHopeEnterprise;
 import Business.Enterprise.FundingEnterprise;
 
 import Business.Enterprise.HospitalEnterprise;
-import Business.Organization.Organization;
-import Business.Organization.Organization.Type;
-import Business.Organization.OrganizationDirectory;
+import Business.Organizations.Organization;
+import Business.Organizations.Organization.Type;
+import Business.Organizations.OrganizationDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;

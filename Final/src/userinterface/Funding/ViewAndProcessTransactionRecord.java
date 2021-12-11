@@ -6,8 +6,8 @@ package userinterface.Funding;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.FinanceOrganization;
-import Business.Organization.Organization;
+import Business.Organizations.FinanceOrganization;
+import Business.Organizations.Organization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;

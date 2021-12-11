@@ -6,9 +6,9 @@ package userinterface.labOrganization;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.LabOrganization;
-import Business.Organization.Organization;
-import Business.Organization.OrganizationDirectory;
+import Business.Organizations.LabOrganization;
+import Business.Organizations.Organization;
+import Business.Organizations.OrganizationDirectory;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;

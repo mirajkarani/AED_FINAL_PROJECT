@@ -6,7 +6,7 @@ package userinterface.MedicOrg;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.MedicOrganization;
+import Business.Organizations.MedicOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;

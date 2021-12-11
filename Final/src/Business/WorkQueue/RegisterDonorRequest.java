@@ -7,7 +7,7 @@ package Business.WorkQueue;
 
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.Organization;
+import Business.Organizations.Organization;
 
 /**
  *

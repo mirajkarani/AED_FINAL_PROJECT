@@ -8,11 +8,13 @@ package Business;
 
 import Business.Adopter.AdopterDirectory;
 import Business.Donor.DonorDirectory;
+import Business.Enterprise.Enterprise;
 import Business.Network.Network;
-import Business.Organization.Organization;
+import Business.Organizations.Organization;
 import Business.Person.PersonDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
 
 /**
@@ -44,6 +46,10 @@ public class EcoSystem extends Organization {
         return business;
     }
     
+    public static void setInstance(EcoSystem system) {
+        business = system;
+    }
+    
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roleList=new ArrayList<Role>();
@@ -52,8 +58,34 @@ public class EcoSystem extends Organization {
     }
     
     public boolean checkIfUserIsUnique(String userName){
-       //
-       return false;
+         if(this.business!=null){
+           for (Network network : business.getNetworkCatalog()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                for (UserAccount ua : enterprise.getUserAccountDirectory().getUserAccountList()) {
+                    if (ua.getUsername().equalsIgnoreCase(userName)) {
+                        return false;
+                    }
+                }
+                for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+                    for (UserAccount ua : organization.getUserAccountDirectory().getUserAccountList()) {
+                        if (ua.getUsername().equalsIgnoreCase(userName)) {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return true;
+    }
+    
+    public boolean isUnique(String name){
+        for(Network network : networkCatalog){
+            if(network.getName().equalsIgnoreCase(name)){
+                return false;
+            }
+        }
+        return true;
     }
 
     public static EcoSystem getBusiness() {

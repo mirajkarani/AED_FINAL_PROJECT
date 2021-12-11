@@ -8,7 +8,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.UserAccount.UserAccount;
-import Business.Organization.PharmacyOrganization;
+import Business.Organizations.PharmacyOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.WorkQueue.PharmacistAssistWorkRequest;

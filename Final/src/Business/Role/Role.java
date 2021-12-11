@@ -4,12 +4,12 @@
  */
 package Business.Role;
 
+import Business.Organizations.Organization;
 import Business.Adopter.AdopterDirectory;
 import Business.Donor.DonorDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 
-import Business.Organization.*;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
