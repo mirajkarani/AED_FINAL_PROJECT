@@ -65,7 +65,7 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
     public void populatePersonTable() {
         DefaultTableModel dtms = (DefaultTableModel) tblPerson.getModel();
         dtms.setRowCount(0);
-        for (Person person : childdirectory.getChildList()) {
+        for (Person person : childdirectory.getPersonList()) {
             if ("Acquired".equalsIgnoreCase(person.getStatus()) || ("Adopted by " + adopter.getName()).startsWith(person.getStatus())) {
                 Object[] row = new Object[dtms.getColumnCount()];
                 row[0] = person;

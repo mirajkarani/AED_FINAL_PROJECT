@@ -197,7 +197,7 @@ public class FundingUnitWorkRequestJPanel extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(null, "Request already processed.");
                     return;
                 }
-                Organization org = organizationDirectory.createOrganization(request.getName(), Organization.Type.Donor);
+                Organization org = organizationDirectory.addNewOrganization(request.getName(), Organization.Type.Donor);
                 Employee emp = org.getEmployeeDirectory().createEmployee(request.getName());
                 UserAccount ua1 = org.getUserAccountDirectory().createUserAccount(request.getUserName(), request.getUserPassword(), emp, new DonorRole());
                 Donor donor = new Donor();

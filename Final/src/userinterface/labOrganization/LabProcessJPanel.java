@@ -4,6 +4,7 @@
  */
 package userinterface.labOrganization;
 
+import Business.WorkQueue.LabAssistanceWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -19,9 +20,9 @@ public class LabProcessJPanel extends javax.swing.JPanel {
      * Creates new form LabProcessJPanel
      */
     JPanel userProcessContainer;
-    LabProcessWorkRequest request;
+    LabAssistanceWorkRequest request;
     
-    public LabProcessJPanel(JPanel userProcessContainer, LabProcessWorkRequest request) {
+    public LabProcessJPanel(JPanel userProcessContainer, LabAssistanceWorkRequest request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
