@@ -7,10 +7,12 @@ package userinterface.RayOfHope.PersonRegistrationRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.Organization;
 import Business.Organization.PersonRegistrationOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -30,7 +32,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
     PersonDirectory persondirectory;
     EcoSystem business;
     Network network;
-    public PersonRegistrationMainWorkArea() {
+    public PersonRegistrationMainWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory persondirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
@@ -39,7 +41,14 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
         this.persondirectory = persondirectory;
         this.enterprise = enterprise;
         valueLabel.setText(organization.getName());
-        childRegistrationArea();
+        personRegistrationArea();
+    }
+    
+    private void personRegistrationArea() {
+        RegisterNewPersonJPanel panel = new RegisterNewPersonJPanel(rightSystemAdminPanel, persondirectory, account, enterprise, business, personRegistrationOrganization);
+        rightSystemAdminPanel.add("ManageNetworkJPanel", panel);
+        CardLayout layout = (CardLayout) rightSystemAdminPanel.getLayout();
+        layout.next(rightSystemAdminPanel);
     }
 
     /**
@@ -159,17 +168,20 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void childRegistrationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_childRegistrationMousePressed
-        childRegistrationArea();
+        personRegistrationArea();
     }//GEN-LAST:event_childRegistrationMousePressed
 
     private void LabNetworkPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabNetworkPanelMousePressed
         // TODO add your handling code here:
-        childRegistrationArea();
+        personRegistrationArea();
     }//GEN-LAST:event_LabNetworkPanelMousePressed
 
     private void lblViewChildMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViewChildMousePressed
         // TODO add your handling code here:
-        
+        ViewPersonTable panel = new ViewPersonTable(rightSystemAdminPanel, account, personRegistrationOrganization, enterprise, business, persondirectory);
+        rightSystemAdminPanel.add("ManageNetworkJPanel", panel);
+        CardLayout layout = (CardLayout) rightSystemAdminPanel.getLayout();
+        layout.next(rightSystemAdminPanel);
     }//GEN-LAST:event_lblViewChildMousePressed
 
 
