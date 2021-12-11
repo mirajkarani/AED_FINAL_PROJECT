@@ -11,7 +11,10 @@ import Business.Organization.PersonRegistrationOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -45,6 +48,7 @@ public class ViewPersonTable extends javax.swing.JPanel {
                 }
             }
         }
+        populateTable();
     }
 
     /**
@@ -118,9 +122,34 @@ public class ViewPersonTable extends javax.swing.JPanel {
     private void btnViewPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPersonActionPerformed
 
         /*This set of code will take the UI to the vie child details*/
-        
+        int selectedRow = tblNewPerson.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a child to view details");
+            return;
+        }
+        person = (Person) tblNewPerson.getValueAt(selectedRow, 0);
+        ViewPersonDetailsJPanel panel = new ViewPersonDetailsJPanel(userProcessContainer, person);
+        this.userProcessContainer.add("ViewChildDetailsJPanel", panel);
+        CardLayout layout = (CardLayout) this.userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewPersonActionPerformed
 
+    public void populateTable() {
+        DefaultTableModel dtms = (DefaultTableModel) tblNewPerson.getModel();
+        dtms.setRowCount(0);
+        if (persondirectory != null && persondirectory.getPersonList() != null && persondirectory.getPersonList().size() > 0) {
+            for (Person person : persondirectory.getPersonList()) {
+                Object[] row = new Object[dtms.getColumnCount()];
+                row[0] = person;
+                row[1] = person.getName();
+                row[2] = person.getGender();
+                row[3] = person.getPersonAge();
+                row[4] = person.getStatus();
+                row[5] = person.getMedicalStatus();
+                dtms.addRow(row);
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeletePerson;
