@@ -178,7 +178,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Enter organization name!");
         } else {
             if (directory.isUnique(orgInstanceName.getText())) {
-                directory.createOrganization(orgInstanceName.getText(), type);
+                directory.addNewOrganization(orgInstanceName.getText(), type);
                 JOptionPane.showMessageDialog(null, "Organization Successfully Created");
                 orgInstanceName.setText("");
                 populateTable();

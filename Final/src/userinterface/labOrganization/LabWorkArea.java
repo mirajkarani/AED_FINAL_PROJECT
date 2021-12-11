@@ -33,7 +33,7 @@ public class LabWorkArea extends javax.swing.JPanel {
     private UserAccount userAccount;
     PersonDirectory personDirectory;
     
-    public LabWorkArea(public LabWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem ecosystem) {
+    public LabWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem ecosystem) {
 
         initComponents();
         this.userProcessContainer=userProcessContainer;   

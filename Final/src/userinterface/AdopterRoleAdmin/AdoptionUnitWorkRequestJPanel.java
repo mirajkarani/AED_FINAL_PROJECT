@@ -204,7 +204,7 @@ public class AdoptionUnitWorkRequestJPanel extends javax.swing.JPanel {
                 return;
             } else {
 
-                Organization org = organizationDirectory.createOrganization(request.getName(), Organization.Type.Adopter);
+                Organization org = organizationDirectory.addNewOrganization(request.getName(), Organization.Type.Adopter);
                 Employee emp = org.getEmployeeDirectory().createEmployee(request.getName());
                 UserAccount ua1 = org.getUserAccountDirectory().createUserAccount(request.getUserName(), request.getUserPassword(), emp, new AdopterRole());
                 Adopter adopter = new Adopter();
