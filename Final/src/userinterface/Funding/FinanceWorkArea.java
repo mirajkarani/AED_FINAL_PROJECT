@@ -4,6 +4,7 @@
  */
 package userinterface.Funding;
 
+import Business.Adopter.AdopterDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.FinanceOrganization;
@@ -47,6 +48,10 @@ public class FinanceWorkArea extends javax.swing.JPanel {
         
         btnProcess.setEnabled(false);
         populateRequesttable();
+    }
+
+    public FinanceWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, AdopterDirectory adopterdirectory) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

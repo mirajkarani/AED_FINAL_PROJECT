@@ -89,13 +89,13 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         lblPhoto = new javax.swing.JLabel();
         imageTextField = new javax.swing.JTextField();
         uploadBtn = new javax.swing.JButton();
-        jXDatePicker1 = new org.netbeans.modules.form.InvalidComponent();
         jLabel6 = new javax.swing.JLabel();
         cmbAge = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         yesBtn = new javax.swing.JRadioButton();
         noBtn = new javax.swing.JRadioButton();
         lblBack = new javax.swing.JLabel();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -198,8 +198,6 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
             }
         });
         add(uploadBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 114, 30));
-
-        add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 210, -1));
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 470, 970, 290));
 
         cmbAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18" }));
@@ -221,6 +219,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
             }
         });
         add(lblBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, 50, 40));
+        add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 200, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
@@ -427,7 +426,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private org.netbeans.modules.form.InvalidComponent jXDatePicker1;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private javax.swing.JLabel lblBack;
     private javax.swing.JLabel lblPhoto;
     private javax.swing.JRadioButton maleRDB;
