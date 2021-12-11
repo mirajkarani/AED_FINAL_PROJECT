@@ -83,7 +83,7 @@ public class LabJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblLab);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 790, 130));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 790, 130));
 
         btnAssignToMe.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         btnAssignToMe.setText("Assign To Me");
