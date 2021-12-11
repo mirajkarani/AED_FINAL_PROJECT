@@ -108,7 +108,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CHILD REGISTRATION");
+        jLabel1.setText("PERSON REGISTRATION");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 320, 30));
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 190, 30));
 
@@ -164,7 +164,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 190, -1));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel7.setText("Does child have special needs?");
+        jLabel7.setText("Does person have special needs?");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 220, 30));
 
         yesBtn.setText("Yes");

@@ -94,7 +94,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
 
         childRegistration.setBackground(new java.awt.Color(255, 204, 204));
         childRegistration.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        childRegistration.setText("Child Registration Area");
+        childRegistration.setText("Person Registration Area");
         childRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 childRegistrationMousePressed(evt);
@@ -126,7 +126,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
 
         lblViewChild.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblViewChild.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblViewChild.setText("View Child Records");
+        lblViewChild.setText("View Person Records");
         lblViewChild.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblViewChildMousePressed(evt);

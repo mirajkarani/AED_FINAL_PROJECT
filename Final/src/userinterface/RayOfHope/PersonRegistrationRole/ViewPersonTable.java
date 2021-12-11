@@ -7,11 +7,17 @@ package userinterface.RayOfHope.PersonRegistrationRole;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.LabOrganization;
+import Business.Organization.MedicOrganization;
+import Business.Organization.Organization;
 import Business.Organization.PersonRegistrationOrganization;
+import Business.Organization.PharmacyOrganization;
 import Business.Person.Person;
 import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -116,7 +122,33 @@ public class ViewPersonTable extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeletePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePersonActionPerformed
-       
+       int selectedRow = tblNewPerson.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a Person to delete");
+        }
+        Person ch = (Person) tblNewPerson.getValueAt(selectedRow, 0);
+        int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete the person?", "Alert", JOptionPane.YES_NO_CANCEL_OPTION);
+        if (result == 0) {
+            persondirectory.removePerson(ch);
+            List<Organization> list = new ArrayList<>();
+            for (Network network : business.getNetworkCatalog()) {
+                for (Enterprise ent : network.getEnterpriseDirectory().getEnterpriseList()) {
+                    if (this.network.equals(network)) {
+                        for (Organization organization : ent.getOrganizationDirectory().getOrganizationList()) {
+                            if (organization instanceof MedicOrganization || organization instanceof PharmacyOrganization || organization instanceof LabOrganization) {
+                                list.add(organization);
+                            }
+                        }
+                    }
+                }
+            }
+            for (Organization org : list) {
+                org.getWorkQueue().delete(ch.getPersonId());
+            }
+            account.getWorkQueue().delete(ch.getPersonId());
+            business.getWorkQueue().delete(ch.getPersonId());
+        }
+        populateTable();
     }//GEN-LAST:event_btnDeletePersonActionPerformed
 
     private void btnViewPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewPersonActionPerformed
@@ -124,12 +156,12 @@ public class ViewPersonTable extends javax.swing.JPanel {
         /*This set of code will take the UI to the vie child details*/
         int selectedRow = tblNewPerson.getSelectedRow();
         if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please select a child to view details");
+            JOptionPane.showMessageDialog(null, "Please select a person to view details");
             return;
         }
         person = (Person) tblNewPerson.getValueAt(selectedRow, 0);
         ViewPersonDetailsJPanel panel = new ViewPersonDetailsJPanel(userProcessContainer, person);
-        this.userProcessContainer.add("ViewChildDetailsJPanel", panel);
+        this.userProcessContainer.add("ViewPersonDetailsJPanel", panel);
         CardLayout layout = (CardLayout) this.userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewPersonActionPerformed

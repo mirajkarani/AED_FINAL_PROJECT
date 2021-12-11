@@ -106,7 +106,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("VIEW CHILD DETAILS");
+        jLabel1.setText("VIEW PERSON DETAILS");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 520, 40));
 
         nameTextField.setEnabled(false);
@@ -199,7 +199,6 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         });
         add(uploadBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 114, 30));
 
-        jXDatePicker1.setEnabled(false);
         add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 210, -1));
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 470, 970, 290));
 
@@ -207,7 +206,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 210, 30));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jLabel7.setText("Does child have special needs?");
+        jLabel7.setText("Does person have special needs?");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 220, 30));
 
         yesBtn.setText("Yes");
