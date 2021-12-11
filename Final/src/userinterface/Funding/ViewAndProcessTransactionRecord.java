@@ -175,7 +175,8 @@ public class ViewAndProcessTransactionRecord extends javax.swing.JPanel {
         DonorWorkRequest req = (DonorWorkRequest) jTable2.getValueAt(selectedRow, 0);
         if ("Received".equals(statusval) || "Assigned".equals(statusval)) {
             JOptionPane.showMessageDialog(null, "Request already processed");
-        } else {
+        } 
+        else {
             req.setReceiver(account);
             req.setMessage("Payment processed");
             req.setStatus("Assigned");
@@ -196,7 +197,8 @@ public class ViewAndProcessTransactionRecord extends javax.swing.JPanel {
         DonorWorkRequest req = (DonorWorkRequest) jTable2.getValueAt(selectedRow, 0);
         if ("Received".equals(statusval)) {
             JOptionPane.showMessageDialog(null, "Request already processed");
-        } else {
+        } 
+        else {
             req.setMessage(txtComments.getText());
             req.setStatus("Received");
             JOptionPane.showMessageDialog(null, "Request is processed");
@@ -227,7 +229,8 @@ public class ViewAndProcessTransactionRecord extends javax.swing.JPanel {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField txtComments;
     // End of variables declaration//GEN-END:variables
-public void populateDonorRequesttable() {
+
+    public void populateDonorRequesttable() {
         DefaultTableModel dtms = (DefaultTableModel) jTable2.getModel();
         dtms.setRowCount(0);
 
