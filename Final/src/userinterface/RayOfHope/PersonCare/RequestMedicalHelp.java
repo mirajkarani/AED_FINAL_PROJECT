@@ -4,6 +4,16 @@
  */
 package userinterface.RayOfHope.PersonCare;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.Organization.PersonCareOrganization;
+import Business.Person.Person;
+import Business.Person.PersonDirectory;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author aniketmirajkar
@@ -13,8 +23,26 @@ public class RequestMedicalHelp extends javax.swing.JPanel {
     /**
      * Creates new form RequestMedicalHelp
      */
-    public RequestMedicalHelp() {
+    
+    JPanel userProcessContainer;
+    Person person;
+    UserAccount account;
+    PersonCareOrganization personCareOrganization;
+    Enterprise enterprise;
+    EcoSystem business;
+    PersonDirectory personDirectory;
+    Network network;
+    
+    public RequestMedicalHelp(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory personDirectory, Person person) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.person = person;
+        this.account = account;
+        this.personCareOrganization = (PersonCareOrganization) organization;
+        this.enterprise = enterprise;
+        this.business = business;
+        this.personDirectory = personDirectory;
     }
 
     /**
