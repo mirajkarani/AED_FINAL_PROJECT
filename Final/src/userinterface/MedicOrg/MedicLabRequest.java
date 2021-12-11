@@ -7,11 +7,17 @@ package userinterface.MedicOrg;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organization.LabOrganization;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
-
+import Business.Person.PersonDirectory;
+import Business.Person.Person;
+import Business.WorkQueue.LabAssistanceWorkRequest;
+import Business.WorkQueue.MedicalAssistanceWorkRequest;
+import javax.swing.JOptionPane;
 /**
  *
  * @author mandardeshmukh
@@ -27,7 +33,7 @@ public class MedicLabRequest extends javax.swing.JPanel {
     private UserAccount userAccount;
     private PersonDirectory persondirectory;
     private Person person;
-    private  MedicalHelpWorkRequest request;
+    private  MedicalAssistanceWorkRequest request;
     private  EcoSystem business;
     Network network;
     public MedicLabRequest() {
@@ -85,7 +91,7 @@ public class MedicLabRequest extends javax.swing.JPanel {
         if (message.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please enter test name");
         } else {
-            LabProcessWorkRequest labRequest = new LabProcessWorkRequest();
+            LabAssistanceWorkRequest labRequest = new LabAssistanceWorkRequest();
             labRequest.setMessage(message);
             labRequest.setSender(userAccount);
             labRequest.setStatus("Sent");

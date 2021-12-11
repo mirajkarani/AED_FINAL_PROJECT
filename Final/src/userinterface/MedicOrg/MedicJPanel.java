@@ -44,7 +44,7 @@ public class MedicJPanel extends javax.swing.JPanel {
         this.persondirectory = persondirectory;
         this.userAccount = account;
         this.business = business;
-        for (Network net : business.getNetworkList()) {
+        for (Network net : business.getNetworkCatalog()) {
             for (Enterprise ent : net.getEnterpriseDirectory().getEnterpriseList()) {
                 if (ent.equals(enterprise)) {
                     network = net;
