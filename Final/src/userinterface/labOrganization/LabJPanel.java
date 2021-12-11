@@ -8,7 +8,11 @@ import Business.EcoSystem;
 import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -30,7 +34,7 @@ public class LabJPanel extends javax.swing.JPanel {
         this.userAccount = account;
         this.business = business;
         this.labOrganization = (LabOrganization) organization;
-        
+        populateTable();
         btnProcess.setEnabled(false);
     }
 
@@ -103,14 +107,59 @@ public class LabJPanel extends javax.swing.JPanel {
 
     private void btnAssignToMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignToMeActionPerformed
         // TODO add your handling code here:
-       
+        int selectedRow = tblLab.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a Person from table");
+            return;
+        }
+        WorkRequest request = (WorkRequest) tblLab.getValueAt(selectedRow, 5);
+        //if (request.getStatus().equalsIgnoreCase("Completed")) {
+            if ("Completed".equalsIgnoreCase(request.getStatus())) {
+                JOptionPane.showMessageDialog(null, "Request already completed");
+                return;
+            } else {
+                request.setReceiver(userAccount);
+                request.setStatus("Processing");
+                JOptionPane.showMessageDialog(null, "Request assigned");
+                btnProcess.setEnabled(true); 
     }//GEN-LAST:event_btnAssignToMeActionPerformed
-
+    }
+    
     private void btnProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcessActionPerformed
         // TODO add your handling code here:
-        
+         int selectedRow = tblLab.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select Person from table");
+            return;
+        }
+        LabProcessWorkRequest request = (LabProcessWorkRequest) tblLab.getValueAt(selectedRow, 5);
+        //if (request.getStatus().equalsIgnoreCase("Completed")) {
+            if ("Completed".equalsIgnoreCase(request.getStatus())) {
+                JOptionPane.showMessageDialog(null, "Request already completed.");
+                return;
+            } else {
+                request.setStatus("Processing");
+            }
+            LabProcessJPanel panel = new LabProcessJPanel(userProcessContainer, request);
+            userProcessContainer.add("processWorkRequestJPanel", panel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
     }//GEN-LAST:event_btnProcessActionPerformed
 
+        public void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tblLab.getModel();
+        model.setRowCount(0);
+        for (WorkRequest request : labOrganization.getWorkQueue().getWorkRequestList()) {
+            Object[] row = new Object[6];
+            row[0] = request.getPersonId();
+            row[1] = request.getPersonName();
+            row[2] = request.getSender().getEmployee().getName();
+            row[3] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
+            row[4] = request.getStatus();
+            row[5] = request;
+            model.addRow(row);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAssignToMe;
