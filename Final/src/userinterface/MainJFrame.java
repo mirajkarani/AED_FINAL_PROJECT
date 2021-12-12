@@ -280,7 +280,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jTextPane1.setEditable(false);
         jTextPane1.setFont(new java.awt.Font("SansSerif", 3, 16)); // NOI18N
-        jTextPane1.setText("\"The world may not change if you adopt a child but for that child, their world will change.\" ");
+        jTextPane1.setText("Many senior citizens find themselves in a long-term care facility with increasing life expectancy in modern times.  At Ray Of Hope, we like to provide for the elderly to keep their spirits high and bellies full.");
         lblInfo.setViewportView(jTextPane1);
 
         loginJPanel.add(lblInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 660, 720, 50));
@@ -295,7 +295,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jTextPane3.setEditable(false);
         jTextPane3.setFont(new java.awt.Font("SansSerif", 3, 16)); // NOI18N
-        jTextPane3.setText("\"When you sponsor a child, you're helping to ensure they can grow up healthy, learning and safe – no matter where they were born. Many children around the world aren’t getting the opportunity to reach their full potential. As a sponsor, you can help change that.\"");
+        jTextPane3.setText("Ray Of Hope allows us to bring joy to senior citizens by showcasing hope to let them know they are not forgotten and alone.");
         lblInfo1.setViewportView(jTextPane3);
 
         loginJPanel.add(lblInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 720, 100));
