@@ -64,7 +64,9 @@ public class LabProcessJPanel extends javax.swing.JPanel {
         lblResult.setText("Result");
         add(lblResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 120, 20));
         add(txtResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 290, 100));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 720, 370));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/labIcon.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, -30, 720, 370));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
