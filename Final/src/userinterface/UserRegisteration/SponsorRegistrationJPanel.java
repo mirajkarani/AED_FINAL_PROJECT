@@ -129,14 +129,14 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             }
         });
         txtUserName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUserNameKeyTyped(evt);
+            }
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtUserNameKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtUserNameKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtUserNameKeyTyped(evt);
             }
         });
         add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 220, 40));
@@ -149,11 +149,11 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
         txtName.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         txtName.setForeground(new java.awt.Color(25, 56, 82));
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtNameKeyReleased(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNameKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNameKeyReleased(evt);
             }
         });
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 220, 40));
@@ -180,11 +180,11 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
         txtAge.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         txtAge.setForeground(new java.awt.Color(25, 56, 82));
         txtAge.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtAgeKeyReleased(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtAgeKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAgeKeyReleased(evt);
             }
         });
         add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 220, 40));
@@ -197,11 +197,11 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             }
         });
         txtSSN.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtSSNKeyReleased(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtSSNKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSSNKeyReleased(evt);
             }
         });
         add(txtSSN, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 230, 40));
@@ -224,14 +224,14 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             }
         });
         txtContact.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtContactKeyTyped(evt);
+            }
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtContactKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtContactKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtContactKeyTyped(evt);
             }
         });
         add(txtContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 440, 240, 40));
@@ -329,17 +329,9 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 60, 1110, 720));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
+    private void txtIncomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIncomeKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUserNameActionPerformed
-
-    private void txtUserNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserNameKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUserNameKeyPressed
-
-    private void txtUserNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserNameKeyReleased
-        // TODO add your handling code here:
-        txtUserName.getDocument().addDocumentListener(new DocumentListener() {
+        txtIncome.getDocument().addDocumentListener(new DocumentListener() {
             public void changedUpdate(DocumentEvent e) {
                 warn();
             }
@@ -353,68 +345,22 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             }
 
             public void warn() {
-                if (!system.checkIfUserIsUnique(txtUserName.getText())) {
-                    usernameExistsMessage.setVisible(true);
-                    userNameTick.setVisible(false);
-                    userUnique = false;
-                } else {
-                    usernameExistsMessage.setVisible(false);
-                    userNameTick.setVisible(true);
-                    userUnique = true;
-                }
-            }
-        });
-    }//GEN-LAST:event_txtUserNameKeyReleased
-
-    public void populateNetworkComboBox() {
-        cmbCity.removeAllItems();
-        for (Network network : system.getNetworkCatalog()) {
-            cmbCity.addItem(network);
-        }
-    }
-    private void txtUserNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserNameKeyTyped
-        // TODO add your handling code here:
-        txtUserName.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        txtUserName.setForeground(Color.BLACK);
-    }//GEN-LAST:event_txtUserNameKeyTyped
-
-    private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
-        // TODO add your handling code here:
-        if (!system.checkIfUserIsUnique(txtName.getText())) {
-            usernameExistsMessage.setVisible(true);
-            IncomeTick.setVisible(false);
-            userUnique = false;
-        } else {
-            txtName.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            txtName.setForeground(Color.BLACK);
-            usernameExistsMessage.setVisible(false);
-            IncomeTick.setVisible(true);
-            userUnique = true;
-            int delay = 2500; //milliseconds
-            ActionListener taskPerformer = new ActionListener() {
-                public void actionPerformed(ActionEvent evt) {
+                if (!ValidationHelper.isNumeric(txtIncome.getText())) {
+                    IncomeValidate.setVisible(true);
                     IncomeTick.setVisible(false);
+                    income = false;
+                } else {
+                    IncomeValidate.setVisible(false);
+                    IncomeTick.setVisible(true);
+                    income = true;
                 }
-            };
-            javax.swing.Timer tick = new javax.swing.Timer(delay, taskPerformer);
-            tick.setRepeats(false);
-            tick.start();
-        }
-    }//GEN-LAST:event_txtNameKeyReleased
+            }
+        });
+    }//GEN-LAST:event_txtIncomeKeyReleased
 
-    private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
+    private void txtEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNameKeyTyped
-
-    private void txtPwdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPwdKeyTyped
-        // TODO add your handling code here:
-        txtPwd.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        txtPwd.setForeground(Color.BLACK);
-    }//GEN-LAST:event_txtPwdKeyTyped
-
-    private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
-        // TODO add your handling code here:
-        txtAge.getDocument().addDocumentListener(new DocumentListener() {
+        txtEmail.getDocument().addDocumentListener(new DocumentListener() {
             public void changedUpdate(DocumentEvent e) {
                 warn();
             }
@@ -428,101 +374,18 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             }
 
             public void warn() {
-                if (!ValidationHelper.isNumeric(txtAge.getText())) {
-                    ageValidate.setVisible(true);
-                    ageTick.setVisible(false);
-                    age = false;
+                if (!ValidationHelper.isValidEmailId(txtEmail.getText())) {
+                    emailValidate.setVisible(true);
+                    emailTick.setVisible(false);
+                    emailValid = false;
                 } else {
-                    ageTick.setVisible(true);
-                    ageValidate.setVisible(false);
-                    age = true;
+                    emailValidate.setVisible(false);
+                    emailTick.setVisible(true);
+                    emailValid = true;
                 }
             }
         });
-    }//GEN-LAST:event_txtAgeKeyReleased
-
-    private void txtAgeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAgeKeyTyped
-
-    private void txtSSNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSSNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSSNActionPerformed
-
-    private void txtSSNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSSNKeyReleased
-        // TODO add your handling code here:
-        txtSSN.getDocument().addDocumentListener(new DocumentListener() {
-            public void changedUpdate(DocumentEvent e) {
-                warn();
-            }
-
-            public void removeUpdate(DocumentEvent e) {
-                warn();
-            }
-
-            public void insertUpdate(DocumentEvent e) {
-                warn();
-            }
-
-            public void warn() {
-                if (!ValidationHelper.isValidSSN(txtSSN.getText())) {
-                    SSNValidate.setVisible(true);
-                    ssnTick.setVisible(false);
-                    ssn = false;
-                } else {
-                    ssnTick.setVisible(true);
-                    SSNValidate.setVisible(false);
-                    ssn = true;
-                }
-            }
-        });
-    }//GEN-LAST:event_txtSSNKeyReleased
-
-    private void txtSSNKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSSNKeyTyped
-        // TODO add your handling code here:
-        txtSSN.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        txtSSN.setForeground(Color.BLACK);
-    }//GEN-LAST:event_txtSSNKeyTyped
-
-    private void txtContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContactActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtContactActionPerformed
-
-    private void txtContactKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContactKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtContactKeyPressed
-
-    private void txtContactKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContactKeyReleased
-        txtContact.getDocument().addDocumentListener(new DocumentListener() {
-            public void changedUpdate(DocumentEvent e) {
-                warn();
-            }
-
-            public void removeUpdate(DocumentEvent e) {
-                warn();
-            }
-
-            public void insertUpdate(DocumentEvent e) {
-                warn();
-            }
-
-            public void warn() {
-                if (!ValidationHelper.isValidContactNo(txtContact.getText())) {
-                    numValidate.setVisible(true);
-                    numTick.setVisible(false);
-                    contactValid = false;
-                } else {
-                    numValidate.setVisible(false);
-                    numTick.setVisible(true);
-                    contactValid = true;
-                }
-            }
-        });
-    }//GEN-LAST:event_txtContactKeyReleased
-
-    private void txtContactKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContactKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtContactKeyTyped
+    }//GEN-LAST:event_txtEmailKeyTyped
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         Network network = (Network) cmbCity.getSelectedItem();
@@ -596,9 +459,8 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnRegisterActionPerformed
 
-    private void txtEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyTyped
-        // TODO add your handling code here:
-        txtEmail.getDocument().addDocumentListener(new DocumentListener() {
+    private void txtContactKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContactKeyReleased
+        txtContact.getDocument().addDocumentListener(new DocumentListener() {
             public void changedUpdate(DocumentEvent e) {
                 warn();
             }
@@ -612,22 +474,34 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             }
 
             public void warn() {
-                if (!ValidationHelper.isValidEmailId(txtEmail.getText())) {
-                    emailValidate.setVisible(true);
-                    emailTick.setVisible(false);
-                    emailValid = false;
+                if (!ValidationHelper.isValidContactNo(txtContact.getText())) {
+                    numValidate.setVisible(true);
+                    numTick.setVisible(false);
+                    contactValid = false;
                 } else {
-                    emailValidate.setVisible(false);
-                    emailTick.setVisible(true);
-                    emailValid = true;
+                    numValidate.setVisible(false);
+                    numTick.setVisible(true);
+                    contactValid = true;
                 }
             }
         });
-    }//GEN-LAST:event_txtEmailKeyTyped
+    }//GEN-LAST:event_txtContactKeyReleased
 
-    private void txtIncomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIncomeKeyReleased
+    private void txtContactKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContactKeyPressed
         // TODO add your handling code here:
-        txtIncome.getDocument().addDocumentListener(new DocumentListener() {
+    }//GEN-LAST:event_txtContactKeyPressed
+
+    private void txtContactKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContactKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContactKeyTyped
+
+    private void txtContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContactActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContactActionPerformed
+
+    private void txtSSNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSSNKeyReleased
+        // TODO add your handling code here:
+        txtSSN.getDocument().addDocumentListener(new DocumentListener() {
             public void changedUpdate(DocumentEvent e) {
                 warn();
             }
@@ -641,19 +515,145 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             }
 
             public void warn() {
-                if (!ValidationHelper.isNumeric(txtIncome.getText())) {
-                    IncomeValidate.setVisible(true);
+                if (!ValidationHelper.isValidSSN(txtSSN.getText())) {
+                    SSNValidate.setVisible(true);
+                    ssnTick.setVisible(false);
+                    ssn = false;
+                } else {
+                    ssnTick.setVisible(true);
+                    SSNValidate.setVisible(false);
+                    ssn = true;
+                }
+            }
+        });
+    }//GEN-LAST:event_txtSSNKeyReleased
+
+    private void txtSSNKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSSNKeyTyped
+        // TODO add your handling code here:
+        txtSSN.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        txtSSN.setForeground(Color.BLACK);
+    }//GEN-LAST:event_txtSSNKeyTyped
+
+    private void txtSSNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSSNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSSNActionPerformed
+
+    private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
+        // TODO add your handling code here:
+        txtAge.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                warn();
+            }
+
+            public void removeUpdate(DocumentEvent e) {
+                warn();
+            }
+
+            public void insertUpdate(DocumentEvent e) {
+                warn();
+            }
+
+            public void warn() {
+                if (!ValidationHelper.isNumeric(txtAge.getText())) {
+                    ageValidate.setVisible(true);
+                    ageTick.setVisible(false);
+                    age = false;
+                } else {
+                    ageTick.setVisible(true);
+                    ageValidate.setVisible(false);
+                    age = true;
+                }
+            }
+        });
+    }//GEN-LAST:event_txtAgeKeyReleased
+
+    private void txtAgeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgeKeyTyped
+
+    private void txtPwdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPwdKeyTyped
+        // TODO add your handling code here:
+        txtPwd.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        txtPwd.setForeground(Color.BLACK);
+    }//GEN-LAST:event_txtPwdKeyTyped
+
+    private void txtNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyReleased
+        // TODO add your handling code here:
+        if (!system.checkIfUserIsUnique(txtName.getText())) {
+            usernameExistsMessage.setVisible(true);
+            IncomeTick.setVisible(false);
+            userUnique = false;
+        } else {
+            txtName.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            txtName.setForeground(Color.BLACK);
+            usernameExistsMessage.setVisible(false);
+            IncomeTick.setVisible(true);
+            userUnique = true;
+            int delay = 2500; //milliseconds
+            ActionListener taskPerformer = new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
                     IncomeTick.setVisible(false);
-                    income = false;
+                }
+            };
+            javax.swing.Timer tick = new javax.swing.Timer(delay, taskPerformer);
+            tick.setRepeats(false);
+            tick.start();
+        }
+    }//GEN-LAST:event_txtNameKeyReleased
+
+    private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameKeyTyped
+
+    private void txtUserNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserNameKeyReleased
+        // TODO add your handling code here:
+        txtUserName.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                warn();
+            }
+
+            public void removeUpdate(DocumentEvent e) {
+                warn();
+            }
+
+            public void insertUpdate(DocumentEvent e) {
+                warn();
+            }
+
+            public void warn() {
+                if (!system.checkIfUserIsUnique(txtUserName.getText())) {
+                    usernameExistsMessage.setVisible(true);
+                    userNameTick.setVisible(false);
+                    userUnique = false;
                 } else {
-                    IncomeValidate.setVisible(false);
-                    IncomeTick.setVisible(true);
-                    income = true;
+                    usernameExistsMessage.setVisible(false);
+                    userNameTick.setVisible(true);
+                    userUnique = true;
                 }
             }
         });
-    }//GEN-LAST:event_txtIncomeKeyReleased
+    }//GEN-LAST:event_txtUserNameKeyReleased
 
+    private void txtUserNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserNameKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserNameKeyPressed
+
+    private void txtUserNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserNameKeyTyped
+        // TODO add your handling code here:
+        txtUserName.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        txtUserName.setForeground(Color.BLACK);
+    }//GEN-LAST:event_txtUserNameKeyTyped
+
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserNameActionPerformed
+
+    public void populateNetworkComboBox() {
+        cmbCity.removeAllItems();
+        for (Network network : system.getNetworkCatalog()) {
+            cmbCity.addItem(network);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IncomeTick;
