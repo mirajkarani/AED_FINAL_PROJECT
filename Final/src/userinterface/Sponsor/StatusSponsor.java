@@ -102,7 +102,7 @@ public class StatusSponsor extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Message", "Reciever", "Child ID", "Child Name", "Amount", "Status"
+                "Message", "Reciever", "Person ID", "Person Name", "Amount", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {

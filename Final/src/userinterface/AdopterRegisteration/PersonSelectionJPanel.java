@@ -98,7 +98,7 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CHILD SELECTION");
+        jLabel1.setText("PERSON SELECTION");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 383, -1));
 
         tblPerson.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -110,7 +110,7 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Child ID", "Child Name", "Gender", "Age", "Status"
+                "Person ID", "Person Name", "Gender", "Age", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
