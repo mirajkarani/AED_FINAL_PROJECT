@@ -127,4 +127,10 @@ public class EcoSystem extends Organization {
     public void setDonorDirectory(DonorDirectory donorDirectory) {
         this.donorDirectory = donorDirectory;
     }
+    
+    public Network createAndAddNetwork(){
+        Network network=new Network();
+        networkCatalog.add(network);
+        return network;
+    }
 }
