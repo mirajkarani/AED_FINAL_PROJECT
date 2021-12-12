@@ -70,27 +70,34 @@ public class MedicMedicinePrescription extends javax.swing.JPanel {
         Save = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("MEDICINE PRESCRIPTION");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 309, -1));
+        jLabel1.setText("Medicine Prescription");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 309, -1));
 
-        lblPrescription.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        lblPrescription.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblPrescription.setText("Prescription");
-        add(lblPrescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 160, 20));
-        add(txtPrescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 270, 90));
+        add(lblPrescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 160, 20));
 
-        Save.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        txtPrescription.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(txtPrescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 270, 90));
+
+        Save.setBackground(new java.awt.Color(255, 255, 255));
+        Save.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         Save.setText("Save");
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
             }
         });
-        add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 120, 30));
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 550, 570));
+        add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 120, 30));
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screen Shot 2021-12-12 at 3.16.06 PM.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, -80, 550, 570));
     }// </editor-fold>//GEN-END:initComponents
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed

@@ -94,11 +94,12 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
         btnAdopt = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PERSON SELECTION");
+        jLabel1.setText("Person Selection");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 383, -1));
 
         tblPerson.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -123,17 +124,19 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPerson);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 790, 120));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 790, 120));
 
-        btnAdopt.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnAdopt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnAdopt.setText("Adopt");
         btnAdopt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdoptActionPerformed(evt);
             }
         });
-        add(btnAdopt, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, 100, -1));
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 830, 520));
+        add(btnAdopt, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 100, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/female doc and patients.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 830, 520));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdoptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdoptActionPerformed

@@ -97,7 +97,7 @@ public class AdoptionUnitWorkRequestJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         lblRefresh = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 226, 187));
         setMinimumSize(new java.awt.Dimension(1058, 840));
         setPreferredSize(new java.awt.Dimension(1058, 840));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -135,7 +135,7 @@ public class AdoptionUnitWorkRequestJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 980, 170));
 
         assignJButton.setBackground(new java.awt.Color(255, 255, 255));
-        assignJButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        assignJButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         assignJButton.setForeground(new java.awt.Color(25, 56, 82));
         assignJButton.setText("Assign To Me");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +146,7 @@ public class AdoptionUnitWorkRequestJPanel extends javax.swing.JPanel {
         add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
 
         processJButton.setBackground(new java.awt.Color(255, 255, 255));
-        processJButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        processJButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         processJButton.setForeground(new java.awt.Color(25, 56, 82));
         processJButton.setText("Process");
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -159,11 +159,12 @@ public class AdoptionUnitWorkRequestJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 56, 82));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ADOPTION WORK REQUEST");
+        jLabel1.setText("Adoption Requests");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 41, 431, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/funds.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 870, 300));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/istockphoto-1206776889-612x612.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 870, 470));
 
         lblRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/refreshBtn.png"))); // NOI18N
         lblRefresh.addMouseListener(new java.awt.event.MouseAdapter() {
