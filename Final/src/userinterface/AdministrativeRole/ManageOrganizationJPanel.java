@@ -104,7 +104,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         organizationJTable.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -139,7 +139,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 680, 130));
 
         addJButton.setBackground(new java.awt.Color(255, 255, 255));
-        addJButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        addJButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         addJButton.setText("Add Organization");
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,16 +148,18 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
         add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 150, 33));
 
+        organizationJComboBox.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 210, 40));
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel1.setText("Organization Type ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, -1, 35));
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel2.setText("Name");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, -1, -1));
 
+        orgInstanceName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         orgInstanceName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgInstanceNameActionPerformed(evt);
@@ -165,12 +167,13 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
         add(orgInstanceName, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, 210, 30));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/org.png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 640, 570));
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MicrosoftTeams-image copy.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 640, 570));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("MANAGE ORGANIZATION");
+        jLabel4.setText("Manage Organization");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 370, 30));
     }// </editor-fold>//GEN-END:initComponents
 
