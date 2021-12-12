@@ -19,6 +19,9 @@ import Business.WorkQueue.AdopterWorkStatusCheckRequest;
 import Business.WorkQueue.AdoptionProcessWorkRequest;
 import Business.WorkQueue.BackgroundCheckWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -322,7 +325,11 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
                 }
                 String subject = "Background check process initiated";
                 String content = "Your background check process has been initiated and sent to respective team. You can check your status through your credentials. \nThank you.";
-                SendMail.sendEmailMessage(adopter.getEmailId(), subject, content);
+                try {
+                    SendMail.sendEmailMessage(adopter.getEmailId(), subject, content);
+                } catch (UnsupportedEncodingException ex) {
+                    Logger.getLogger(AdoptionCheckProcess.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 JOptionPane.showMessageDialog(null, "BGC check initialized successfully!");
             } else if (!receiverval.equals(account.getUsername())) {
                 JOptionPane.showMessageDialog(null, "Please select the work request assigned to you to proceed");

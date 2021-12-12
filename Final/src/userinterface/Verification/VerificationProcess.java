@@ -18,6 +18,9 @@ import Business.WorkQueue.AdopterWorkStatusCheckRequest;
 import Business.WorkQueue.BackgroundCheckWorkRequest;
 import Business.WorkQueue.FinanceCheckProcessWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -372,7 +375,7 @@ public class VerificationProcess extends javax.swing.JPanel {
                 }
                 String subject = "Background Check Approved";
                 String content = "Your background check has been completed and approved. The request is further sent to Finance check team .You can confirm your status through portal. \nThank you";
-                SendMail.sendEmailMessage(adopter.getEmailId(), subject, content);
+                //SendMail.sendEmailMessage(adopter.getEmailId(), subject, content);
                 JOptionPane.showMessageDialog(null, "Finance check initialized successfully!");
 
             } else {
@@ -420,7 +423,11 @@ public class VerificationProcess extends javax.swing.JPanel {
                 }
                 String subject = "Background Verification failed";
                 String content = "We are sorry to inform you that your background check has been failed and cannot proceed with adoption procedure .You can confirm your status through portal. \nThank you";
-                SendMail.sendEmailMessage(adopter.getEmailId(), subject, content);
+                try {
+                    SendMail.sendEmailMessage(adopter.getEmailId(), subject, content);
+                } catch (UnsupportedEncodingException ex) {
+                    Logger.getLogger(VerificationProcess.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 JOptionPane.showMessageDialog(null, "Background check denied. Adopt request cancelled");
             } else {
                 JOptionPane.showMessageDialog(null, "Please select work request assigned to you");

@@ -18,6 +18,9 @@ import Business.UserAccount.UserAccount;
 import Business.Utility.SendMail;
 import Business.WorkQueue.PersonCareAdoptionWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -154,7 +157,11 @@ public class ViewAdoptionRequest extends javax.swing.JPanel {
             }
             String subject = "Congratulations! Your adoption request is approved";
             String content = "We are happy to inform you that your adoption request has been approved. We are sure that " +name+ " will witness loving attention from you.";
-            SendMail.sendEmailMessage(req.getEmailId(), subject, content);
+            try {
+                SendMail.sendEmailMessage(req.getEmailId(), subject, content);
+            } catch (UnsupportedEncodingException ex) {
+                Logger.getLogger(ViewAdoptionRequest.class.getName()).log(Level.SEVERE, null, ex);
+            }
             JOptionPane.showMessageDialog(null, "Child Adopted");
         }
     }//GEN-LAST:event_btnProcessActionPerformed

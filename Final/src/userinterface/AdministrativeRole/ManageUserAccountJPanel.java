@@ -199,7 +199,24 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
-        
+            String userName = nameJTextField.getText();
+        String password = passwordJTextField.getText();
+        if ("".equals(userName)) {
+            JOptionPane.showMessageDialog(null, "Please enter username");
+        } else if (!ecosystem.checkIfUserIsUnique(userName)) {
+            JOptionPane.showMessageDialog(null, "Please enter unique username");
+        } else if ("".equals(password)) {
+            JOptionPane.showMessageDialog(null, "Please enter password");
+        } else {
+            Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+            Employee employee = (Employee) employeeJComboBox.getSelectedItem();
+            Role role = (Role) roleJComboBox.getSelectedItem();
+            organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+            JOptionPane.showMessageDialog(null, "User Account Created");
+            nameJTextField.setText("");
+            passwordJTextField.setText("");
+            popData();
+        }
     }//GEN-LAST:event_createUserJButtonActionPerformed
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
