@@ -89,11 +89,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         createUserJButton = new javax.swing.JButton();
         nameJTextField = new javax.swing.JTextField();
+        passwordJTextField = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         userJTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        passwordJTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         employeeJComboBox = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
@@ -118,6 +118,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         nameJTextField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, 200, 35));
+        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, 200, 40));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel1.setText("User Name");
@@ -159,9 +160,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel2.setText("Password");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, 89, 35));
 
-        passwordJTextField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        add(passwordJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, 200, 35));
-
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel3.setText("Employee");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 105, 35));
@@ -199,7 +197,24 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
-        
+        String userName = nameJTextField.getText();
+        String password = passwordJTextField.getText();
+        if ("".equals(userName)) {
+            JOptionPane.showMessageDialog(null, "Please enter username");
+        } else if (!ecosystem.checkIfUserIsUnique(userName)) {
+            JOptionPane.showMessageDialog(null, "Please enter unique username");
+        } else if ("".equals(password)) {
+            JOptionPane.showMessageDialog(null, "Please enter password");
+        } else {
+            Organization organization = (Organization) organizationJComboBox.getSelectedItem();
+            Employee employee = (Employee) employeeJComboBox.getSelectedItem();
+            Role role = (Role) roleJComboBox.getSelectedItem();
+            organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
+            JOptionPane.showMessageDialog(null, "User Account Created");
+            nameJTextField.setText("");
+            passwordJTextField.setText("");
+            popData();
+        }
     }//GEN-LAST:event_createUserJButtonActionPerformed
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
@@ -225,7 +240,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox organizationJComboBox;
-    private javax.swing.JTextField passwordJTextField;
+    private javax.swing.JPasswordField passwordJTextField;
     private javax.swing.JComboBox roleJComboBox;
     private javax.swing.JTable userJTable;
     // End of variables declaration//GEN-END:variables
