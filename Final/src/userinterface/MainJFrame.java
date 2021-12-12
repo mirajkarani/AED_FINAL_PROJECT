@@ -104,7 +104,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnLogoutLabelMousePressed(evt);
             }
         });
-        UpperPanel.add(btnLogoutLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 50, 40));
+        UpperPanel.add(btnLogoutLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 0, 60, 50));
 
         lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/66847.png"))); // NOI18N
         lblBack.addMouseListener(new java.awt.event.MouseAdapter() {

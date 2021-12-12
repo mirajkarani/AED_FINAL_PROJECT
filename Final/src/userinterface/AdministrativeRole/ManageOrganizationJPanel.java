@@ -40,7 +40,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         
         
-        populateTable();
+        //populateTable();
         //populateCombos();
          organizationJComboBox.removeAllItems();
         if(enterprise instanceof HospitalEnterprise){
