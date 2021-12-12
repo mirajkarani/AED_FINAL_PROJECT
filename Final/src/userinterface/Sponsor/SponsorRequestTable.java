@@ -91,7 +91,7 @@ public class SponsorRequestTable extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Child Id", "Child Name", "Gender", "Age", "Amount"
+                "Person Id", "Person Name", "Gender", "Age", "Amount"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -108,7 +108,7 @@ public class SponsorRequestTable extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SPONSOR A CHILD");
+        jLabel1.setText("SPONSOR HUMANITY");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 250, 50));
 
         btnPay.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
