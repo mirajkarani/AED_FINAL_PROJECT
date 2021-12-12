@@ -97,12 +97,12 @@ public class CheckStatusJPanel extends javax.swing.JPanel {
         btnProceed = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        jLabel1.setText("TRACK YOUR STATUS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 260, 20));
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setText("Track Your Progress");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 260, 30));
 
         tblReq.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         tblReq.setModel(new javax.swing.table.DefaultTableModel(
@@ -113,7 +113,7 @@ public class CheckStatusJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Message", "BGC Status", "Finance Check Status", "Child Care Status"
+                "Message", "Verification Status", "Finance Check Status", "Person Care Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -128,16 +128,16 @@ public class CheckStatusJPanel extends javax.swing.JPanel {
 
         add(tblRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 860, 130));
 
-        btnProceed.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnProceed.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnProceed.setText("Proceed");
         btnProceed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProceedActionPerformed(evt);
             }
         });
-        add(btnProceed, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 150, 30));
+        add(btnProceed, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 330, 150, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/kids 2.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/364424375b4363112bce7cccd18a2d40.gif"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 920, 400));
     }// </editor-fold>//GEN-END:initComponents
 

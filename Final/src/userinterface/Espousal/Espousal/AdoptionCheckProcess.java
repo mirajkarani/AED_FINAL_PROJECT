@@ -137,57 +137,64 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         lblRefresh = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHeading.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHeading.setText("ADOPTION PROCESS");
+        lblHeading.setText("Start your Adoption Journey");
         add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 460, 30));
 
-        lblAdopterDetails.setFont(new java.awt.Font("Lucida Grande", 1, 20)); // NOI18N
-        lblAdopterDetails.setText("Adopter Details");
-        add(lblAdopterDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 180, 20));
+        lblAdopterDetails.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        lblAdopterDetails.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAdopterDetails.setText("Your Details");
+        add(lblAdopterDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 350, 20));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel1.setText("Name");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 100, 20));
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel2.setText("Age");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 80, -1));
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel3.setText("Gender");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 60, -1));
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel4.setText("SSN");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 50, 20));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel5.setText("Income");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 70, -1));
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel6.setText("Email ID");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 70, -1));
 
         txtEmail.setEditable(false);
+        txtEmail.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 200, -1));
 
         txtName.setEditable(false);
+        txtName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 210, -1));
 
         txtAge.setEditable(false);
+        txtAge.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 210, 30));
 
         txtSSN.setEditable(false);
+        txtSSN.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(txtSSN, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 200, -1));
 
         txtIncome.setEditable(false);
+        txtIncome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(txtIncome, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 200, -1));
 
+        rdbMale.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         rdbMale.setText("Male");
         rdbMale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,6 +203,7 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
         });
         add(rdbMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
 
+        rdbFemale.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         rdbFemale.setText("Female");
         add(rdbFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 230, -1, -1));
 
@@ -223,8 +231,8 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 810, 110));
 
-        btnInitiateBCG.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btnInitiateBCG.setText("Initiate BGC");
+        btnInitiateBCG.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnInitiateBCG.setText("Start Verification");
         btnInitiateBCG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInitiateBCGActionPerformed(evt);
@@ -232,7 +240,9 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
         });
         add(btnInitiateBCG, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 580, 150, 30));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/kids11.png"))); // NOI18N
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/grandparents-parents-kids-icon-family-design-vector-graph-cartoon-concept-represented-isolated-colorfull-illustration-74239628 (1).png"))); // NOI18N
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 930, 510));
 
         lblRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/refreshBtn.png"))); // NOI18N
