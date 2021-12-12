@@ -484,7 +484,8 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
                     usernameExistsMsg.setVisible(true);
                     userNameCorrect.setVisible(false);
                     userUnique = false;
-                } else {
+                }    
+                 else {
                     usernameExistsMsg.setVisible(false);
                     userNameCorrect.setVisible(true);
                     userUnique = true;

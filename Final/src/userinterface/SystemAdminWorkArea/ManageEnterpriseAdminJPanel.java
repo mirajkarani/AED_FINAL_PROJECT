@@ -9,6 +9,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Role.AdminRole;
+import Business.Role.LabAssistantRole;
 import Business.UserAccount.UserAccount;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -164,6 +165,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 usernameJTextField.setText("");
                 passwordJPasswordField.setText("");
                 nameJTextField.setText("");
+                
                 JOptionPane.showMessageDialog(null, "Account created sucessfully");
                 populateTable();
             } else {

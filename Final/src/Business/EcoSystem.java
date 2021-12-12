@@ -28,6 +28,7 @@ public class EcoSystem extends Organization {
     private PersonDirectory personDirectory;
     private AdopterDirectory adopterDirectory;
     private DonorDirectory donorDirectory;
+   
 
     private EcoSystem(){
         

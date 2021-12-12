@@ -16,6 +16,7 @@ import Business.Person.PersonDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import static java.time.Clock.system;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import userinterface.UserRegisteration.SponsorRegistrationJPanel;
 import userinterface.UserRegisteration.AdopterRegistrationJPanel;
@@ -125,7 +126,7 @@ public class MainJFrame extends javax.swing.JFrame {
         lblPic.setBackground(new java.awt.Color(71, 52, 58));
         lblPic.setForeground(new java.awt.Color(71, 52, 58));
         lblPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/460d763b03bde42280bf12b493874a04.gif"))); // NOI18N
+        lblPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/460d763b03bde42280bf12b493874a04.gif"))); // NOI18N
 
         javax.swing.GroupLayout upperPanelLayout = new javax.swing.GroupLayout(upperPanel);
         upperPanel.setLayout(upperPanelLayout);
@@ -302,7 +303,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         lblCancel1.setBackground(new java.awt.Color(255, 255, 255));
         lblCancel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCancel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/66847.png"))); // NOI18N
+        lblCancel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/66847.png"))); // NOI18N
         lblCancel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lblCancel1.setMaximumSize(new java.awt.Dimension(20, 20));
         lblCancel1.setMinimumSize(new java.awt.Dimension(20, 20));
@@ -317,7 +318,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/sun-rays-logo-11549878082pielo0cy42.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sun-rays-logo-11549878082pielo0cy42.png"))); // NOI18N
         jLabel4.setMaximumSize(new java.awt.Dimension(148, 151));
         jLabel4.setMinimumSize(new java.awt.Dimension(148, 151));
         jLabel4.setPreferredSize(new java.awt.Dimension(148, 151));
