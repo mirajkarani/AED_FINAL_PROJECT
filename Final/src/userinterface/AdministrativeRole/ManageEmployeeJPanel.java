@@ -170,6 +170,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 690, 430));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(71, 52, 58));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Manage Employees");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 400, 30));

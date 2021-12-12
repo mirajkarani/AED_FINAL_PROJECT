@@ -98,6 +98,7 @@ public class PersonSelectionJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Person Selection");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 383, -1));

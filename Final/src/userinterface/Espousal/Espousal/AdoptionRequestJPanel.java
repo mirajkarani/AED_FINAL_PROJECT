@@ -54,17 +54,17 @@ public class AdoptionRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         btnProcess = new javax.swing.JButton();
         btnAssignToMe = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAdoptersRequest = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 730, 530));
 
-        btnProcess.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnProcess.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +73,7 @@ public class AdoptionRequestJPanel extends javax.swing.JPanel {
         });
         add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, 112, -1));
 
-        btnAssignToMe.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnAssignToMe.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnAssignToMe.setText("Assign To Me");
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,9 +106,16 @@ public class AdoptionRequestJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 830, 160));
 
+        jLabel2.setBackground(new java.awt.Color(246, 226, 187));
+        jLabel2.setForeground(new java.awt.Color(71, 52, 58));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/grandparents-parents-kids-icon-family-design-vector-graph-cartoon-concept-represented-isolated-colorfull-illustration-74239628 (1).png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 730, 530));
+
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ADOPTION REQUEST");
+        jLabel1.setText("Process Adoption Requests");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 357, -1));
     }// </editor-fold>//GEN-END:initComponents
 

@@ -157,7 +157,7 @@ public class AdoptionUnitWorkRequestJPanel extends javax.swing.JPanel {
         add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, 120, -1));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(25, 56, 82));
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Adoption Requests");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 41, 431, -1));

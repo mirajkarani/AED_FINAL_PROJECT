@@ -192,6 +192,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 570, 560));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(71, 52, 58));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Manage User Account");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 420, 30));
