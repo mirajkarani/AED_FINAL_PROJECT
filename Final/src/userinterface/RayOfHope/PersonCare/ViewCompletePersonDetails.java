@@ -152,7 +152,7 @@ public class ViewCompletePersonDetails extends javax.swing.JPanel {
 
         lblHeading.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHeading.setText("View Child Details");
+        lblHeading.setText("View Person Details");
         jPanel1.add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 223, 40));
         jPanel1.add(lblPic, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, 180));
 
@@ -230,7 +230,7 @@ public class ViewCompletePersonDetails extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Message", "Child Id", "Sender", "Receiver", "Result", "Remarks"
+                "Message", "Person Id", "Sender", "Receiver", "Result", "Remarks"
             }
         ) {
             boolean[] canEdit = new boolean [] {

@@ -103,7 +103,9 @@ public class LabJPanel extends javax.swing.JPanel {
             }
         });
         add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 150, 30));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 760, 540));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Lab_tech_2.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, -130, 730, 520));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAssignToMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignToMeActionPerformed

@@ -128,7 +128,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         String name = nameJTextField.getText().trim();
         if (!name.isEmpty()) {
-            if (system.isUnique(name)) {
+            if (system.isUnique(name)) {       
                 Network network = system.createAndAddNetwork();
                 network.setName(name);
                 JOptionPane.showMessageDialog(null, "Network Successfully Created");

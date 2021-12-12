@@ -84,7 +84,7 @@ public class ViewPersonDetails extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        jLabel1.setText("VIEW CHILD DETAILS");
+        jLabel1.setText("VIEW PERSON DETAILS");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 310, 20));
 
         tblChild.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -96,7 +96,7 @@ public class ViewPersonDetails extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Child ID", "Name", "Age", "Gender", "Status"
+                "Person ID", "Name", "Age", "Gender", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
