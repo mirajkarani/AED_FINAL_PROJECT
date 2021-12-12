@@ -477,12 +477,13 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             ActionListener taskPerformer = new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     IncomeTick.setVisible(false);
-                }
+                }    
             };
+                
             javax.swing.Timer tick = new javax.swing.Timer(delay, taskPerformer);
             tick.setRepeats(false);
             tick.start();
-        }
+      }               
     }//GEN-LAST:event_txtNameKeyReleased
 
 

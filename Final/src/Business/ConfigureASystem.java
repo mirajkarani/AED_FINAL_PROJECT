@@ -3,10 +3,14 @@ package Business;
 import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
+import Business.Organizations.Organization;
 import Business.Role.MedicRole;
+import Business.Role.PharmacistRole;
 import Business.Role.RayOfHopeRole;
 import Business.Role.SystemAdminRole;
 import Business.UserAccount.UserAccount;
+import Business.Role.MedicRole;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,20 +27,15 @@ public class ConfigureASystem {
         //initialize some organizations
         //have some employees 
         //create user account
-        
-        Network network = system.createAndAddNetwork();
-        
+
         Employee employee = system.getEmployeeDirectory().createEmployee("RRH");
         
         UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
         
-        Employee enterprise1 = system.getEmployeeDirectory().createEmployee("Hospital");
+        Employee employee1 = system.getEmployeeDirectory().createEmployee("Hospital");
         
-        UserAccount ub = system.getUserAccountDirectory().createUserAccount("hospital", "hospital", employee, new MedicRole());
+        UserAccount ub = system.getUserAccountDirectory().createUserAccount("Medic", "Medic", employee, new MedicRole());
         
-        Employee enterprise2 = system.getEmployeeDirectory().createEmployee("RayOfHope");
-        
-        UserAccount uc = system.getUserAccountDirectory().createUserAccount("rayofhope", "rayofhope", employee, new RayOfHopeRole());
         
         return system;
     }

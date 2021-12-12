@@ -189,7 +189,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         roleJComboBox.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
         add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 200, 30));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user background.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/employee.jpg"))); // NOI18N
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 570, 560));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
