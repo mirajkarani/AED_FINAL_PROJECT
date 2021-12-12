@@ -62,8 +62,6 @@ public class AdoptionRequestJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setText("jLabel2");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 730, 530));
 
         btnProcess.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N

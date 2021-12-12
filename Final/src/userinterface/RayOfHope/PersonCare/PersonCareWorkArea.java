@@ -102,7 +102,7 @@ public class PersonCareWorkArea extends javax.swing.JPanel {
         ChildWorkArea.add(lblCCIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 37, -1));
 
         CC.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        CC.setText("Child Care Area");
+        CC.setText("Person Care Area");
         CC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 CCMousePressed(evt);
@@ -125,7 +125,7 @@ public class PersonCareWorkArea extends javax.swing.JPanel {
         lblViewChild.add(lblIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 40, 40));
 
         ViewChild.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        ViewChild.setText("View Child Details");
+        ViewChild.setText("View Person Details");
         ViewChild.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 ViewChildMousePressed(evt);

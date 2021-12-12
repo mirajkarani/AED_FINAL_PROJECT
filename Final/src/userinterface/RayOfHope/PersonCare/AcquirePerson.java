@@ -92,7 +92,7 @@ public class AcquirePerson extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Comments", "Pharmacy Name", "Child Care Admin", "Child ID", "Child Name", "Status"
+                "Comments", "Pharmacy Name", "Person Care Admin", "Person ID", "Person Name", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -132,7 +132,7 @@ public class AcquirePerson extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("ACQUIRE CHILD ");
+        jLabel5.setText("ACQUIRE PERSON ");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 320, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

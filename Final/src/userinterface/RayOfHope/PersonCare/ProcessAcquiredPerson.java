@@ -85,7 +85,7 @@ public class ProcessAcquiredPerson extends javax.swing.JPanel {
         jPanel1.add(submitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 110, 33));
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        jLabel2.setText("PROCESS CHILD CARE REQUEST");
+        jLabel2.setText("PROCESS PERSON CARE REQUEST");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 350, 20));
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 910, 560));
 

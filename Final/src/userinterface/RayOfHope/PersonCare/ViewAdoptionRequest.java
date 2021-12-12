@@ -43,7 +43,7 @@ public class ViewAdoptionRequest extends javax.swing.JPanel {
     Adopter adopter;
     Role roler;
     Network network;
-    public ViewAdoptionRequest() {
+    public ViewAdoptionRequest(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, PersonDirectory persondirectory, AdopterDirectory adopterdirectory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;
