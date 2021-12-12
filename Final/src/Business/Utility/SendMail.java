@@ -5,6 +5,7 @@
  */
 package Business.Utility;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -20,13 +21,17 @@ import javax.swing.JOptionPane;
  */
 public class SendMail {
     
-    public static void sendEmailMessage(String emailId, String subject, String text) {
+    public static void sendEmailMessage(String emailId, String sub, String text) throws UnsupportedEncodingException {
         String to = emailId;
-        String from = "milind.trivedi61@gmail.com";
-        String pass = "milind@1234";
+        
+        String from="rayofhopeneu@gmail.com";
+        String fromname="RAY OF HOPE";
+        String SMTP_USERNAME  = "AKIASF5ZCCWGGL3XSBW4";
+        String pass = "BNFNwrjqCp2WaZNUa41kCsWhA7yKl6QT40YjBhOLXYFW";
+        String subject=sub;
 
         Properties properties = System.getProperties();
-        String host = "smtp.gmail.com";
+        String host = "email-smtp.us-east-1.amazonaws.com";
 
         properties.put("mail.smtp.starttls.enable", "true");
 
@@ -39,12 +44,13 @@ public class SendMail {
 
         try {
             MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
+            message.setFrom(new InternetAddress(from,fromname));
             message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
             message.setSubject(subject);
+            //message.setContent(BODY,"text/html");
             message.setText(text);
             Transport transport = session.getTransport("smtp");
-            transport.connect(host, from, pass);
+            transport.connect(host, SMTP_USERNAME, pass);
             transport.sendMessage(message, message.getAllRecipients());
             transport.close();
             System.out.println("Sent message successfully....");
@@ -53,6 +59,7 @@ public class SendMail {
             JOptionPane.showMessageDialog(null, "Invalid email id");
         }
     }
+    
     
     
 }
