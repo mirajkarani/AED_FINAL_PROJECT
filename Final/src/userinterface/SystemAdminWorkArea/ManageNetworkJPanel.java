@@ -56,7 +56,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         networkJTable.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -94,32 +94,34 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 540, 150));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 85, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 85, 30));
 
         submitJButton.setBackground(new java.awt.Color(255, 255, 255));
-        submitJButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        submitJButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, 133, 33));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 133, 33));
 
-        nameJTextField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 170, 30));
+        nameJTextField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 170, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/noc_logo2.gif"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 770, 320));
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/7eedb8511846a6b6ed4db46508ec0e7e.gif"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 840, 400));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("MANAGE NETWORK");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 300, 20));
+        jLabel4.setText("Manage Network");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 300, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed

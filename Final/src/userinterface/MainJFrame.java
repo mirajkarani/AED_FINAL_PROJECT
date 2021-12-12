@@ -89,6 +89,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         UpperPanel.setBackground(new java.awt.Color(255, 255, 255));
         UpperPanel.setMinimumSize(new java.awt.Dimension(1338, 60));
@@ -97,13 +98,15 @@ public class MainJFrame extends javax.swing.JFrame {
 
         btnLogoutLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         btnLogoutLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        btnLogoutLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/66847.png"))); // NOI18N
         btnLogoutLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnLogoutLabelMousePressed(evt);
             }
         });
-        UpperPanel.add(btnLogoutLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 0, 60, 50));
+        UpperPanel.add(btnLogoutLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 0, 60, 50));
 
+        lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/66847.png"))); // NOI18N
         lblBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblBackMousePressed(evt);
@@ -152,9 +155,6 @@ public class MainJFrame extends javax.swing.JFrame {
         lblUserPic.setBackground(new java.awt.Color(255, 255, 255));
         lblUserPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUserPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screen Shot 2021-12-11 at 9.51.57 PM.png"))); // NOI18N
-        lblUserPic.setMaximumSize(new java.awt.Dimension(20, 20));
-        lblUserPic.setMinimumSize(new java.awt.Dimension(20, 20));
-        lblUserPic.setPreferredSize(new java.awt.Dimension(20, 20));
 
         lblUserName.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblUserName.setToolTipText("");
@@ -190,9 +190,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
         lblPwdPic.setBackground(new java.awt.Color(255, 255, 255));
         lblPwdPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screen Shot 2021-12-11 at 9.52.09 PM.png"))); // NOI18N
-        lblPwdPic.setMaximumSize(new java.awt.Dimension(20, 20));
-        lblPwdPic.setMinimumSize(new java.awt.Dimension(20, 20));
-        lblPwdPic.setPreferredSize(new java.awt.Dimension(20, 20));
 
         lblPasswrd.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblPasswrd.setBorder(null);
@@ -305,9 +302,6 @@ public class MainJFrame extends javax.swing.JFrame {
         lblCancel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCancel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/66847.png"))); // NOI18N
         lblCancel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lblCancel1.setMaximumSize(new java.awt.Dimension(20, 20));
-        lblCancel1.setMinimumSize(new java.awt.Dimension(20, 20));
-        lblCancel1.setPreferredSize(new java.awt.Dimension(20, 20));
         lblCancel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblCancel1MousePressed(evt);
@@ -317,11 +311,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sun-rays-logo-11549878082pielo0cy42.png"))); // NOI18N
-        jLabel4.setMaximumSize(new java.awt.Dimension(148, 151));
-        jLabel4.setMinimumSize(new java.awt.Dimension(148, 151));
-        jLabel4.setPreferredSize(new java.awt.Dimension(148, 151));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
