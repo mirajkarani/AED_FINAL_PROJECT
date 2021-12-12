@@ -141,11 +141,13 @@ public class AdoptionCheckProcess extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHeading.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        lblHeading.setForeground(new java.awt.Color(71, 52, 58));
         lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeading.setText("Start your Adoption Journey");
         add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 460, 30));
 
         lblAdopterDetails.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        lblAdopterDetails.setForeground(new java.awt.Color(71, 52, 58));
         lblAdopterDetails.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAdopterDetails.setText("Your Details");
         add(lblAdopterDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 350, 20));

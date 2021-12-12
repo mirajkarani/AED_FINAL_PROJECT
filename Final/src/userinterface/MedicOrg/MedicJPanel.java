@@ -95,6 +95,7 @@ public class MedicJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblDoctorOrganisation.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        lblDoctorOrganisation.setForeground(new java.awt.Color(71, 52, 58));
         lblDoctorOrganisation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDoctorOrganisation.setText("Medic Organization");
         add(lblDoctorOrganisation, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 540, 30));

@@ -55,7 +55,6 @@ public class EspousalMainWorkArea extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        rightSystemAdminPanel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         Adoption = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -63,14 +62,16 @@ public class EspousalMainWorkArea extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        rightSystemAdminPanel = new javax.swing.JPanel();
 
-        rightSystemAdminPanel.setPreferredSize(new java.awt.Dimension(1058, 840));
-        rightSystemAdminPanel.setLayout(new java.awt.CardLayout());
+        setBackground(new java.awt.Color(255, 204, 153));
 
+        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
         jPanel3.setMinimumSize(new java.awt.Dimension(280, 148));
         jPanel3.setPreferredSize(new java.awt.Dimension(280, 148));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Adoption.setBackground(new java.awt.Color(0, 153, 102));
         Adoption.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 AdoptionMousePressed(evt);
@@ -79,6 +80,7 @@ public class EspousalMainWorkArea extends javax.swing.JPanel {
         Adoption.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manageIcon.png"))); // NOI18N
         Adoption.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 37, -1));
 
         Ado.setBackground(new java.awt.Color(255, 204, 153));
@@ -92,6 +94,9 @@ public class EspousalMainWorkArea extends javax.swing.JPanel {
         Adoption.add(Ado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 225, 36));
 
         jPanel3.add(Adoption, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, -1));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/4512612.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 180, 200));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
@@ -102,6 +107,10 @@ public class EspousalMainWorkArea extends javax.swing.JPanel {
 
         valueLabel.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         jPanel3.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 110, 20));
+
+        rightSystemAdminPanel.setBackground(new java.awt.Color(255, 255, 255));
+        rightSystemAdminPanel.setPreferredSize(new java.awt.Dimension(1058, 840));
+        rightSystemAdminPanel.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -75,6 +75,7 @@ public class MedicLabRequest extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Request a test");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 350, 30));

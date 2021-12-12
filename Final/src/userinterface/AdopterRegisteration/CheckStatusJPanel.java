@@ -101,6 +101,7 @@ public class CheckStatusJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setText("Track Your Progress");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 260, 30));
 
