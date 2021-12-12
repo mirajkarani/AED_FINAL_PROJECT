@@ -126,17 +126,17 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(25, 56, 82));
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ADOPTER REGISTRATION FORM");
+        jLabel1.setText("Adopter Registration");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 430, -1));
 
-        lblName.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        lblName.setForeground(new java.awt.Color(25, 56, 82));
+        lblName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblName.setForeground(new java.awt.Color(71, 52, 58));
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 60, 20));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 70, 20));
 
-        txtName.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        txtName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtName.setForeground(new java.awt.Color(25, 56, 82));
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,33 +144,33 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
             }
         });
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNameKeyPressed(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNameKeyTyped(evt);
+            }
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNameKeyPressed(evt);
             }
         });
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 250, 40));
 
-        lblUserName.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        lblUserName.setForeground(new java.awt.Color(25, 56, 82));
+        lblUserName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblUserName.setForeground(new java.awt.Color(71, 52, 58));
         lblUserName.setText("Username");
-        add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
+        add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 230, 80, -1));
 
-        txtUserName.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        txtUserName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtUserName.setForeground(new java.awt.Color(25, 56, 82));
         txtUserName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtUserNameKeyReleased(evt);
-            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtUserNameKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtUserNameKeyReleased(evt);
             }
         });
         add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 250, 40));
 
-        txtPwd.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        txtPwd.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtPwd.setForeground(new java.awt.Color(25, 56, 82));
         txtPwd.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -179,17 +179,17 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
         });
         add(txtPwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 250, 40));
 
-        lblPassword.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        lblPassword.setForeground(new java.awt.Color(25, 56, 82));
+        lblPassword.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(71, 52, 58));
         lblPassword.setText("Password");
-        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 62, 20));
+        add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 300, 70, 20));
 
-        lblEmail.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        lblEmail.setForeground(new java.awt.Color(25, 56, 82));
+        lblEmail.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(71, 52, 58));
         lblEmail.setText("Email Id");
-        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, -1, 20));
+        add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 380, 60, 20));
 
-        txtEmail.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(25, 56, 82));
         txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -199,7 +199,7 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
         add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 250, 40));
 
         btnRegister.setBackground(new java.awt.Color(255, 255, 255));
-        btnRegister.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnRegister.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnRegister.setForeground(new java.awt.Color(25, 56, 82));
         btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -209,24 +209,30 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
         });
         add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 670, 140, -1));
 
+        usernameExistsMsg.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         usernameExistsMsg.setForeground(new java.awt.Color(255, 0, 0));
         usernameExistsMsg.setText("Username already exists");
         add(usernameExistsMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, -1, -1));
 
+        emailValidateMsg.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         emailValidateMsg.setForeground(new java.awt.Color(255, 0, 0));
         emailValidateMsg.setText("Email format incorrect");
         add(emailValidateMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
 
+        emailCorrect.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         emailCorrect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/tick.png"))); // NOI18N
         add(emailCorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, -1, -1));
 
+        userNameCorrect.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         userNameCorrect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/tick.png"))); // NOI18N
         add(userNameCorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
 
-        lblAge.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        lblAge.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblAge.setForeground(new java.awt.Color(71, 52, 58));
         lblAge.setText("Age");
-        add(lblAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 540, 60, 20));
+        add(lblAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, 70, 20));
 
+        txtAge.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtAge.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtAgeKeyReleased(evt);
@@ -234,29 +240,41 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
         });
         add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 250, 40));
 
-        lblGender.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        lblGender.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblGender.setForeground(new java.awt.Color(71, 52, 58));
         lblGender.setText("Gender");
-        add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 90, 20));
+        add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 100, 20));
 
+        rdbMale.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         rdbMale.setText("Male");
         add(rdbMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, -1, -1));
 
+        rdbFemale.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         rdbFemale.setText("Female");
         add(rdbFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/kids11.png"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 940, 470));
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(71, 52, 58));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screen Shot 2021-12-12 at 5.30.29 AM.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 940, 470));
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(71, 52, 58));
         jLabel4.setText("Street Address Line1");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 150, -1, 30));
+
+        txtAdd1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(txtAdd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 150, 240, 40));
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(71, 52, 58));
         jLabel3.setText("Street Address Line2");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 220, -1, 30));
+
+        txtAdd2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(txtAdd2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 220, 240, 40));
 
+        txtContact.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtContact.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtContactKeyReleased(evt);
@@ -264,11 +282,12 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
         });
         add(txtContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 290, 240, 40));
 
-        jLabel5.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(71, 52, 58));
         jLabel5.setText("City");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 370, 60, -1));
 
-        cmbCity.setBackground(new java.awt.Color(255, 255, 255));
+        cmbCity.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         cmbCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbCityActionPerformed(evt);
@@ -276,12 +295,12 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
         });
         add(cmbCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 370, 240, -1));
 
-        lblSSN.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        lblSSN.setForeground(new java.awt.Color(25, 56, 82));
+        lblSSN.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblSSN.setForeground(new java.awt.Color(71, 52, 58));
         lblSSN.setText("SSN");
         add(lblSSN, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 450, 50, -1));
 
-        txtSSN.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        txtSSN.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtSSN.setForeground(new java.awt.Color(25, 56, 82));
         txtSSN.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -290,12 +309,12 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
         });
         add(txtSSN, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 440, 230, 40));
 
-        lblIncome.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        lblIncome.setForeground(new java.awt.Color(25, 56, 82));
+        lblIncome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblIncome.setForeground(new java.awt.Color(71, 52, 58));
         lblIncome.setText("Annual Income");
         add(lblIncome, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 530, -1, 30));
 
-        txtIncome.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        txtIncome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtIncome.setForeground(new java.awt.Color(25, 56, 82));
         txtIncome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -304,35 +323,44 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
         });
         add(txtIncome, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 520, 230, 40));
 
-        jLabel7.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(71, 52, 58));
         jLabel7.setText("Contact No");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, -1, 30));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 650, -1, -1));
 
+        contactNoCorrect.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         contactNoCorrect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/tick.png"))); // NOI18N
         add(contactNoCorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 300, -1, -1));
 
+        contactNoValidate.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         contactNoValidate.setForeground(new java.awt.Color(255, 0, 0));
         contactNoValidate.setText("Phone format incorrect");
         add(contactNoValidate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 310, -1, -1));
 
+        annualIncomeCorrect.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         annualIncomeCorrect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/tick.png"))); // NOI18N
         add(annualIncomeCorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 530, -1, 30));
 
+        AnnualIncomeValidate.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         AnnualIncomeValidate.setForeground(new java.awt.Color(255, 0, 0));
         AnnualIncomeValidate.setText("Enter numeric value");
         add(AnnualIncomeValidate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 540, -1, -1));
 
+        ageCorrect.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         ageCorrect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/tick.png"))); // NOI18N
         add(ageCorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
 
+        ageValidate.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         ageValidate.setForeground(new java.awt.Color(255, 0, 0));
         ageValidate.setText("Enter numeric value");
         add(ageValidate, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, -1, -1));
 
+        ssnCorrect.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         ssnCorrect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/tick.png"))); // NOI18N
         add(ssnCorrect, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 450, -1, -1));
 
+        ssnValidate.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         ssnValidate.setForeground(new java.awt.Color(255, 0, 0));
         ssnValidate.setText("Enter valid SSN");
         add(ssnValidate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 460, -1, -1));
