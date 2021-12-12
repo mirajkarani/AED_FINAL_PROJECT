@@ -103,11 +103,11 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createUserJButton.setBackground(new java.awt.Color(255, 255, 255));
-        createUserJButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        createUserJButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         createUserJButton.setText("Create");
         createUserJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +119,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         nameJTextField.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, 200, 35));
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel1.setText("User Name");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 89, 35));
 
@@ -155,7 +155,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 680, 140));
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel2.setText("Password");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, 89, 35));
 
@@ -182,19 +182,20 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 200, 30));
         organizationJComboBox.getAccessibleContext().setAccessibleName("");
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel4.setText("Role");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 66, 35));
 
-        roleJComboBox.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        roleJComboBox.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(roleJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 200, 30));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/employee.jpg"))); // NOI18N
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MicrosoftTeams-image copy.png"))); // NOI18N
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 570, 560));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("MANAGE USER ACCOUNT");
+        jLabel6.setText("Manage User Account");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 420, 30));
     }// </editor-fold>//GEN-END:initComponents
 

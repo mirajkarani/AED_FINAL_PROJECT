@@ -131,19 +131,19 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         systemAdminPanel.setBackground(new java.awt.Color(255, 204, 153));
         systemAdminPanel.setPreferredSize(new java.awt.Dimension(1338, 840));
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
         jPanel3.setMinimumSize(new java.awt.Dimension(280, 148));
         jPanel3.setPreferredSize(new java.awt.Dimension(280, 148));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ManageOrg.setBackground(new java.awt.Color(255, 204, 153));
+        ManageOrg.setBackground(new java.awt.Color(0, 153, 102));
         ManageOrg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 ManageOrgMousePressed(evt);
             }
         });
 
-        manageOrganisation.setBackground(new java.awt.Color(255, 204, 153));
+        manageOrganisation.setBackground(new java.awt.Color(0, 153, 102));
         manageOrganisation.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         manageOrganisation.setText("Manage Organisation");
         manageOrganisation.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -152,6 +152,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(0, 153, 102));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manageIcon.png"))); // NOI18N
 
         javax.swing.GroupLayout ManageOrgLayout = new javax.swing.GroupLayout(ManageOrg);
@@ -176,7 +177,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel3.add(ManageOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, -1));
 
-        manageEmp.setBackground(new java.awt.Color(255, 204, 153));
+        manageEmp.setBackground(new java.awt.Color(0, 153, 102));
         manageEmp.setPreferredSize(new java.awt.Dimension(264, 48));
         manageEmp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -184,7 +185,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        manageEmployee.setBackground(new java.awt.Color(255, 204, 153));
+        manageEmployee.setBackground(new java.awt.Color(0, 153, 102));
         manageEmployee.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         manageEmployee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         manageEmployee.setText("Manage Employee");
@@ -194,6 +195,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(0, 153, 102));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/orgIcon.png"))); // NOI18N
 
         javax.swing.GroupLayout manageEmpLayout = new javax.swing.GroupLayout(manageEmp);
@@ -220,17 +222,18 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel3.add(manageEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 280, 40));
 
-        manageUserPanel.setBackground(new java.awt.Color(255, 204, 153));
+        manageUserPanel.setBackground(new java.awt.Color(0, 153, 102));
         manageUserPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 manageUserPanelMousePressed(evt);
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(0, 153, 102));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/request.png"))); // NOI18N
 
-        manageUser.setBackground(new java.awt.Color(255, 204, 153));
+        manageUser.setBackground(new java.awt.Color(0, 153, 102));
         manageUser.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         manageUser.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         manageUser.setText("Manage User");
@@ -260,16 +263,17 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel3.add(manageUserPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 280, 40));
 
-        manageRequestPanel.setBackground(new java.awt.Color(255, 204, 153));
+        manageRequestPanel.setBackground(new java.awt.Color(0, 153, 102));
         manageRequestPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 manageRequestPanelMousePressed(evt);
             }
         });
 
+        jLabel3.setBackground(new java.awt.Color(0, 153, 102));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/statusIcon.png"))); // NOI18N
 
-        ManageRequest.setBackground(new java.awt.Color(255, 204, 153));
+        ManageRequest.setBackground(new java.awt.Color(0, 153, 102));
         ManageRequest.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         ManageRequest.setText("Manage Request");
         ManageRequest.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -302,7 +306,8 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel3.add(manageRequestPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 280, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/systemadminlogo.png"))); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/4512612.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 210, 190));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
