@@ -26,6 +26,7 @@ import javax.swing.table.DefaultTableModel;
 import Business.Organizations.PharmacyOrganization;
 import Business.WorkQueue.LabAssistanceWorkRequest;
 import Business.WorkQueue.PharmacistAssistWorkRequest;
+import javax.swing.BorderFactory;
 import userinterface.MedicOrg.MedicMedicinePrescription;
 import userinterface.MedicOrg.MedicLabRequest;
 
@@ -180,88 +181,117 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
         lblLabWork = new javax.swing.JLabel();
         lblMedicationHistory = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PERSONAL INFORMATION");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 350, 20));
+        jLabel1.setText("Personal Details");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 350, 20));
 
+        lblName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblName.setText("Name");
-        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 120, 30));
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 120, 30));
 
+        lblAge.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblAge.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblAge.setText("Age");
-        add(lblAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 120, 20));
+        add(lblAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 120, 20));
 
+        lblGender.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblGender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblGender.setText("Gender");
-        add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 130, 20));
+        add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 130, 20));
 
+        lblMark.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblMark.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblMark.setText("Identification Mark");
-        add(lblMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 140, 20));
+        add(lblMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 140, 20));
 
+        txtName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 210, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 210, 30));
 
+        txtMark.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtMark.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        add(txtMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 210, -1));
+        add(txtMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 210, -1));
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("VITAL SIGNS");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 340, 20));
+        jLabel6.setText("Vital Signs Of Patient");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 40, 340, 20));
 
+        lblTemp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblTemp.setText("Body Temperature");
-        add(lblTemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 130, 20));
+        add(lblTemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 130, 20));
 
+        lblPulseRate.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblPulseRate.setText("Pulse Rate");
-        add(lblPulseRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 110, 20));
+        add(lblPulseRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 110, 20));
 
+        lblRespiratoryRate.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblRespiratoryRate.setText("Respiratory Rate");
-        add(lblRespiratoryRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 120, -1));
+        add(lblRespiratoryRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 180, 120, -1));
 
+        lblBP.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblBP.setText("Blood Pressure");
-        add(lblBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 140, 20));
-        add(txtTemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 160, 30));
-        add(txtPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 120, 160, -1));
-        add(txtRR, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 160, -1));
-        add(txtBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, 160, -1));
+        add(lblBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, 140, 20));
 
+        txtTemp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(txtTemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 70, 160, 30));
+
+        txtPulse.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(txtPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 120, 160, -1));
+
+        txtRR.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(txtRR, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, 160, -1));
+
+        txtBP.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(txtBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, 160, -1));
+
+        btnRequestTest.setBackground(new java.awt.Color(255, 255, 255));
         btnRequestTest.setText("Request Lab Test");
         btnRequestTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRequestTestActionPerformed(evt);
             }
         });
-        add(btnRequestTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 150, -1));
+        add(btnRequestTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 150, -1));
 
+        btnPrescribeMedication.setBackground(new java.awt.Color(255, 255, 255));
         btnPrescribeMedication.setText("Prescribe Medication");
         btnPrescribeMedication.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrescribeMedicationActionPerformed(evt);
             }
         });
-        add(btnPrescribeMedication, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 310, 160, 30));
+        add(btnPrescribeMedication, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 160, 30));
 
+        btnMale.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnMale.setText("Male");
-        add(btnMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
+        add(btnMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
 
+        btnFemale.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnFemale.setText("Female");
-        add(btnFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 120, -1));
+        add(btnFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 120, -1));
 
+        btnSave.setBackground(new java.awt.Color(255, 255, 255));
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 90, -1));
-        add(lblPersonPic, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 180));
-        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 210, 30));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 90, -1));
+
+        lblPersonPic.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(lblPersonPic, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 180, 180));
+
+        txtAge.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 210, 30));
 
         tblLab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -309,21 +339,28 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, 850, 90));
 
-        lblLabWork.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        lblLabWork.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         lblLabWork.setText("Lab Work History");
         add(lblLabWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 200, 20));
 
-        lblMedicationHistory.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        lblMedicationHistory.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
         lblMedicationHistory.setText("Medication History");
         add(lblMedicationHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 630, 190, -1));
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
+        btnBack.setForeground(new java.awt.Color(255, 51, 51));
+        btnBack.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        btnBack.setContentAreaFilled(false);
+        btnBack.setText("<");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 70, 30));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 50));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screen Shot 2021-12-12 at 3.23.00 PM.png"))); // NOI18N
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 860, 660));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestTestActionPerformed
@@ -462,6 +499,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblBP;

@@ -66,18 +66,22 @@ public class MedicWorkArea extends javax.swing.JPanel {
         manageNetworkPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         DoctorWorkArea = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         rightSystemAdminPanel = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel1.setBackground(new java.awt.Color(255, 204, 153));
+
+        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
         jPanel3.setMinimumSize(new java.awt.Dimension(280, 148));
         jPanel3.setPreferredSize(new java.awt.Dimension(280, 148));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageNetworkPanel.setBackground(new java.awt.Color(255, 204, 153));
+        manageNetworkPanel.setBackground(new java.awt.Color(0, 153, 102));
         manageNetworkPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 manageNetworkPanelMousePressed(evt);
@@ -97,6 +101,10 @@ public class MedicWorkArea extends javax.swing.JPanel {
         });
         manageNetworkPanel.add(DoctorWorkArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 6, 225, 36));
 
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manageIcon.png"))); // NOI18N
+        manageNetworkPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 37, -1));
+
         jPanel3.add(manageNetworkPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 280, -1));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
@@ -107,6 +115,10 @@ public class MedicWorkArea extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jPanel3.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 120, 30));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/4512612.png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 280, 150));
 
         rightSystemAdminPanel.setBackground(new java.awt.Color(255, 255, 255));
         rightSystemAdminPanel.setPreferredSize(new java.awt.Dimension(1058, 840));
@@ -142,8 +154,10 @@ public class MedicWorkArea extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DoctorWorkArea;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel manageNetworkPanel;

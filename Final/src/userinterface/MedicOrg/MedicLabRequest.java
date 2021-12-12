@@ -17,6 +17,7 @@ import Business.Person.PersonDirectory;
 import Business.Person.Person;
 import Business.WorkQueue.LabAssistanceWorkRequest;
 import Business.WorkQueue.MedicalAssistanceWorkRequest;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 /**
  *
@@ -68,35 +69,48 @@ public class MedicLabRequest extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         btnSave = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("REQUEST LAB TEST");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 350, 20));
-        add(txtTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 270, 90));
+        jLabel1.setText("Request a test");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 350, 30));
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        txtTest.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(txtTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 270, 90));
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel2.setText("Test Description");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 140, 20));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 140, 20));
 
-        btnSave.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnSave.setBackground(new java.awt.Color(255, 255, 255));
+        btnSave.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 110, 30));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, 110, 30));
 
-        btnBack.setText("Back");
+        btnBack.setForeground(new java.awt.Color(255, 51, 51));
+        btnBack.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        btnBack.setContentAreaFilled(false);
+        btnBack.setText("<");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 40));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/female doc and patients.png"))); // NOI18N
+        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 760, 470));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
@@ -151,6 +165,7 @@ public class MedicLabRequest extends javax.swing.JPanel {
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField txtTest;
     // End of variables declaration//GEN-END:variables
 }

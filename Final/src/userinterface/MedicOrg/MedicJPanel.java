@@ -91,12 +91,13 @@ public class MedicJPanel extends javax.swing.JPanel {
         btnProcess = new javax.swing.JButton();
         lblImg = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblDoctorOrganisation.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
         lblDoctorOrganisation.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDoctorOrganisation.setText("MEDIC ORGANIZATION");
-        add(lblDoctorOrganisation, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 540, 30));
+        lblDoctorOrganisation.setText("Medic Organization");
+        add(lblDoctorOrganisation, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 540, 30));
 
         tblMedic.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,25 +120,33 @@ public class MedicJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblMedic);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 970, 210));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 970, 210));
 
-        btnAssignToMe.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnAssignToMe.setBackground(new java.awt.Color(255, 255, 255));
+        btnAssignToMe.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnAssignToMe.setText("Assign To Me");
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAssignToMeActionPerformed(evt);
             }
         });
-        add(btnAssignToMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 170, -1));
+        add(btnAssignToMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, 170, -1));
 
-        btnProcess.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnProcess.setBackground(new java.awt.Color(255, 255, 255));
+        btnProcess.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProcessActionPerformed(evt);
             }
         });
-        add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 510, 130, -1));
+        add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, 130, -1));
+
+        lblImg.setBackground(new java.awt.Color(255, 255, 255));
+        lblImg.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/female doc and patients.png"))); // NOI18N
+        lblImg.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         add(lblImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 800, 620));
     }// </editor-fold>//GEN-END:initComponents
 
