@@ -150,6 +150,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
         lblUserPic.setBackground(new java.awt.Color(255, 255, 255));
         lblUserPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUserPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screen Shot 2021-12-11 at 9.51.57 PM.png"))); // NOI18N
+        lblUserPic.setMaximumSize(new java.awt.Dimension(20, 20));
+        lblUserPic.setMinimumSize(new java.awt.Dimension(20, 20));
+        lblUserPic.setPreferredSize(new java.awt.Dimension(20, 20));
 
         lblUserName.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblUserName.setToolTipText("");
@@ -167,9 +171,9 @@ public class MainJFrame extends javax.swing.JFrame {
         UserPanelLayout.setHorizontalGroup(
             UserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(UserPanelLayout.createSequentialGroup()
-                .addComponent(lblUserPic, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblUserPic, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE))
+                .addComponent(lblUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))
         );
         UserPanelLayout.setVerticalGroup(
             UserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +188,10 @@ public class MainJFrame extends javax.swing.JFrame {
         lblPwd.setPreferredSize(new java.awt.Dimension(302, 34));
 
         lblPwdPic.setBackground(new java.awt.Color(255, 255, 255));
-        lblPwdPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPwdPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screen Shot 2021-12-11 at 9.52.09 PM.png"))); // NOI18N
+        lblPwdPic.setMaximumSize(new java.awt.Dimension(20, 20));
+        lblPwdPic.setMinimumSize(new java.awt.Dimension(20, 20));
+        lblPwdPic.setPreferredSize(new java.awt.Dimension(20, 20));
 
         lblPasswrd.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblPasswrd.setBorder(null);
