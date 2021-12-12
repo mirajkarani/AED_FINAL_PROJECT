@@ -20,8 +20,11 @@ import Business.Utility.SendMail;
 import Business.WorkQueue.AdoptionProcessWorkRequest;
 import Business.WorkQueue.AdopterRegistrationRequest;
 import Business.WorkQueue.WorkRequest;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -248,7 +251,11 @@ public class AdoptionUnitWorkRequestJPanel extends javax.swing.JPanel {
                 request.setStatus("Completed");
                 String subject = "Account activation";
                 String content = "Dear Adopter, your account has been activated. Your request has been sent to Adoption team. You can check your status through your credentials. \nThank you.";
-                SendMail.sendEmailMessage(request.getUserEmailId(), subject, content);
+                try {
+                    SendMail.sendEmailMessage(request.getUserEmailId(), subject, content);
+                } catch (UnsupportedEncodingException ex) {
+                    Logger.getLogger(AdoptionUnitWorkRequestJPanel.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 JOptionPane.showMessageDialog(null, "User account has been activated successfully");
             }
         }

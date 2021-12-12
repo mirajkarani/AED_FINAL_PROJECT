@@ -14,6 +14,9 @@ import Business.UserAccount.UserAccount;
 import Business.Utility.SendMail;
 import Business.WorkQueue.DonorWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -213,7 +216,11 @@ public class ViewAndProcessTransactionRecord extends javax.swing.JPanel {
             }
             String subject = "Payment Receipt";
             String content = "Dear Sponsor, this is an acknowledgement receipt. We have recieved your payment. Thank you so much for your kind donation. Your caring support will make a great difference in the child's academic success. We hope that you will continue serving and make world a better place for children.";
-            SendMail.sendEmailMessage(req.getEmailId(), subject, content);
+            try {
+                SendMail.sendEmailMessage(req.getEmailId(), subject, content);
+            } catch (UnsupportedEncodingException ex) {
+                Logger.getLogger(ViewAndProcessTransactionRecord.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         populateDonorRequesttable();
         txtComments.setText("");

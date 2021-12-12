@@ -15,6 +15,9 @@ import Business.WorkQueue.WorkQueue;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -413,7 +416,11 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             registrationRequest.setAnnualIncome(txtIncome.getText());
             String subject = "Sponsorer Registeration";
             String content = "Thank you for registering with us. Your account will be activated within 24 hours. We will keep you posted with your status.";
-            SendMail.sendEmailMessage(txtEmail.getText(), subject, content);
+            try {
+                SendMail.sendEmailMessage(txtEmail.getText(), subject, content);
+            } catch (UnsupportedEncodingException ex) {
+                Logger.getLogger(SponsorRegistrationJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
             for (Network network1 : system.getNetworkCatalog()) {
                 for (Enterprise enterprise : network1.getEnterpriseDirectory().getEnterpriseList()) {
                     if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Funding) {
