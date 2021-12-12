@@ -6,7 +6,7 @@
 package Business.Adopter;
 
 /**
- *
+ * Adopter Class
  * @author milin
  */
 public class Adopter {
