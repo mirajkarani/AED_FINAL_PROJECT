@@ -84,6 +84,7 @@ public class LabWorkArea extends javax.swing.JPanel {
         LabNetworkPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manageIcon.png"))); // NOI18N
         LabNetworkPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 50, 40));
 
         LabWorkArea.setBackground(new java.awt.Color(255, 204, 153));
@@ -97,6 +98,8 @@ public class LabWorkArea extends javax.swing.JPanel {
         LabNetworkPanel.add(LabWorkArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 6, 220, 50));
 
         jPanel3.add(LabNetworkPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 280, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/labIcon.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 160, 190));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
