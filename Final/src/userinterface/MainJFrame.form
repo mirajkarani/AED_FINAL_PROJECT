@@ -18,6 +18,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,32,0,0,4,-30"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -446,7 +447,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="16" style="3"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&quot;The world may not change if you adopt a child but for that child, their world will change.&quot; "/>
+                <Property name="text" type="java.lang.String" value="Many senior citizens find themselves in a long-term care facility with increasing life expectancy in modern times.  At Ray Of Hope, we like to provide for the elderly to keep their spirits high and bellies full."/>
               </Properties>
             </Component>
           </SubComponents>
@@ -493,7 +494,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="16" style="3"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&quot;When you sponsor a child, you&apos;re helping to ensure they can grow up healthy, learning and safe &#x2013; no matter where they were born. Many children around the world aren&#x2019;t getting the opportunity to reach their full potential. As a sponsor, you can help change that.&quot;"/>
+                <Property name="text" type="java.lang.String" value="Ray Of Hope allows us to bring joy to senior citizens by showcasing hope to let them know they are not forgotten and alone."/>
               </Properties>
             </Component>
           </SubComponents>
