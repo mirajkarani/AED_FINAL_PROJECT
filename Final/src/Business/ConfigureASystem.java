@@ -31,12 +31,7 @@ public class ConfigureASystem {
         Employee employee = system.getEmployeeDirectory().createEmployee("RRH");
         
         UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", employee, new SystemAdminRole());
-        
-        Employee employee1 = system.getEmployeeDirectory().createEmployee("Hospital");
-        
-        UserAccount ub = system.getUserAccountDirectory().createUserAccount("Medic", "Medic", employee, new MedicRole());
-        
-        
+
         return system;
     }
     
