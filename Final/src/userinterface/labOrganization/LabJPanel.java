@@ -55,12 +55,14 @@ public class LabJPanel extends javax.swing.JPanel {
         btnProcess = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(71, 52, 58));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("LAB ORGANIZATION");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 431, -1));
+        jLabel2.setText("Lab Organization");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 431, -1));
 
         tblLab.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         tblLab.setModel(new javax.swing.table.DefaultTableModel(
@@ -86,24 +88,25 @@ public class LabJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 790, 130));
 
-        btnAssignToMe.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnAssignToMe.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnAssignToMe.setText("Assign To Me");
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAssignToMeActionPerformed(evt);
             }
         });
-        add(btnAssignToMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 160, 30));
+        add(btnAssignToMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 160, 30));
 
-        btnProcess.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnProcess.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProcessActionPerformed(evt);
             }
         });
-        add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 430, 150, 30));
+        add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, 150, 30));
 
+        jLabel1.setBackground(new java.awt.Color(246, 226, 187));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Lab_tech_2.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, -130, 730, 520));
     }// </editor-fold>//GEN-END:initComponents
