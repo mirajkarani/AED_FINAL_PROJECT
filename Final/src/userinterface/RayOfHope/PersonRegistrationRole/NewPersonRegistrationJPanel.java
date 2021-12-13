@@ -117,10 +117,10 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 190, 30));
 
         femaleRDB.setText("Female");
-        add(femaleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, -1, 35));
+        add(femaleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, -1, 35));
 
         maleRDB.setText("Male");
-        add(maleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, -1, 35));
+        add(maleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, 35));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -164,8 +164,7 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         add(txtMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 190, 30));
 
         cmbAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78" }));
-        add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 190, -1));
-
+        add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 190, -1));
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel7.setText("Does person have special needs?");

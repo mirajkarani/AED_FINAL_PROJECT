@@ -30,14 +30,10 @@ public class OrganizationDirectory {
     public Organization addNewOrganization(String name,Organization.Type type){
         
         Organization organization = null;
-        System.out.println(name);
         
         if (type.getValue().equals(Organization.Type.Medic.getValue())){ 
-            System.out.println("Inside "+Organization.Type.Medic.getValue());
            organization = new MedicOrganization(name);
-           System.out.println(organization);
            organizationList.add(organization);
-           System.out.println(organizationList);
            
 
         }
