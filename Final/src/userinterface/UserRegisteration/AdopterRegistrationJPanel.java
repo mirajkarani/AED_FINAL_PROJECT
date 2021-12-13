@@ -407,7 +407,7 @@ public class AdopterRegistrationJPanel extends javax.swing.JPanel {
             }
             for (Network network1 : system.getNetworkCatalog()) {
                 for (Enterprise enterprise : network1.getEnterpriseDirectory().getEnterpriseList()) {
-                    if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Adoption) {
+                    if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Espousal) {
                         if (enterprise.getWorkQueue() == null) {
                             enterprise.setWorkQueue(new WorkQueue());
                         }

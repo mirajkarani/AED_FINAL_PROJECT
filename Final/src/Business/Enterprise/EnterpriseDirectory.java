@@ -40,7 +40,7 @@ public class EnterpriseDirectory {
             enterprise=new RayOfHopeEnterprise(name);
             enterpriseList.add(enterprise);
         }
-        else if (type == Enterprise.EnterpriseType.Adoption)
+        else if (type == Enterprise.EnterpriseType.Espousal)
         {
             enterprise = new AdoptionEnterprise(name);
             enterpriseList.add(enterprise);

@@ -85,12 +85,12 @@ public class OrganizationDirectory {
         return organization;
     }
     
-    /* public boolean isUnique(String name){
+    public boolean isUnique(String name){
         for(Organization organization : organizationList){
             if(name.equalsIgnoreCase(organization.getName())){
                 return false;
             }
         }
         return true;
-    }*/
+    }
 }
