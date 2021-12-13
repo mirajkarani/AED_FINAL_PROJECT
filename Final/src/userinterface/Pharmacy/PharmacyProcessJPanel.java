@@ -75,18 +75,20 @@ public class PharmacyProcessJPanel extends javax.swing.JPanel {
         btnSave = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
+        jPanel1.setBackground(new java.awt.Color(246, 226, 187));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PHARMACIST PROCESS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 378, -1));
+        jLabel1.setText("Pharmacist Feedback");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 378, -1));
 
-        lblComments.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblComments.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblComments.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblComments.setText("Comments");
-        jPanel1.add(lblComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 100, 20));
-        jPanel1.add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 310, 130));
+        jPanel1.add(lblComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 100, 20));
+        jPanel1.add(txtComments, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 310, 130));
 
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +96,11 @@ public class PharmacyProcessJPanel extends javax.swing.JPanel {
                 btnSaveActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 100, -1));
+        jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 100, -1));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screen Shot 2021-12-12 at 3.23.00 PM.png"))); // NOI18N
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 590, 470));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

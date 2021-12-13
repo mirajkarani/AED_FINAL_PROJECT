@@ -128,13 +128,13 @@ public class ViewCompletePersonDetails extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(246, 226, 187));
         jPanel1.setMinimumSize(new java.awt.Dimension(50, 50));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 190, 30));
+        jPanel1.add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 190, 30));
 
         lblDOB.setText("Age");
-        jPanel1.add(lblDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 100, 30));
+        jPanel1.add(lblDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 100, 30));
 
         maleRDB.setText("Male");
         maleRDB.addActionListener(new java.awt.event.ActionListener() {
@@ -142,59 +142,60 @@ public class ViewCompletePersonDetails extends javax.swing.JPanel {
                 maleRDBActionPerformed(evt);
             }
         });
-        jPanel1.add(maleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 120, -1, -1));
+        jPanel1.add(maleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, -1, -1));
 
         femaleRDB.setText("Female");
-        jPanel1.add(femaleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 100, 100, 60));
+        jPanel1.add(femaleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 100, 100, 60));
 
         lblGender.setText("Gender");
-        jPanel1.add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 130, 30));
+        jPanel1.add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 130, 30));
 
         lblHeading.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        lblHeading.setForeground(new java.awt.Color(71, 52, 58));
         lblHeading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeading.setText("View Person Details");
         jPanel1.add(lblHeading, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 223, 40));
-        jPanel1.add(lblPic, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, 180));
+        jPanel1.add(lblPic, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 70, 170, 180));
 
         lblName.setText("Name");
-        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 110, 30));
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 110, 30));
 
         lblPersonalInfo.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblPersonalInfo.setText("Personal Info");
-        jPanel1.add(lblPersonalInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 121, 20));
+        jPanel1.add(lblPersonalInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 121, 20));
 
         jLabel7.setText("Temperature");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, 27));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, -1, 27));
 
         lblMedicalInfo.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblMedicalInfo.setText("Medical Info");
-        jPanel1.add(lblMedicalInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 143, -1));
+        jPanel1.add(lblMedicalInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 143, -1));
 
         tempText.setMinimumSize(new java.awt.Dimension(50, 50));
-        jPanel1.add(tempText, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 190, 30));
+        jPanel1.add(tempText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 190, 30));
 
         jLabel9.setText("Respiration Rate");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, -1, 27));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, -1, 27));
 
         respRateText.setMinimumSize(new java.awt.Dimension(50, 50));
-        jPanel1.add(respRateText, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 190, -1));
+        jPanel1.add(respRateText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 190, -1));
 
         jLabel10.setText("Medical History:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, -1, 25));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, -1, 25));
 
         medicalTextArea.setColumns(20);
         medicalTextArea.setRows(5);
         jScrollPane1.setViewportView(medicalTextArea);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 370, 90));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 370, 90));
 
         lblRegistDate.setText("Registration Date");
-        jPanel1.add(lblRegistDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 130, 30));
+        jPanel1.add(lblRegistDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 130, 30));
 
         lblIdenMark.setText("Identification mark");
-        jPanel1.add(lblIdenMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 130, 30));
+        jPanel1.add(lblIdenMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 130, 30));
 
-        btnRequestFunds.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnRequestFunds.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnRequestFunds.setText("Request Funds");
         btnRequestFunds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,7 +204,7 @@ public class ViewCompletePersonDetails extends javax.swing.JPanel {
         });
         jPanel1.add(btnRequestFunds, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, 180, 30));
 
-        requestMedicalHelpBtn.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        requestMedicalHelpBtn.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         requestMedicalHelpBtn.setText("Request Medical Help");
         requestMedicalHelpBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,16 +214,16 @@ public class ViewCompletePersonDetails extends javax.swing.JPanel {
         jPanel1.add(requestMedicalHelpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 600, 180, 30));
 
         lblBP.setText("Blood Pressure");
-        jPanel1.add(lblBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 340, 100, 30));
+        jPanel1.add(lblBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 100, 30));
 
         bpText.setMinimumSize(new java.awt.Dimension(50, 50));
-        jPanel1.add(bpText, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 340, 190, -1));
+        jPanel1.add(bpText, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 340, 190, -1));
 
         lblPulse.setText("Pulse Rate");
-        jPanel1.add(lblPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 400, -1, 27));
+        jPanel1.add(lblPulse, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, -1, 27));
 
         pulseText.setMinimumSize(new java.awt.Dimension(50, 50));
-        jPanel1.add(pulseText, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 400, 190, -1));
+        jPanel1.add(pulseText, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 400, 190, -1));
 
         tblRequest.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         tblRequest.setModel(new javax.swing.table.DefaultTableModel(
@@ -244,10 +245,10 @@ public class ViewCompletePersonDetails extends javax.swing.JPanel {
         jScrollPane3.setViewportView(tblRequest);
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 800, 104));
-        jPanel1.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 190, 30));
-        jPanel1.add(txtMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 190, 30));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 1010, 480));
-        jPanel1.add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 190, -1));
+        jPanel1.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 190, 30));
+        jPanel1.add(txtMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 190, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 1010, 480));
+        jPanel1.add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 190, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

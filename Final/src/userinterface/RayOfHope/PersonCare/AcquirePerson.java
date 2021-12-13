@@ -84,7 +84,7 @@ public class AcquirePerson extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(246, 226, 187));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         workTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -105,34 +105,35 @@ public class AcquirePerson extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 870, 130));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 870, 130));
 
         processBtn.setBackground(new java.awt.Color(255, 255, 255));
-        processBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        processBtn.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         processBtn.setText("Process Request");
         processBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(processBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, 160, 33));
+        jPanel1.add(processBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 160, 33));
 
         btnAssign.setBackground(new java.awt.Color(255, 255, 255));
-        btnAssign.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnAssign.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnAssign.setText("Assign to me");
         btnAssign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAssignActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 133, 33));
+        jPanel1.add(btnAssign, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 133, 33));
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/7eedb8511846a6b6ed4db46508ec0e7e.gif"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 1010, 370));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(71, 52, 58));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("ACQUIRE PERSON ");
+        jLabel5.setText("Acquisition Dept");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 320, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

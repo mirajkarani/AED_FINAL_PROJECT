@@ -89,7 +89,7 @@ public class FundingUnitWorkRequestJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         lblRefresh = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 226, 187));
         setMinimumSize(new java.awt.Dimension(1058, 840));
         setPreferredSize(new java.awt.Dimension(1058, 840));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -124,10 +124,10 @@ public class FundingUnitWorkRequestJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 870, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 870, 170));
 
         assignJButton.setBackground(new java.awt.Color(255, 255, 255));
-        assignJButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        assignJButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         assignJButton.setForeground(new java.awt.Color(25, 56, 82));
         assignJButton.setText("Assign To Me");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -135,10 +135,10 @@ public class FundingUnitWorkRequestJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, -1, -1));
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
 
         processJButton.setBackground(new java.awt.Color(255, 255, 255));
-        processJButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        processJButton.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         processJButton.setForeground(new java.awt.Color(25, 56, 82));
         processJButton.setText("Process");
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -146,12 +146,12 @@ public class FundingUnitWorkRequestJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 470, 130, -1));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 130, -1));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(25, 56, 82));
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("MANAGE SPONSOR WORK REQUEST");
+        jLabel1.setText("Manage Sponsorship Request");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 41, 431, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/employee.jpg"))); // NOI18N

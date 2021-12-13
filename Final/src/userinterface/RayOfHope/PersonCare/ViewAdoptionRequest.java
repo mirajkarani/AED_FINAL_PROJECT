@@ -81,12 +81,14 @@ public class ViewAdoptionRequest extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("VIEW ADOPTION REQUEST");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 287, 32));
+        jLabel1.setText("View Adoption Request");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 287, 32));
 
         tblReq.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,7 +111,7 @@ public class ViewAdoptionRequest extends javax.swing.JPanel {
         });
         tblAdoptionReq.setViewportView(tblReq);
 
-        add(tblAdoptionReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 708, 140));
+        add(tblAdoptionReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 708, 140));
 
         btnProcess.setBackground(new java.awt.Color(255, 255, 255));
         btnProcess.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
@@ -119,7 +121,7 @@ public class ViewAdoptionRequest extends javax.swing.JPanel {
                 btnProcessActionPerformed(evt);
             }
         });
-        add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 130, -1));
+        add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 130, -1));
 
         jButton1.setText("Refresh");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +131,7 @@ public class ViewAdoptionRequest extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, -10, 110, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/adp.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/grandparents-parents-kids-icon-family-design-vector-graph-cartoon-concept-represented-isolated-colorfull-illustration-74239628 (1).png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 730, 460));
     }// </editor-fold>//GEN-END:initComponents
 
