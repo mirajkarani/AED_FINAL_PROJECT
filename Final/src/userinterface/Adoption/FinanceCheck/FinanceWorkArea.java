@@ -1,60 +1,59 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package userinterface.Verification;
+package userinterface.Adoption.FinanceCheck;
 
 import Business.Adopter.Adopter;
 import Business.Adopter.AdopterDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Organizations.FinancialVerificationOrganization;
 import Business.Organizations.Organization;
-import Business.Organizations.VerificationOrganization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
-import userinterface.Verification.VerificationCheckRequest;
 import javax.swing.JPanel;
 
 /**
  *
- * @author aniketmirajkar
+ * @author MyPC1
  */
-public class VerificationWorkArea extends javax.swing.JPanel {
+public class FinanceWorkArea extends javax.swing.JPanel {
 
     /**
-     * Creates new form VerificationWorkArea
+     * Creates new form SystemAdminWorkAreaJPanel
      */
-    
     JPanel userProcessContainer;
     UserAccount account;
     Enterprise enterprise;
     EcoSystem business;
-    AdopterDirectory adopterDirectory;
-    VerificationOrganization verificationOrganization;
+    AdopterDirectory adopterdirectory;
+    FinancialVerificationOrganization financeOrganization;
     Adopter adopter;
     
-    public VerificationWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, AdopterDirectory adopterDirectory) {
+    
+    public FinanceWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business, AdopterDirectory adopterdirectory) {
         initComponents();
-        
         this.userProcessContainer=userProcessContainer;
-        this.adopterDirectory=adopterDirectory;
+        this.adopterdirectory=adopterdirectory;
         this.account=account;
         this.enterprise=enterprise;
         this.business = business;
-        this.verificationOrganization = (VerificationOrganization) organization;
-        this.adopter = adopter;    
-        
+        this.financeOrganization = (FinancialVerificationOrganization)organization;
         valueLabel.setText(organization.getName());
-        VerificationRequestJPanel();
+        financeRequestJPanel();
+        
     }
     
-    private void VerificationRequestJPanel(){
-        VerificationCheckRequest panel = new VerificationCheckRequest(rightSystemAdminPanel, account, verificationOrganization, enterprise, business, adopterDirectory);
-        rightSystemAdminPanel.add("BGCandCriminalCheckRequestTable",panel);
+    private void financeRequestJPanel(){
+        FinanceCheckRequestJPanel panel = new FinanceCheckRequestJPanel(rightSystemAdminPanel, account, financeOrganization, enterprise, business, adopterdirectory);
+        rightSystemAdminPanel.add("ManageNetworkJPanel",panel);
         CardLayout layout = (CardLayout) rightSystemAdminPanel.getLayout();
         layout.next(rightSystemAdminPanel);
      }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,64 +63,62 @@ public class VerificationWorkArea extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         systemAdminPanel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        bgcAndCriminal = new javax.swing.JPanel();
+        FinanceRequest = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        BGCAndCri = new javax.swing.JLabel();
+        finReq = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         rightSystemAdminPanel = new javax.swing.JPanel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        setBackground(new java.awt.Color(255, 204, 204));
+        setPreferredSize(new java.awt.Dimension(1338, 840));
+        setLayout(new java.awt.BorderLayout());
 
         systemAdminPanel.setBackground(new java.awt.Color(255, 204, 153));
         systemAdminPanel.setPreferredSize(new java.awt.Dimension(1338, 840));
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel3.setBackground(new java.awt.Color(255, 204, 153));
         jPanel3.setMinimumSize(new java.awt.Dimension(280, 148));
         jPanel3.setPreferredSize(new java.awt.Dimension(280, 148));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        bgcAndCriminal.setBackground(new java.awt.Color(0, 153, 102));
-        bgcAndCriminal.addMouseListener(new java.awt.event.MouseAdapter() {
+        FinanceRequest.setBackground(new java.awt.Color(255, 204, 153));
+        FinanceRequest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                bgcAndCriminalMousePressed(evt);
+                FinanceRequestMousePressed(evt);
             }
         });
-        bgcAndCriminal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        FinanceRequest.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bgcAndCriminal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 37, 36));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/manageIcon.png"))); // NOI18N
+        FinanceRequest.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 37, -1));
 
-        BGCAndCri.setBackground(new java.awt.Color(255, 204, 204));
-        BGCAndCri.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        BGCAndCri.setText("Process BGC & Criminal Check");
-        BGCAndCri.addMouseListener(new java.awt.event.MouseAdapter() {
+        finReq.setBackground(new java.awt.Color(255, 204, 204));
+        finReq.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        finReq.setText("Process Finance Request");
+        finReq.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                BGCAndCriMousePressed(evt);
+                finReqMousePressed(evt);
             }
         });
-        bgcAndCriminal.add(BGCAndCri, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 6, 225, 36));
+        FinanceRequest.add(finReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 6, 225, 36));
 
-        jPanel3.add(bgcAndCriminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 280, -1));
+        jPanel3.add(FinanceRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, -1));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/4512612.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 210, 200));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/finIcon.png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 200, 180));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Organization");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 120, 20));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 110, 20));
 
         valueLabel.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
-        jPanel3.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 130, 20));
+        jPanel3.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 110, 20));
 
         rightSystemAdminPanel.setBackground(new java.awt.Color(255, 255, 255));
         rightSystemAdminPanel.setPreferredSize(new java.awt.Dimension(1058, 840));
@@ -142,28 +139,25 @@ public class VerificationWorkArea extends javax.swing.JPanel {
             .addComponent(rightSystemAdminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(systemAdminPanel, java.awt.BorderLayout.CENTER);
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1357, -1));
+        add(systemAdminPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BGCAndCriMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BGCAndCriMousePressed
-        VerificationRequestJPanel();
-    }//GEN-LAST:event_BGCAndCriMousePressed
+    private void finReqMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_finReqMousePressed
+        financeRequestJPanel();
+    }//GEN-LAST:event_finReqMousePressed
 
-    private void bgcAndCriminalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bgcAndCriminalMousePressed
+    private void FinanceRequestMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FinanceRequestMousePressed
         // TODO add your handling code here:
-        VerificationRequestJPanel();
-    }//GEN-LAST:event_bgcAndCriminalMousePressed
+        financeRequestJPanel();
+    }//GEN-LAST:event_FinanceRequestMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BGCAndCri;
-    private javax.swing.JPanel bgcAndCriminal;
+    private javax.swing.JPanel FinanceRequest;
+    private javax.swing.JLabel finReq;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel rightSystemAdminPanel;
     private javax.swing.JPanel systemAdminPanel;

@@ -40,7 +40,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         this.enterprise = enterprise;
         
         
-        //populateTable();
+        populateTable();
         //populateCombos();
          organizationJComboBox.removeAllItems();
         if(enterprise instanceof HospitalEnterprise){
@@ -183,15 +183,14 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
        if ("".equals(orgInstanceName.getText())) {
             JOptionPane.showMessageDialog(null, "Enter organization name!");
         } else { 
-           // if (directory.isUnique(orgInstanceName.getText())) {
+            if (directory.isUnique(orgInstanceName.getText())) {
                 directory.addNewOrganization(orgInstanceName.getText(), type);
-                System.out.println(directory.getOrganizationList());
                 JOptionPane.showMessageDialog(null, "Organization Successfully Created");
                 orgInstanceName.setText("");
                 populateTable();
-           /* } else {
+            } else {
                 JOptionPane.showMessageDialog(null, "Organization name already exists!");
-            }  */         
+            }           
         }
 
     }//GEN-LAST:event_addJButtonActionPerformed
