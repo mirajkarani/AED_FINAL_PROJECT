@@ -79,10 +79,14 @@ public class FundingWorkArea extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         rightSystemAdminPanel = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(255, 204, 153));
+
+        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
         jPanel3.setMinimumSize(new java.awt.Dimension(280, 148));
         jPanel3.setPreferredSize(new java.awt.Dimension(280, 148));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        manageNetworkPanel.setBackground(new java.awt.Color(0, 153, 102));
         manageNetworkPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 manageNetworkPanelMousePressed(evt);
@@ -104,6 +108,7 @@ public class FundingWorkArea extends javax.swing.JPanel {
 
         jPanel3.add(manageNetworkPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 290, 40));
 
+        lblViewYourStatus.setBackground(new java.awt.Color(0, 153, 102));
         lblViewYourStatus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblViewYourStatusMousePressed(evt);
@@ -111,9 +116,11 @@ public class FundingWorkArea extends javax.swing.JPanel {
         });
         lblViewYourStatus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel5.setBackground(new java.awt.Color(0, 153, 102));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblViewYourStatus.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 37, 40));
 
+        lblViewStatus.setBackground(new java.awt.Color(0, 153, 102));
         lblViewStatus.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblViewStatus.setText("Transaction Work Area");
         lblViewStatus.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -124,6 +131,10 @@ public class FundingWorkArea extends javax.swing.JPanel {
         lblViewYourStatus.add(lblViewStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 0, 231, 38));
 
         jPanel3.add(lblViewYourStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 280, 40));
+
+        jLabel1.setBackground(new java.awt.Color(0, 153, 102));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/4512612.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 200, 210));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
@@ -134,6 +145,7 @@ public class FundingWorkArea extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         jPanel3.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 170, 20));
 
+        rightSystemAdminPanel.setBackground(new java.awt.Color(255, 255, 255));
         rightSystemAdminPanel.setPreferredSize(new java.awt.Dimension(1058, 840));
         rightSystemAdminPanel.setLayout(new java.awt.CardLayout());
 
