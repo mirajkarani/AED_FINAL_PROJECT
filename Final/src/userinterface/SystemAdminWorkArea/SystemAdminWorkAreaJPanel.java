@@ -83,11 +83,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         manageEnterpriseAdminLabel = new javax.swing.JLabel();
         lblAnalysis = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        Analysis = new javax.swing.JLabel();
         lblGraph = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        graph = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         manageNetwork = new javax.swing.JLabel();
@@ -189,22 +185,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         lblAnalysis.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setBackground(new java.awt.Color(0, 153, 102));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/piChart.png"))); // NOI18N
-        lblAnalysis.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
-
-        Analysis.setBackground(new java.awt.Color(0, 153, 102));
-        Analysis.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        Analysis.setText("Our Services");
-        Analysis.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                AnalysisMousePressed(evt);
-            }
-        });
-        lblAnalysis.add(Analysis, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, -10, 230, 38));
-
         jPanel3.add(lblAnalysis, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 280, -1));
 
         lblGraph.setBackground(new java.awt.Color(0, 153, 102));
@@ -214,21 +194,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         lblGraph.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/graph.png"))); // NOI18N
-        lblGraph.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 50, 31));
-
-        graph.setBackground(new java.awt.Color(0, 153, 102));
-        graph.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        graph.setText("Who We Serve");
-        graph.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                graphMousePressed(evt);
-            }
-        });
-        lblGraph.add(graph, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, -10, 231, 31));
-
         jPanel3.add(lblGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 280, 40));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -278,20 +243,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         whoWeServe();
     }//GEN-LAST:event_lblGraphMousePressed
 
-    private void graphMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_graphMousePressed
-        // TODO add your handling code here:
-        whoWeServe();
-    }//GEN-LAST:event_graphMousePressed
-
     private void lblAnalysisMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAnalysisMousePressed
         // TODO add your handling code here:
         ourServices();
     }//GEN-LAST:event_lblAnalysisMousePressed
-
-    private void AnalysisMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnalysisMousePressed
-        // TODO add your handling code here:
-        ourServices();
-    }//GEN-LAST:event_AnalysisMousePressed
 
     private void manageEnterpriseAdminMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageEnterpriseAdminMousePressed
         manageEnterpriseAdmin();
@@ -317,13 +272,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Analysis;
-    private javax.swing.JLabel graph;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel3;
