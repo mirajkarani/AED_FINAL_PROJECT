@@ -301,7 +301,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Test Requested", "Child ID", "Child Name", "Receiver", "Message", "Status"
+                "Test Requested", "Person ID", "Person Name", "Receiver", "Message", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -324,7 +324,7 @@ public class AssignPersonJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Message", "Child ID", "Child Name", "Receiver", "Status", "Medication Prescribed"
+                "Message", "Person ID", "Person Name", "Receiver", "Status", "Medication Prescribed"
             }
         ) {
             boolean[] canEdit = new boolean [] {

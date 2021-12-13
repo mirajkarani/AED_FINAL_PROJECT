@@ -58,7 +58,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         this.persondirectory = persondirectory;
         this.donorDirectory = donorDirectory;
         manageRequestPanel.setVisible(false);
-        if ("Adoption".equalsIgnoreCase(this.enterprise.getEnterpriseType().getValue()) || "Funding".equalsIgnoreCase(this.enterprise.getEnterpriseType().getValue())) {
+        if ("Espousal".equalsIgnoreCase(this.enterprise.getEnterpriseType().getValue()) || "Funding".equalsIgnoreCase(this.enterprise.getEnterpriseType().getValue())) {
             manageRequestPanel.setVisible(true);
         }
         valueLabel.setText(enterprise.getName());
@@ -88,7 +88,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     }
 
     private void manageRequests() {
-        if ("Adoption".equalsIgnoreCase(this.enterprise.getEnterpriseType().getValue())) {
+        if ("Espousal".equalsIgnoreCase(this.enterprise.getEnterpriseType().getValue())) {
             AdoptionUnitWorkRequestJPanel vOUWRJP = new AdoptionUnitWorkRequestJPanel(rightSystemAdminPanel, account, enterprise, business, adopterdirectory);
             rightSystemAdminPanel.add("manageOrganizationJPanel", vOUWRJP);
         } else if ("Funding".equalsIgnoreCase(this.enterprise.getEnterpriseType().getValue())) {

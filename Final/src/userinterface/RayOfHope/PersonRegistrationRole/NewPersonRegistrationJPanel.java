@@ -163,8 +163,9 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 130, 35));
         add(txtMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 190, 30));
 
-        cmbAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18" }));
-        add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 190, -1));
+        cmbAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78" }));
+        add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 190, -1));
+
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel7.setText("Does person have special needs?");

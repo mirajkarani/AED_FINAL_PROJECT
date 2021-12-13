@@ -36,6 +36,7 @@ public class SendMail {
         properties.put("mail.smtp.starttls.enable", "true");
 
         properties.put("mail.smtp.ssl.trust", host);
+        properties.put("mail.smtp.ssl.protocols","TLSv1.2");
         properties.put("mail.smtp.user", from);
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.auth", "true");
