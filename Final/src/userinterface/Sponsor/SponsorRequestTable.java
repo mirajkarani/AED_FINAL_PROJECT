@@ -83,7 +83,7 @@ public class SponsorRequestTable extends javax.swing.JPanel {
         btnPay = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         personTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -104,24 +104,24 @@ public class SponsorRequestTable extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(personTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 980, 137));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 980, 137));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SPONSOR HUMANITY");
+        jLabel1.setText("Sponsorship");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 250, 50));
 
-        btnPay.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnPay.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnPay.setText("Pay With Card");
         btnPay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPayActionPerformed(evt);
             }
         });
-        add(btnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, 150, 30));
+        add(btnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 150, 30));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/happy.png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 500, 360));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/364424375b4363112bce7cccd18a2d40.gif"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 500, 370));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayActionPerformed

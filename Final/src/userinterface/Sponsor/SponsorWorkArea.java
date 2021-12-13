@@ -99,12 +99,12 @@ public class SponsorWorkArea extends javax.swing.JPanel {
         systemAdminPanel.setBackground(new java.awt.Color(255, 204, 153));
         systemAdminPanel.setPreferredSize(new java.awt.Dimension(1338, 840));
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
         jPanel3.setMinimumSize(new java.awt.Dimension(280, 148));
         jPanel3.setPreferredSize(new java.awt.Dimension(280, 148));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manageNetworkPanel.setBackground(new java.awt.Color(255, 204, 153));
+        manageNetworkPanel.setBackground(new java.awt.Color(0, 153, 102));
         manageNetworkPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 manageNetworkPanelMousePressed(evt);
@@ -127,7 +127,7 @@ public class SponsorWorkArea extends javax.swing.JPanel {
 
         jPanel3.add(manageNetworkPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 280, -1));
 
-        lblViewYourStatus.setBackground(new java.awt.Color(255, 204, 153));
+        lblViewYourStatus.setBackground(new java.awt.Color(0, 153, 102));
         lblViewYourStatus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblViewYourStatusMousePressed(evt);
@@ -135,6 +135,7 @@ public class SponsorWorkArea extends javax.swing.JPanel {
         });
         lblViewYourStatus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblViewStatus.setBackground(new java.awt.Color(0, 153, 102));
         lblViewStatus.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblViewStatus.setText("Payment Status");
         lblViewStatus.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,7 +151,8 @@ public class SponsorWorkArea extends javax.swing.JPanel {
 
         jPanel3.add(lblViewYourStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 280, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/donateLogo.png"))); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/4512612.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 190, 200));
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N

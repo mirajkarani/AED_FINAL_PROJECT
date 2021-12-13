@@ -73,31 +73,33 @@ public class ViewPersonTable extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblNewPerson = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(71, 52, 58));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("VIEW PERSON RECORDS");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 370, 30));
+        jLabel3.setText("View Person Records");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 370, 30));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 480, 330));
 
-        btnDeletePerson.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnDeletePerson.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnDeletePerson.setText("Delete Person");
         btnDeletePerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeletePersonActionPerformed(evt);
             }
         });
-        add(btnDeletePerson, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 150, 33));
+        add(btnDeletePerson, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 150, 33));
 
-        btnViewPerson.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnViewPerson.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnViewPerson.setText("View Person Details");
         btnViewPerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewPersonActionPerformed(evt);
             }
         });
-        add(btnViewPerson, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 150, 33));
+        add(btnViewPerson, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 150, 33));
 
         tblNewPerson.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         tblNewPerson.setModel(new javax.swing.table.DefaultTableModel(
@@ -118,7 +120,7 @@ public class ViewPersonTable extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblNewPerson);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 800, 210));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 800, 210));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDeletePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePersonActionPerformed
