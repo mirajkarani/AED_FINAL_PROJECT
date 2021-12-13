@@ -66,7 +66,7 @@ public class MedicJPanel extends javax.swing.JPanel {
                 row[1] = request.getPersonId();
                 row[2] = request.getPersonName();
                 row[3] = request.getStatus();
-                row[4] = request.getSender().getEmployee().getName();
+                row[4] = request.getSender().getEmployee().getId();
                 row[5] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
                 String result = ((MedicalAssistanceWorkRequest) request).getTestResult();
                 row[6] = result == null ? "Waiting" : result;

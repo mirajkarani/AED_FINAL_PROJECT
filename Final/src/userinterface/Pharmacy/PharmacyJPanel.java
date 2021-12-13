@@ -75,13 +75,15 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         btnProcess = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        jPanel1.setBackground(new java.awt.Color(246, 226, 187));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 153, 255)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPharmacist.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        lblPharmacist.setForeground(new java.awt.Color(71, 52, 58));
         lblPharmacist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPharmacist.setText("PHARMACIST ORGANIZATION");
-        jPanel1.add(lblPharmacist, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 450, -1));
+        lblPharmacist.setText("Pharmacy");
+        jPanel1.add(lblPharmacist, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 450, -1));
 
         tblPharmacist.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,26 +106,29 @@ public class PharmacyJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPharmacist);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 850, 150));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 850, 150));
 
-        btnAssignToMe.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnAssignToMe.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnAssignToMe.setText("Assign To Me");
         btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAssignToMeActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAssignToMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 170, 30));
+        jPanel1.add(btnAssignToMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 170, 30));
 
-        btnProcess.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btnProcess.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnProcess.setText("Process");
         btnProcess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProcessActionPerformed(evt);
             }
         });
-        jPanel1.add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 500, 140, -1));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 500, 460));
+        jPanel1.add(btnProcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, 140, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screen Shot 2021-12-12 at 3.16.06 PM.png"))); // NOI18N
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 500, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

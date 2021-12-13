@@ -82,7 +82,7 @@ public class RequestFinancialHelp extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(246, 226, 187));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblEduFunds.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -94,16 +94,18 @@ public class RequestFinancialHelp extends javax.swing.JPanel {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Miscellaneous");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 213, 38));
+
+        txtEduFunds.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jPanel1.add(txtEduFunds, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 222, 27));
 
-        btnSubmit.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        btnSubmit.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnSubmit.setText("Request");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 133, 33));
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 133, 33));
 
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -111,24 +113,33 @@ public class RequestFinancialHelp extends javax.swing.JPanel {
         jLabel4.setToolTipText("");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 240, 36));
 
+        txtFundsMedExp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtFundsMedExp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFundsMedExpActionPerformed(evt);
             }
         });
         jPanel1.add(txtFundsMedExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 222, 27));
+
+        txtFundsLiving.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jPanel1.add(txtFundsLiving, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 222, 27));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Funds for Living Expenses");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 230, 36));
+
+        txtFundsMisc.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jPanel1.add(txtFundsMisc, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 222, 27));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("REQUEST FOR FUNDS");
+        jLabel1.setText("Request Funds");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 870, 40));
+
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/finance.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 860, 380));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

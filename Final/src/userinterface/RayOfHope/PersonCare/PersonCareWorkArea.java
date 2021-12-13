@@ -79,17 +79,18 @@ public class PersonCareWorkArea extends javax.swing.JPanel {
         lblViewAdoption = new javax.swing.JLabel();
         rightSystemAdminPanel = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(255, 204, 153));
         setLayout(new java.awt.BorderLayout());
 
         systemAdminPanel.setBackground(new java.awt.Color(255, 204, 153));
         systemAdminPanel.setPreferredSize(new java.awt.Dimension(1338, 840));
 
-        LeftPanel.setBackground(new java.awt.Color(255, 204, 153));
+        LeftPanel.setBackground(new java.awt.Color(0, 153, 102));
         LeftPanel.setMinimumSize(new java.awt.Dimension(280, 148));
         LeftPanel.setPreferredSize(new java.awt.Dimension(280, 148));
         LeftPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ChildWorkArea.setBackground(new java.awt.Color(255, 204, 153));
+        ChildWorkArea.setBackground(new java.awt.Color(0, 153, 102));
         ChildWorkArea.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 ChildWorkAreaMousePressed(evt);
@@ -112,7 +113,7 @@ public class PersonCareWorkArea extends javax.swing.JPanel {
 
         LeftPanel.add(ChildWorkArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 280, -1));
 
-        lblViewChild.setBackground(new java.awt.Color(255, 204, 153));
+        lblViewChild.setBackground(new java.awt.Color(0, 153, 102));
         lblViewChild.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblViewChildMousePressed(evt);
@@ -135,7 +136,8 @@ public class PersonCareWorkArea extends javax.swing.JPanel {
 
         LeftPanel.add(lblViewChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 280, -1));
 
-        lblPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/childCare.png"))); // NOI18N
+        lblPic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/4512612.png"))); // NOI18N
         LeftPanel.add(lblPic, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 180, 170));
 
         lblOrg.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
@@ -146,7 +148,7 @@ public class PersonCareWorkArea extends javax.swing.JPanel {
         valueLabel.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
         LeftPanel.add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 110, 20));
 
-        AdoptionPanel.setBackground(new java.awt.Color(255, 204, 153));
+        AdoptionPanel.setBackground(new java.awt.Color(0, 153, 102));
         AdoptionPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 AdoptionPanelMousePressed(evt);
@@ -155,7 +157,7 @@ public class PersonCareWorkArea extends javax.swing.JPanel {
 
         lblicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/orgIcon.png"))); // NOI18N
 
-        lblViewAdoption.setBackground(new java.awt.Color(255, 204, 153));
+        lblViewAdoption.setBackground(new java.awt.Color(0, 153, 102));
         lblViewAdoption.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblViewAdoption.setText("View Adoption Request");
         lblViewAdoption.addMouseListener(new java.awt.event.MouseAdapter() {
