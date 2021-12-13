@@ -458,7 +458,7 @@ public class SponsorRegistrationJPanel extends javax.swing.JPanel {
             numTick.setVisible(false);
 
         } else {
-            JOptionPane.showMessageDialog(null, "Invalid credentials");
+            JOptionPane.showMessageDialog(null, "Your care package request has been registered successfully");
         }
     }//GEN-LAST:event_btnRegisterActionPerformed
 
