@@ -96,46 +96,48 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 130, 35));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 130, 35));
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Age");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 130, 40));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 130, 40));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PERSON REGISTRATION");
+        jLabel1.setText("Person Registration");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 320, 30));
-        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 190, 30));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 190, 30));
 
         femaleRDB.setText("Female");
-        add(femaleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, -1, 35));
+        add(femaleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, -1, 35));
 
         maleRDB.setText("Male");
-        add(maleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 35));
+        add(maleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, -1, 35));
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Gender");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 130, 35));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 130, 35));
 
         photoText.setMaximumSize(new java.awt.Dimension(6, 20));
-        add(photoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 190, 30));
+        add(photoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 190, 30));
 
-        btnRegisterChild.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnRegisterChild.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnRegisterChild.setText("Register");
         btnRegisterChild.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterChildActionPerformed(evt);
             }
         });
-        add(btnRegisterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 130, -1));
+        add(btnRegisterChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 130, -1));
 
         uploadButton.setText("Upload");
         uploadButton.addActionListener(new java.awt.event.ActionListener() {
@@ -143,38 +145,38 @@ public class NewPersonRegistrationJPanel extends javax.swing.JPanel {
                 uploadButtonActionPerformed(evt);
             }
         });
-        add(uploadButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 360, 110, 30));
+        add(uploadButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, 110, 30));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Photo ");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 130, 35));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 130, 35));
 
-        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Registration Date");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 130, 35));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 130, 35));
 
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Identification Mark");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 130, 35));
-        add(txtMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 190, 30));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 130, 35));
+        add(txtMark, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 190, 30));
 
         cmbAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18" }));
-        add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 190, -1));
+        add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 190, -1));
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel7.setText("Does person have special needs?");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 230, 30));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 230, 30));
 
         yesBtn.setText("Yes");
-        add(yesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, -1, -1));
+        add(yesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, -1));
 
         noBtn.setText("No");
-        add(noBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, -1, -1));
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 720, 350));
-        add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 190, -1));
+        add(noBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 720, 350));
+        add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 190, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisterChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterChildActionPerformed

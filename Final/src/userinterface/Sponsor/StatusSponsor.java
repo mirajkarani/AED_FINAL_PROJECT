@@ -89,11 +89,13 @@ public class StatusSponsor extends javax.swing.JPanel {
         workReqTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PAYMENT STATUS");
+        jLabel1.setText("Payment Status");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 380, 30));
 
         workReqTable.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -115,7 +117,9 @@ public class StatusSponsor extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(workReqTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 910, 137));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 910, 137));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/finance-png-20994.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 740, 480));
     }// </editor-fold>//GEN-END:initComponents
 

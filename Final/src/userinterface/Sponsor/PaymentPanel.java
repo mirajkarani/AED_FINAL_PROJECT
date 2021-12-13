@@ -117,27 +117,28 @@ private boolean validateExpDate(){
         jLabel6 = new javax.swing.JLabel();
         jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CARD PAYMENT");
+        jLabel1.setText("Card Payment");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel2.setText("Card Number");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel3.setText("CVV");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel4.setText("Expiration Date");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel5.setText("Postal Code");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, -1, -1));
 
@@ -162,14 +163,14 @@ private boolean validateExpDate(){
         });
         add(txtPostal, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, 180, -1));
 
-        btnPay.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        btnPay.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnPay.setText("Pay");
         btnPay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPayActionPerformed(evt);
             }
         });
-        add(btnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, 150, 40));
+        add(btnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, 150, 40));
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 2, 12)); // NOI18N
         jLabel6.setText("please enter your 16 digits card number");

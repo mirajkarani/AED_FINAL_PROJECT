@@ -97,17 +97,19 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         lblBack = new javax.swing.JLabel();
         jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
 
+        setBackground(new java.awt.Color(246, 226, 187));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Name");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 150, 30));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(71, 52, 58));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("VIEW PERSON DETAILS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 520, 40));
+        jLabel1.setText("View Person Details");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 520, 40));
 
         nameTextField.setEnabled(false);
         add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 210, 30));
@@ -116,7 +118,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         maleRDB.setEnabled(false);
         add(maleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 80, 30));
 
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Age");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 150, 30));
@@ -125,7 +127,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         femaleRDB.setEnabled(false);
         add(femaleRDB, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 80, 30));
 
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Gender");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 150, 30));
@@ -148,7 +150,9 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
             }
         });
         add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 620, 133, 33));
-        add(imageLable, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 220, 180));
+
+        imageLable.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        add(imageLable, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, 220, 180));
 
         CancelBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         CancelBtn.setText("Cancel");
@@ -160,7 +164,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         });
         add(CancelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 620, 133, 33));
 
-        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Identification mark");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 150, 30));
@@ -172,12 +176,12 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 210, 80));
 
-        jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Registration Date");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 150, 30));
 
-        lblPhoto.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblPhoto.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblPhoto.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPhoto.setText("Photo");
         add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 150, 33));
@@ -190,6 +194,7 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
         });
         add(imageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 210, 30));
 
+        uploadBtn.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         uploadBtn.setText("Update Photo");
         uploadBtn.setEnabled(false);
         uploadBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -197,13 +202,15 @@ public class ViewPersonDetailsJPanel extends javax.swing.JPanel {
                 uploadBtnActionPerformed(evt);
             }
         });
-        add(uploadBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 114, 30));
+        add(uploadBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 120, 30));
+
+        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 470, 970, 290));
 
         cmbAge.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18" }));
         add(cmbAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 210, 30));
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel7.setText("Does person have special needs?");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 220, 30));
 

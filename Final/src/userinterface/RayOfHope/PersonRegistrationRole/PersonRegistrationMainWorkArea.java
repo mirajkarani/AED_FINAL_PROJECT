@@ -78,12 +78,12 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
         systemAdminPanel.setBackground(new java.awt.Color(255, 204, 153));
         systemAdminPanel.setPreferredSize(new java.awt.Dimension(1338, 840));
 
-        jPanel3.setBackground(new java.awt.Color(255, 204, 153));
+        jPanel3.setBackground(new java.awt.Color(0, 153, 102));
         jPanel3.setMinimumSize(new java.awt.Dimension(280, 148));
         jPanel3.setPreferredSize(new java.awt.Dimension(280, 148));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabNetworkPanel.setBackground(new java.awt.Color(255, 204, 153));
+        LabNetworkPanel.setBackground(new java.awt.Color(0, 153, 102));
         LabNetworkPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 LabNetworkPanelMousePressed(evt);
@@ -92,7 +92,7 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        childRegistration.setBackground(new java.awt.Color(255, 204, 204));
+        childRegistration.setBackground(new java.awt.Color(0, 152, 102));
         childRegistration.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         childRegistration.setText("Person Registration Area");
         childRegistration.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,6 +133,9 @@ public class PersonRegistrationMainWorkArea extends javax.swing.JPanel {
             }
         });
         jPanel3.add(lblViewChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 230, 40));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/4512612.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 180, 180));
         jPanel3.add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 280, 40));
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 50, 40));
